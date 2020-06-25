@@ -4,7 +4,7 @@ import com.ifisolution.pcrreport.entities.Chemical;
 
 import java.util.List;
 
-public class GeneralService {
+public class GeneService {
     Iterable<Chemical> findAll();
 
     List<Chemical> search(String chemical_name);

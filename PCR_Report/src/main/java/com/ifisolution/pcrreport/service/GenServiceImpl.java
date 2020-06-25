@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GeneralServiceImpl implements GeneralService {
+public class GenServiceImpl extends GeneService {
     @Autowired
     private RepositoryConfig repositoryConfig;
 

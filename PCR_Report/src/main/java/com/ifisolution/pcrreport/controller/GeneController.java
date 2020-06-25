@@ -1,7 +1,7 @@
 package com.ifisolution.pcrreport.controller;
 
 import com.ifisolution.pcrreport.entities.Chemical;
-import com.ifisolution.pcrreport.service.GeneralService;
+import com.ifisolution.pcrreport.service.GeneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-public class GeneralController {
+public class GeneController {
     @Autowired
-    private GeneralService generalService;
+    private GeneService geneService;
 
     @GetMapping("/chemical") //
     public String list(Model model) {
 
-        model.addAttribute("contacts", generalService.findAll());
+        model.addAttribute("contacts", geneService.findAll());
         return "list";
     }
 
@@ -32,7 +32,7 @@ public class GeneralController {
         if (StringUtils.isEmpty(name)) {
             return "redirect:/contact";
         }
-        model.addAttribute("contacts", generalService.search(name));
+        model.addAttribute("contacts", geneService.search(name));
         return "list";
     }
 
@@ -44,7 +44,7 @@ public class GeneralController {
 
     @GetMapping("/contact/{id}/edit")
     public String edit(@PathVariable("id") Integer id, Model model) {
-        model.addAttribute("contact", generalService.findById(id));
+        model.addAttribute("contact", geneService.findById(id));
         return "form";
     }
 
@@ -53,14 +53,14 @@ public class GeneralController {
         if (result.hasErrors()) {
             return "form";
         }
-        generalService.save(chemical);
+        geneService.save(chemical);
         redirect.addFlashAttribute("successMessage", "Saved contact successfully!");
         return "redirect:/contact";
     }
 
     @GetMapping("/contact/{id}/delete")
     public String delete(@PathVariable int id, RedirectAttributes redirect) {
-        generalService.delete(id);
+        geneService.delete(id);
         redirect.addFlashAttribute("successMessage", "Deleted contact successfully!");
         return "redirect:/contact";
 
