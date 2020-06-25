@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="dist/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="dist/Project.jar"/>
+	<classpathentry kind="lib" path="D:/data struture/mySQL/mysql-connector-java-8.0.20.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
