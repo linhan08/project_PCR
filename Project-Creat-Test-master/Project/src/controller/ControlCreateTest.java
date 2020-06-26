@@ -1,4 +1,4 @@
-package controller;
+	package controller;
 
 import information.CauHoi;
 import information.TracNghiem;
@@ -71,7 +71,7 @@ public class ControlCreateTest {
         sinhDe.taoTieuDe();
         sinhDe.sinhDeTL(listTest);
         
-        if (JOptionPane.showConfirmDialog(null, "Bạn có muốn mở đề bây giờ?", "Thành Công", JOptionPane.YES_NO_OPTION) == 0) {
+        if (JOptionPane.showConfirmDialog(null, "Báº¡n cÃ³ muá»‘n má»Ÿ Ä‘á»� bÃ¢y giá»�?", "ThÃ nh CÃ´ng", JOptionPane.YES_NO_OPTION) == 0) {
             if (Desktop.isDesktopSupported()) {
                 try {
                     File myFile = new File("src/test/data.docx");
@@ -100,7 +100,7 @@ public class ControlCreateTest {
         sinhDe.taoTieuDe();
         sinhDe.sinhDeTN(listTest);
         
-        if (JOptionPane.showConfirmDialog(null, "Bạn có muốn mở đề bây giờ?", "Thành Công", JOptionPane.YES_NO_OPTION) == 0) {
+        if (JOptionPane.showConfirmDialog(null, "Báº¡n cÃ³ muá»‘n má»Ÿ Ä‘á»� bÃ¢y giá»�?", "ThÃ nh CÃ´ng", JOptionPane.YES_NO_OPTION) == 0) {
             if (Desktop.isDesktopSupported()) {
                 try {
                     File myFile = new File("src/test/data.docx");
@@ -138,7 +138,7 @@ public class ControlCreateTest {
         sinhDe.taoTieuDe();
         sinhDe.sinhDeTLVaTN(listTest, listTesttl);
         
-        if (JOptionPane.showConfirmDialog(null, "Bạn có muốn mở đề bây giờ?", "Thành Công", JOptionPane.YES_NO_OPTION) == 0) {
+        if (JOptionPane.showConfirmDialog(null, "Báº¡n cÃ³ muá»‘n má»Ÿ Ä‘á»� bÃ¢y giá»�?", "ThÃ nh CÃ´ng", JOptionPane.YES_NO_OPTION) == 0) {
             if (Desktop.isDesktopSupported()) {
                 try {
                     File myFile = new File("src/test/data.docx");
