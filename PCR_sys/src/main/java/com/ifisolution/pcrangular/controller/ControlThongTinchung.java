@@ -15,19 +15,19 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api")
-public class RestApiController {
-    public static Logger logger = (Logger) LoggerFactory.getLogger(RestApiController.class);
+public class ControlThongTinchung {
+    public static Logger logger = (Logger) LoggerFactory.getLogger(ControlThongTinchung.class);
 
     @Autowired
     ThongTinChungService thongTinChungService;
 
     @RequestMapping(value = "/thongtinchung/", method = RequestMethod.GET)
     public ResponseEntity<List<ThongTinChung>> listAllContact(){
-        List<ThongTinChung> listContact= thongTinChungService.findAll();
-        if(listContact.isEmpty()) {
+        List<ThongTinChung> listThongTinChung= thongTinChungService.findAll();
+        if(listThongTinChung.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<List<ThongTinChung>>(listContact, HttpStatus.OK);
+        return new ResponseEntity<List<ThongTinChung>>(listThongTinChung, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/thongtinchung/{id}", method = RequestMethod.GET)
