@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c2de34d-5b70-489e-900d-154a0ff6d120" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PCR_sys/src/main/java/com/ifisolution/pcrangular/controller/RestApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PCR_sys/src/main/java/com/ifisolution/pcrangular/controller/ControlThongTinchung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PCR_sys/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PCR_sys/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project-Creat-Test-master/Project/src/controller/ControlCreateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project-Creat-Test-master/Project/src/controller/ControlCreateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/FinalDatabase.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1do1xiZMEIsAb1iMjniWjbLf9CD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRUD Operation angular + eclipse App/Student" />
+  </component>
+  <component name="RunManager">
+    <configuration name="PcrReportApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="PCR_Report" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ifisolution.pcrreport.PcrReportApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c2de34d-5b70-489e-900d-154a0ff6d120" name="Default Changelist" comment="" />
+      <created>1593076879408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593076879408</updated>
+      <workItem from="1593076892624" duration="1446000" />
+      <workItem from="1593155521631" duration="3304000" />
+      <workItem from="1593162522063" duration="122000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="835" y="387" key="#Assign_Data_Sources" timestamp="1593077322271">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="835" y="387" key="#Assign_Data_Sources/0.0.1920.1040@0.0.1920.1040" timestamp="1593077322271" />
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1593162637365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593162637365" />
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1593077350040">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593077350040" />
+  </component>
+</project>
