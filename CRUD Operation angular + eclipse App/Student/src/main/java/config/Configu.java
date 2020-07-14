@@ -25,7 +25,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
         @ComponentScan("Model"),
         @ComponentScan("Controller"),
         @ComponentScan("DAO"),
-        @ComponentScan("Miscallaneous"),
         @ComponentScan("Service")})
 public class Configu {
 
