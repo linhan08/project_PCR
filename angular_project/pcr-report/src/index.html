@@ -123,8 +123,6 @@
                         }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
                     }]
                 });
-
-
                 clearInterval(checkExist);
             }
         }, 100);
@@ -172,10 +170,10 @@
             initTableData();
             $("#list-header").on({
                 mouseenter: function() {
-                    $(this).css("background-color", "pink");
+                    $(this).css("background-color", "gray");
                 },
                 mouseleave: function() {
-                    $(this).css("background-color", "rgb(25, 114, 173) ");
+                    $(this).css("background-color", "rgb(202, 114, 13)");
                 },
             });
             $("#btnReloadData").on("click", function() {
