@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {StudentService} from '../student.service';
 import {Student} from '../student';
 import {Observable, Subject} from "rxjs";
-
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
