@@ -3,7 +3,9 @@ package com.ifisolution.shopcar.service;
 import java.util.List;
 
 import com.ifisolution.shopcar.model.Customer;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface CustomerService {
 	
 	public boolean saveCustomer(Customer customer);
