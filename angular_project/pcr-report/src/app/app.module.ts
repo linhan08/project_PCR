@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-// import {DataTablesModule} from 'angular-datatables';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ListCarComponent } from './list-car/list-car.component';
+import {DataTablesModule} from 'angular-datatables';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,8 @@ import { ListCarComponent } from './list-car/list-car.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    // DataTablesModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
