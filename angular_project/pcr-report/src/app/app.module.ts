@@ -25,6 +25,7 @@ import {DataTablesModule} from 'angular-datatables';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
