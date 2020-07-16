@@ -76,23 +76,92 @@
 <div class="container">
     <div class="row welcome text-center">
         <div class="col-12">
-            <h2 class="display-5 my-3 text-info">List of VIP</h2>
+            <h2 class="display-5 my-3 text-info">List of Car</h2>
         </div>
     </div>
-    <table class="table table-striped" id="users">
+    <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead>
             <tr id="list-header">
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Address</th>
-                <th scope="col">Phone</th>
+                <th scope="col">Car Name</th>
+                <th scope="col">Car Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
+            <tr *ngFor="let car of cars ">
+                <td>{{car.car_name}}</td>
+                <td>{{car.car_price}}</td>
+                <td>{{car.description}}</td>
+                <td>
+                    <button (click)="deleteCar(car.car_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                    <button (click)="updateCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button>
+                    <button (click)="createCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal1">Add new</button>
+                    <!-- <button type="button" [routerLink]="['/add-car']" class="btn btn-primary btn-lg">Add new</button> -->
+                </td>
+            </tr>
         </tbody>
     </table>
     <button type="button" class="btn btn-primary" id="btnReloadData">Reload data</button>
+    <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form [formGroup]="carupdateform" #updstu (ngSubmit)="updateStu(updstu)">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align: center">Update Car</h4>
+
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" *ngFor="let car of carlist ">
+                        <div [hidden]="isupdated">
+
+                            <input type="hidden" class="form-control" formControlName="car_id" [(ngModel)]="car.car_id">
+                            <div class="form-group">
+                                <label for="name">Car Name</label>
+                                <input type="text" class="form-control" formControlName="car_name" [(ngModel)]="car.car_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Car Price</label>
+                                <input type="text" class="form-control" formControlName="car_price" [(ngModel)]="car.car_price">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Description</label>
+                                <select class="form-control" formControlName="description" required>
+                                    <option value="VIP" [selected]="'B-Tech' == car.description">VIP</option>
+                                    <option value="Normal" [selected]="'BCA' == car.description">Normal</option>
+                                    <option value="Specail" [selected]="'MCA' == car.description">Specail</option>
+                                    <option value="M-Tech" [selected]="'M-Tech' == car.description">M-Tech</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div [hidden]="!isupdated">
+                            <h4>Car Detail Updated!</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container-fluid">
     <div class="row welcome text-center">
@@ -174,7 +243,7 @@
                 unloaded for a leg of the rally. </p>
             <figure class="highcharts-figure">
                 <div id="container-chart"></div>
-                <p class="highcharts-description">This chart shows</p>
+                <p class="highcharts-descriptionription">This chart shows</p>
             </figure>
             <br>
         </div>

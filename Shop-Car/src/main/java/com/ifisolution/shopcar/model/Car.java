@@ -10,7 +10,7 @@ public class Car {
     private int car_id;
     private String car_name;
     private int car_price;
-    private String desc;
+    private String description;
 
 
     public int getCar_id() {
@@ -37,12 +37,12 @@ public class Car {
         this.car_price = car_price;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String desc) {
+        this.description = desc;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Car {
                 "car_id=" + car_id +
                 ", car_name='" + car_name + '\'' +
                 ", car_price=" + car_price +
-                ", desc='" + desc + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
