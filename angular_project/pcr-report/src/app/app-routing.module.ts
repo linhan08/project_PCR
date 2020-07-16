@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {StudentListComponent} from './student-list/student-list.component';
-import {AddStudentComponent} from './add-student/add-student.component';
+import { AddCarComponent } from './add-car/add-car.component';
+import { ListCarComponent } from './list-car/list-car.component';
 
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
-  {path: '', component: AddStudentComponent},
-  {path: '', component: StudentListComponent},
+  {path: '', component: AddCarComponent},
+  {path: '', component: ListCarComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'view-student', component: StudentListComponent},
-  {path: 'add-student', component: AddStudentComponent},
+  {path: 'list-car', component: ListCarComponent},
+  {path: 'add-car', component: AddCarComponent},
   {path: 'dashboard', component: DashboardComponent}
 ];
 
