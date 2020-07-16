@@ -10,7 +10,7 @@ import {Car} from '../model/car.model';
 })
 export class AddCarComponent implements OnInit {
 
-  constructor(private carservice: CarService) {
+  constructor(private carService: CarService) {
   }
 
   car: Car = new Car();
@@ -37,7 +37,7 @@ export class AddCarComponent implements OnInit {
 
 
   save() {
-    this.carservice.createCar(this.car)
+    this.carService.createCar(this.car)
       .subscribe(data => console.log(data), error => console.log(error));
     this.car = new Car();
   }
