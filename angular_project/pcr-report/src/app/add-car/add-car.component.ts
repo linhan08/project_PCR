@@ -22,7 +22,7 @@ export class AddCarComponent implements OnInit {
 
   carsaveform = new FormGroup({
     car_name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    car_price: new FormControl('', [Validators.required, Validators.price]),
+    car_price: new FormControl('', [Validators.required,]),
     desc: new FormControl()
   });
 

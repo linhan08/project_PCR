@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DataTableModule } from 'ng-angular8-datatable';
 // import {DataTablesModule} from 'angular-datatables';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ListCarComponent } from './list-car/list-car.component';
@@ -23,6 +24,7 @@ import { ListCarComponent } from './list-car/list-car.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    DataTableModule
     // DataTablesModule
   ],
   providers: [],
