@@ -32,10 +32,9 @@
                     <td>{{student.student_email}}</td>
                     <td>{{student.student_branch}}</td>
                     <td>
-                        <button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i
-                            class="fa fa-futboll-0">Delete</i></button>&nbsp;
-                        <button (click)="updateStudent(student.student_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update
-                        </button>
+                        <button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                        <button (click)="updateStudent(student.student_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button>&nbsp;
+                        <button [routerLink]="['/add-student']" routerLinkActive="router-link-active" class='btn btn-info'>Add</button>
                     </td>
                 </tr>
             </tbody>

@@ -64,10 +64,10 @@ export class ListCarComponent implements OnInit {
   }
 
   carupdateform = new FormGroup({
-    car_id: new FormControl(),
-    car_name: new FormControl(),
-    car_price: new FormControl(),
-    desc: new FormControl()
+    carId: new FormControl('', []),
+    carName: new FormControl('', []),
+    carPrice: new FormControl('', []),
+    description: new FormControl('', [])
   });
 
   updateStu(updstu) {
@@ -75,8 +75,8 @@ export class ListCarComponent implements OnInit {
     this.car.car_id = this.CarId.value;
     this.car.car_name = this.CarName.value;
     this.car.car_price = this.CarPrice.value;
-    this.car.desc = this.Desc.value;
-    console.log(this.Desc.value);
+    this.car.description = this.Description.value;
+    console.log(this.Description.value);
 
 
     this.carService.updateCar(this.car.car_id, this.car).subscribe(
@@ -97,7 +97,7 @@ export class ListCarComponent implements OnInit {
     return this.carupdateform.get('car_price');
   }
 
-  get Desc() {
+  get Description() {
     return this.carupdateform.get('desc');
   }
 
