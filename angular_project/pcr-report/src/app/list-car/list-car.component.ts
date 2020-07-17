@@ -64,10 +64,17 @@ export class ListCarComponent implements OnInit {
   }
 
   carupdateform = new FormGroup({
+<<<<<<< HEAD
     carId: new FormControl('', []),
     carName: new FormControl('', []),
     carPrice: new FormControl('', []),
     description: new FormControl('', [])
+=======
+    car_id: new FormControl(),
+    car_name: new FormControl(),
+    car_price: new FormControl(),
+    description: new FormControl()
+>>>>>>> ee9cc56503bc1e478dc420ecbb6cbc0e8da4f226
   });
 
   updateStu(updstu) {
