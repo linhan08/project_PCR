@@ -2,11 +2,12 @@
     <div class="cont">
         <div class="form sign-in">
             <h2>Sign In</h2>
-    <label>
+            <label>
       <span>Username</span>
-      <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+      <input type="email" name="email">
     </label>
-    <label>
+            <input type="text" name="username" [(ngModel)]="loginModel.username" required>
+            <label>
       <span>Password</span>
       <input type="password"  name="password" [(ngModel)]="loginModel.password" required>
     </label>
@@ -40,24 +41,21 @@
             </div>
             <div class="form sign-up">
                 <h2>Sign Up</h2>
-        <label>
+                <label>
         <span>Username</span>
         <input type="text"  name="username" [(ngModel)]="signModel.username" required>
       </label>
-        <label>
+                <label>
         <span>Email</span>
-        <input type="password"  name="email" [(ngModel)]="signModel.email" required>
+        <input type="text"  name="email" [(ngModel)]="signModel.email" required>
       </label>
-        <label>
+                <label>
         <span>Password</span>
-        <input type="password"  name="password" [(ngModel)]="signModel.password">
+        <input type="password"  name="password" [(ngModel)]="signModel.password" required>
       </label>
-      <label>
-        
-        <select [(ngModel)]="signModel.role" [ngModelOptions]="{standalone: true}">
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
+                <label>
+        <span>Confirm Password</span>
+        <input type="password"  name="password" [(ngModel)]="signmodel.password">
       </label>
                 <button type="button" class="submit">Sign Up Now</button>
             </div>

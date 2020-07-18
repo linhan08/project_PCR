@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <form class="form-inline mr-auto">
                 <input class="form-control" type="text" placeholder="something..." aria-label="Search">
-                <button class="btn btn-success btn-rounded btn-sm my-0 ml-sm-2" type="submit">Search</button>
+                <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit">Search</button>
             </form>
         </div>
         <ul class="navbar-nav ml-auto">
@@ -18,13 +18,13 @@
                 <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active">About</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active">Services</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active">Buy</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Buy</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Log out</a>
@@ -46,7 +46,8 @@
             <div class="carousel-caption">
                 <h1 class="display-2">Lamborghini</h1>
                 <h2>Car Service</h2>
-                
+                <button type="button" [routerLink]="['/view-student']" class="btn btn-outline-light btn-lg">View Car</button>
+                <button type="button" [routerLink]="['/add-student']" class="btn btn-primary btn-lg">Add Car</button>
             </div>
         </div>
         <div class="carousel-item">
@@ -69,54 +70,30 @@
                 fiber monocoque. The elegance and vanity of a Roadster meet the power of a naturally aspirated 6.5 liter V-12 engine putting out 515 kW (700 CV), with incredible torque available at all engine speeds. The Aventador Roadster is an open-top
                 supercar that combines sportiness and style. Discover the technical specifications and the full features of the Lamborghini Aventador Roadster.
             </p>
-          
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a routerLink="view-student" class="nav-link" class="btn btn-primary active" role="button">View Student</a>
+                </li>&nbsp;
+                <li class="nav-item">
+                    <a routerLink="add-student" class="nav-link" class="btn btn-primary active" role="button">Add Student</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
-
-<div class ="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1 style="text-align: center">List of Cars</h1><br>
-            <div class="row" [hidden]="!deleteMessage">
-    
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <div class="alert alert-info alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>Car Data Deleted</strong>
-                    </div>
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </div>
-    
-        <div class="panel-body">
-            <table  class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
-                <thead class="thead-dark">
-                    <tr id="list-header">
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                       
-    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let student of students ">
-                        <td>{{student.student_name}}</td>
-                        <td>{{student.student_email}}</td>
-                        <td>{{student.student_branch}}</td>
-                        
-                    </tr>
-                </tbody>
-                <br>
-            </table>
-            <button type="button" class="btn btn-primary" id="btnReloadData">Reload data</button>
-        </div>
-    </div>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a routerLink="view-student" class="nav-link" class="btn btn-primary active" role="button">View Student</a>
+            </li>&nbsp;
+            <li class="nav-item">
+                <a routerLink="add-student" class="nav-link" class="btn btn-primary active" role="button">Add Student</a>
+            </li>
+        </ul>
+    </nav>
 </div>
-<!-- <div class="container">
+<div class="container">
     <div class="row welcome text-center">
         <div class="col-12">
             <h2 class="display-5 my-3 text-info">List of Car</h2>
@@ -136,7 +113,9 @@
         </tbody>
     </table>
     <button type="button" class="btn btn-primary" id="btnReloadData">Reload data</button>
-</div> -->
+
+
+</div>
 <div class="container-fluid">
     <div class="row welcome text-center">
         <div class="col-12">
@@ -156,7 +135,7 @@
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
                     <p>-Pad Included: No</p>
-                    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
                 </div>
             </div>
         </div>
@@ -171,7 +150,7 @@
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
                     <p>-Pad Included: No</p>
-                    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
                 </div>
             </div>
         </div>
@@ -186,7 +165,7 @@
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
                     <p>-Pad Included: No</p>
-                    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
                 </div>
             </div>
         </div>
@@ -236,9 +215,9 @@
             <h2>Contact us</h2>
         </div>
         <div class="col-12 social padding">
-            <a [routerLink]="['/dashboard']" routerLinkActive="active"><i class="fab fa-facebook"></i></a>
-            <a [routerLink]="['/dashboard']" routerLinkActive="active"><i class="fab fa-google-plus-g"></i></a>
-            <a [routerLink]="['/dashboard']" routerLinkActive="active"><i class="fab fa-youtube"></i></a>
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-facebook"></i></a>
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-google-plus-g"></i></a>
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 </div>
@@ -248,7 +227,7 @@
         <div class="row text-center">
             <div class="col-md-4">
                 <hr class="light">
-                <h5>@Daofficial</h5>
+                <h5>@WebPro</h5>
                 <hr class="light">
                 <p>888-000-111</p>
                 <p>daofficial88@gmail.com</p>
@@ -271,7 +250,7 @@
             </div>
             <div class="col-12">
                 <hr class="light-100">
-                <h5>&copy; Daofficial</h5>
+                <h5>&copy; WebPro</h5>
             </div>
         </div>
     </div>

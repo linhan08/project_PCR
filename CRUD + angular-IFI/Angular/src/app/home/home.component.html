@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <form class="form-inline mr-auto">
                 <input class="form-control" type="text" placeholder="something..." aria-label="Search">
-                <button class="btn btn-success btn-rounded btn-sm my-0 ml-sm-2" type="submit">Search</button>
+                <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit">Search</button>
             </form>
         </div>
         <ul class="navbar-nav ml-auto">
@@ -46,6 +46,8 @@
             <div class="carousel-caption">
                 <h1 class="display-2">Lamborghini</h1>
                 <h2>Car Service</h2>
+                <button type="button" [routerLink]="['/list-car']" class="btn btn-outline-light btn-lg">View Car</button>
+                <button type="button" [routerLink]="['/add-car']" class="btn btn-primary btn-lg">Get started</button>
             </div>
         </div>
         <div class="carousel-item">
@@ -70,10 +72,11 @@
             </p>
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a routerLink="view-student" class="nav-link" class="btn btn-success active" role="button">View Car</a>
-               
-                    <a routerLink="dashboard" class="nav-link" class="btn btn-success active" role="button">View dashborad</a>
-                </li>&nbsp;          
+                    <a routerLink="view-student" class="nav-link" class="btn btn-primary active" role="button">View Student</a>
+                </li>&nbsp;
+                <li class="nav-item">
+                    <a routerLink="add-student" class="nav-link" class="btn btn-primary active" role="button">Add Student</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -131,7 +134,7 @@
         <div class="row text-center">
             <div class="col-md-4">
                 <hr class="light">
-                <h5>@Daofficial</h5>
+                <h5>@WebPro</h5>
                 <hr class="light">
                 <p>888-000-111</p>
                 <p>daofficial88@gmail.com</p>
@@ -154,7 +157,7 @@
             </div>
             <div class="col-12">
                 <hr class="light-100">
-                <h5>&copy; Daofficial</h5>
+                <h5>&copy; WebPro</h5>
             </div>
         </div>
     </div>

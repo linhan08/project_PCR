@@ -9,39 +9,31 @@
 .icon1 {
     background-color: #e68312;
 }
-
 .navbar {
     background-color: rgba(1, 1, 10, 0.993) !important;
 }
-
 .navbar li a {
     color: rgb(235, 170, 86) !important;
 }
-
 .navbar li a:hover {
     color: rgb(14, 201, 14) !important;
 }
-
 .carousel-inner img {
     width: 100%;
 }
-
 .carousel-caption {
     position: absolute;
     top: 50%;
 }
-
 .carousel-caption h1 {
     font-size: 400%;
     text-transform: uppercase;
     text-shadow: 5px 5px 15px #000;
 }
-
 .carousel-caption h3 {
     font-size: 200%;
     text-shadow: 2px 2px 10px #000;
 }
-
 .btn-primary {
     background-color: rgb(131, 92, 7);
     border: 1px solid white;
@@ -76,6 +68,9 @@
     color: #bb0000;
 }
 
+.btn {
+    background-color: rgb(236, 142, 75);
+}
 
 .footer {
     background-color: #3f3f3f;
