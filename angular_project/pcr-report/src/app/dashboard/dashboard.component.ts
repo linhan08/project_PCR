@@ -8,8 +8,10 @@ import {Car} from '../model/car.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+   carlist =[];
+   cars =[];
   constructor(private carService: CarService) {
+    
   }
 
   car: Car = new Car();
@@ -49,15 +51,14 @@ export class DashboardComponent implements OnInit {
     return this.carsaveform.get('car_price');
   }
 
-  get Desc() {
+  get Description() {
     return this.carsaveform.get('description');
   }
 
   addCarForm() {
     this.submitted = false;
     this.carsaveform.reset();
-  ngOnInit(): void {
-
   }
 
+  
 }

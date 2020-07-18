@@ -79,7 +79,7 @@
             <h2 class="display-5 my-3 text-info">List of Car</h2>
         </div>
     </div>
-    <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <table class="table table-hover table-sm" datatable [dtOptions]="" [dtTrigger]="">
         <thead>
             <tr id="list-header">
                 <th scope="col">ID</th>
@@ -95,10 +95,9 @@
                 <td>{{car.car_price}}</td>
                 <td>{{car.description}}</td>
                 <td>
-                    <button (click)="deleteCar(car.car_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                    <!-- <button (click)="deleteCar(car.car_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
                     <button (click)="updateCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button>
-                    <button (click)="createCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal1">Add new</button>
-                    <!-- <button type="button" [routerLink]="['/add-car']" class="btn btn-primary btn-lg">Add new</button> -->
+                    <button (click)="createCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal1">Add new</button> -->
                 </td>
             </tr>
         </tbody>
@@ -108,20 +107,74 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <div [hidden]="submitted" style="width: 400px;">
+                            <form [formGroup]="carsaveform" #savecar (ngSubmit)="saveCar(saveCar)">
+                                <div class="form-group">
+                                    <label for="name">Car Name</label>
+                                    <input type="text" class="form-control" formControlName="car_name" data-toggle="tooltip" data-placement="right" title="Enter car Name">
+                                    <div class="alert alert-danger" *ngIf="(CarName.touched) && (CarName.invalid)" style="margin-top: 5px;">
+                                        <span *ngIf="CarName.errors.required">Car Name is Required</span>
+                                        <span *ngIf="CarName.errors.minlength">
+                                        MinLength Error
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name">Car Price</label>
+                                    <input type="text" class="form-control" formControlName="car_price" data-toggle="tooltip" data-placement="right" title="Enter car Price">
+                                    <div class="alert alert-danger" *ngIf="(CarPrice.touched) && (CarPrice.invalid)" style="margin-top: 5px;">
+                                        <span *ngIf="CarPrice.errors.required">Car Price is Required</span>
+                                        <span *ngIf="CarPrice.errors.price">
+                                        Invalid Price Format
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="branch">Description</label>
+                                    <select class="form-control" formControlName="desc" data-toggle="tooltip" data-placement="right" title="Select Description">
+                                        <option value="null">--Select DESC--</option>
+                                        <option value="B-Tech">Vip</option>
+                                        <option value="BCA">Normal</option>
+                                        <option value="MCA">Special</option>
+                                        <option value="M-Tech">M-Tech</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <div [hidden]="!submitted">
+                            <h4>Car Added SuccessFully!</h4>
+                            <button (click)="addCarForm()" class='btn btn-primary'>Add More car</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+
             </div>
         </div>
     </div>
-    <div class="modal" id="myModal">
+    <!-- <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form [formGroup]="carupdateform" #updstu (ngSubmit)="updateStu(updstu)">
-                    <!-- Modal Header -->
+
                     <div class="modal-header">
                         <h4 class="modal-title" style="text-align: center">Update Car</h4>
 
                     </div>
 
-                    <!-- Modal body -->
                     <div class="modal-body" *ngFor="let car of carlist ">
                         <div [hidden]="isupdated">
 
@@ -152,7 +205,6 @@
 
                     </div>
 
-                    <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>
@@ -161,7 +213,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="container-fluid">
     <div class="row welcome text-center">
@@ -176,13 +228,20 @@
             <div class="card">
                 <img class="card-img-top" src="../assets/images/car2.jpg">
                 <div class="card-body">
-                    <h5 class="card-title">Lamborghini aventador luxury </h5>
+                    <!-- <h5 class="card-title">Lamborghini aventador luxury </h5>
                     <p class="card-text">-BrandVG: TECH</p>
                     <p>-Compatible Laptop Screen Size: 39.6 cm (15.6)</p>
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
-                    <p>-Pad Included: No</p>
-                    <a [routerLink]="['/login']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+                    <p>-Pad Included: No</p> -->
+                    <ul>
+                        <li *ngFor="let car of carlist">{{car.car_name}} {{car.car_price}} {{car.description}}
+                          <!-- <a [routerLink]="[ '/update-car', car.car_id]">Edit</a> -->
+                        </li>
+                      </ul>
+                      
+                     <!-- <button (click)="updateCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button> -->
+                    <a [routerLink]="[ '/update-car', car.car_id]" routerLinkActive="active" class="btn btn-outline-secondary">Edit</a>
                 </div>
             </div>
         </div>

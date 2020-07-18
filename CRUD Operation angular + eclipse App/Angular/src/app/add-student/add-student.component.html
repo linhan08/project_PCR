@@ -48,7 +48,9 @@
     <div class="col-sm-4">
         <div [hidden]="!submitted">
             <h4>Student Added SuccessFully!</h4>
-            <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>
+            <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>&nbsp;
+            <button [routerLink]="['/view-student']" routerLinkActive="router-link-active" class='btn btn-info'>View Car</button>
+
         </div>
     </div>
     <div class="col-sm-4"></div>

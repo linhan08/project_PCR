@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,7 @@ public class EmployeeController {
 	private EmployeeRepository employeeRepository;
 
 	@GetMapping("/employees")
+	@PreAuthorize("hasRole('ADMIN')")
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
 	}
@@ -44,11 +46,13 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/employees")
+	@PreAuthorize("hasRole('ADMIN')")
 	public Employee createEmployee(@Valid @RequestBody Employee employee) {
 		return employeeRepository.save(employee);
 	}
 
 	@PutMapping("/employees/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Long employeeId,
 			@Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
 		Employee employee = employeeRepository.findById(employeeId)

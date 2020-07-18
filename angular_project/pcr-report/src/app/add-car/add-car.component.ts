@@ -50,8 +50,8 @@ export class AddCarComponent implements OnInit {
     return this.carsaveform.get('car_price');
   }
 
-  get Desc() {
-    return this.carsaveform.get('desc');
+  get Description() {
+    return this.carsaveform.get('description');
   }
 
   addCarForm() {

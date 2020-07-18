@@ -22,7 +22,7 @@ export class AddStudentComponent implements OnInit {
 
   studentsaveform = new FormGroup({
     student_name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    student_email: new FormControl('', [Validators.required, Validators.email]),
+    student_email: new FormControl('', [Validators.required]),
     student_branch: new FormControl()
   });
 
