@@ -7,12 +7,18 @@ import {HttpClientModule} from '@angular/common/http';
 import {DataTablesModule} from 'angular-datatables';
 import {StudentListComponent} from './student-list/student-list.component';
 import {AddStudentComponent} from './add-student/add-student.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
+    LoginComponent,
+    HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
