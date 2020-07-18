@@ -2,17 +2,17 @@
     <div class="cont">
         <div class="form sign-in">
             <h2>Sign In</h2>
+        <form (ngSubmit)="login()">
             <label>
-      <span>Username</span>
-      <input type="email" name="email">
-    </label>
+                <span>Username</span>
             <input type="text" name="username" [(ngModel)]="loginModel.username" required>
-            <label>
+            </label>
+    <label>
       <span>Password</span>
       <input type="password"  name="password" [(ngModel)]="loginModel.password" required>
     </label>
             <button class="submit" type="button">Sign In</button>
-
+        </form>
 
             <div class="social-media">
                 <ul>
@@ -34,30 +34,34 @@
                     <h2>One of us?</h2>
                     <p>If you already has an account, just sign in. We've missed you!</p>
                 </div>
-                <div class="img-btn" (click)="clickSignUp()">
+                <div class="img-btn" (click)="ngOnInit()">
                     <span class="m-up">Sign Up</span>
                     <span class="m-in">Sign In</span>
                 </div>
             </div>
             <div class="form sign-up">
                 <h2>Sign Up</h2>
-                <label>
+    <form (ngSubmit)="signupUser()">
+        <label>
         <span>Username</span>
         <input type="text"  name="username" [(ngModel)]="signModel.username" required>
       </label>
-                <label>
+        <label>
         <span>Email</span>
         <input type="text"  name="email" [(ngModel)]="signModel.email" required>
       </label>
-                <label>
+        <label>
         <span>Password</span>
         <input type="password"  name="password" [(ngModel)]="signModel.password" required>
       </label>
-                <label>
-        <span>Confirm Password</span>
-        <input type="password"  name="password" [(ngModel)]="signmodel.password">
+        <label>
+            <select [(ngModel)]="signModel.role" [ngModelOptions]="{standalone: true}">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
       </label>
-                <button type="button" class="submit">Sign Up Now</button>
+            <button type="button" class="submit">Sign Up Now</button>
+    </form>
             </div>
         </div>
     </div>
