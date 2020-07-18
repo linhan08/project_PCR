@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
     this.car = new Car();
     this.car.car_name = this.CarName.value;
     this.car.car_price = this.CarPrice.value;
-    this.car.description = this.Description.value;
+    //this.car.description = this.Description.value;
     this.submitted = true;
     this.save();
   }
@@ -58,7 +58,9 @@ export class DashboardComponent implements OnInit {
   addCarForm() {
     this.submitted = false;
     this.carsaveform.reset();
+
   }
 
-  
 }
+
+

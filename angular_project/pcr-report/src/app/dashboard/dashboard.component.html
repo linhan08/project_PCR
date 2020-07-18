@@ -15,19 +15,29 @@
         </div>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="active">Home</a>
+                <a class="nav-link active" [routerLink]="['']" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">About</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Services</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Buy</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Buy</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Log out</a>
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Log out</a>
+      <a class="nav-link" [routerLink]="['']" routerLinkActive="active">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['']" routerLinkActive="active">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['']" routerLinkActive="active">Buy</a>
+            </li>
+            <li class="nav-item">
+
             </li>
         </ul>
     </div>
@@ -46,6 +56,8 @@
             <div class="carousel-caption">
                 <h1 class="display-2">Lamborghini</h1>
                 <h2>Car Service</h2>
+                <button type="button" [routerLink]="['/list-car']" class="btn btn-outline-light btn-lg">View Car</button>
+                <button type="button" [routerLink]="['/add-car']" class="btn btn-primary btn-lg">Get started</button>
             </div>
         </div>
         <div class="carousel-item">
@@ -68,8 +80,6 @@
                 fiber monocoque. The elegance and vanity of a Roadster meet the power of a naturally aspirated 6.5 liter V-12 engine putting out 515 kW (700 CV), with incredible torque available at all engine speeds. The Aventador Roadster is an open-top
                 supercar that combines sportiness and style. Discover the technical specifications and the full features of the Lamborghini Aventador Roadster.
             </p>
-            <button type="button" [routerLink]="['/list-car']" class="btn btn-outline-light btn-lg">View Car</button>
-            <button type="button" [routerLink]="['/add-car']" class="btn btn-primary btn-lg">Get started</button>
         </div>
     </div>
 </div>
@@ -79,14 +89,15 @@
             <h2 class="display-5 my-3 text-info">List of Car</h2>
         </div>
     </div>
+
     <table class="table table-hover table-sm" datatable [dtOptions]="" [dtTrigger]="">
         <thead>
             <tr id="list-header">
                 <th scope="col">ID</th>
-                <th scope="col">Car Name</th>
-                <th scope="col">Car Price</th>
-                <th scope="col">Description</th>
-                <th scope="col">Action</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
             </tr>
         </thead>
         <tbody>
@@ -189,19 +200,7 @@
                                 <input type="text" class="form-control" formControlName="car_price" [(ngModel)]="car.car_price">
                             </div>
 
-                            <div class="form-group">
-                                <label for="name">Description</label>
-                                <select class="form-control" formControlName="description" required>
-                                    <option value="VIP" [selected]="'B-Tech' == car.description">VIP</option>
-                                    <option value="Normal" [selected]="'BCA' == car.description">Normal</option>
-                                    <option value="Specail" [selected]="'MCA' == car.description">Specail</option>
-                                    <option value="M-Tech" [selected]="'M-Tech' == car.description">M-Tech</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div [hidden]="!isupdated">
-                            <h4>Car Detail Updated!</h4>
-                        </div>
+
 
                     </div>
 
@@ -233,6 +232,7 @@
                     <p>-Compatible Laptop Screen Size: 39.6 cm (15.6)</p>
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
+
                     <p>-Pad Included: No</p> -->
                     <ul>
                         <li *ngFor="let car of carlist">{{car.car_name}} {{car.car_price}} {{car.description}}
@@ -242,6 +242,11 @@
                       
                      <!-- <button (click)="updateCar(car.car_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button> -->
                     <a [routerLink]="[ '/update-car', car.car_id]" routerLinkActive="active" class="btn btn-outline-secondary">Edit</a>
+
+                    <p>-Pad Included: No</p>
+
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+                    <a [routerLink]="['']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
                 </div>
             </div>
         </div>
@@ -256,7 +261,11 @@
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
                     <p>-Pad Included: No</p>
-                    <a [routerLink]="['/login']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+
+                    <a [routerLink]="['']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+
                 </div>
             </div>
         </div>
@@ -271,8 +280,11 @@
                     <p>-Pack of: 1</p>
                     <p>-(mm): 1</p>
                     <p>-Pad Included: No</p>
-                    <a [routerLink]="['/login']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
-                </div>
+
+                    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+
+                    <a [routerLink]="['']" routerLinkActive="active" class="btn btn-outline-secondary">See more...</a>
+               </div>
             </div>
         </div>
     </div>
@@ -321,9 +333,14 @@
             <h2>Contact us</h2>
         </div>
         <div class="col-12 social padding">
-            <a [routerLink]="['/login']" routerLinkActive="active"><i class="fab fa-facebook"></i></a>
-            <a [routerLink]="['/login']" routerLinkActive="active"><i class="fab fa-google-plus-g"></i></a>
-            <a [routerLink]="['/login']" routerLinkActive="active"><i class="fab fa-youtube"></i></a>
+
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-facebook"></i></a>
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-google-plus-g"></i></a>
+            <a [routerLink]="['/home']" routerLinkActive="active"><i class="fab fa-youtube"></i></a>
+
+            <a [routerLink]="['']" routerLinkActive="active"><i class="fab fa-facebook"></i></a>
+            <a [routerLink]="['']" routerLinkActive="active"><i class="fab fa-google-plus-g"></i></a>
+            <a [routerLink]="['']" routerLinkActive="active"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 </div>

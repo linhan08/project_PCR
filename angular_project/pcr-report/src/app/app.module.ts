@@ -10,13 +10,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ListCarComponent } from './list-car/list-car.component';
 import {DataTablesModule} from 'angular-datatables';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     AddCarComponent,
-    ListCarComponent
+    ListCarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

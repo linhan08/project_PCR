@@ -170,7 +170,11 @@ button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url("../../assets/images/bg.jpg");
+<<<<<<< HEAD
+    background-image: url('../../assets/images/bg.jpg');
+=======
+    background-image: url(../../assets/images/bg.jpg);
+>>>>>>> ee9cc56503bc1e478dc420ecbb6cbc0e8da4f226
     background-size: cover;
     transition: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;

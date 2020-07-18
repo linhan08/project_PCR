@@ -64,6 +64,11 @@ export class ListCarComponent implements OnInit {
   }
 
   carupdateform = new FormGroup({
+    carId: new FormControl('', []),
+    carName: new FormControl('', []),
+    carPrice: new FormControl('', []),
+    description: new FormControl('', [])
+
     car_id: new FormControl(),
     car_name: new FormControl(),
     car_price: new FormControl(),
@@ -99,6 +104,9 @@ export class ListCarComponent implements OnInit {
 
   get Description() {
     return this.carupdateform.get('description');
+
+    return this.carupdateform.get('desc');
+
   }
 
   get CarId() {
