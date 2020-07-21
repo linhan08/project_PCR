@@ -1,7 +1,8 @@
-package net.guides.springboot2.springboot2jpacrudexample.security;
+package com.ifisolution.shopcar.security;
 
-import net.guides.springboot2.springboot2jpacrudexample.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ifisolution.shopcar.model.User;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -56,11 +56,11 @@
       </label>
         <label>
             <select [(ngModel)]="signModel.role" [ngModelOptions]="{standalone: true}">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
+                <option value="user">USER</option>
+                <option value="admin">ADMIN</option>
             </select>
       </label>
-            <button type="button" class="submit">Sign Up Now</button>
+            <button (click)="signupUser()" type="button" class="submit">Sign Up Now</button>
     </form>
             </div>
         </div>
