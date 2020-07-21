@@ -46,7 +46,7 @@
             <div class="carousel-caption">
                 <h1 class="display-2">Lamborghini</h1>
                 <h2>Car Service</h2>
-                
+
             </div>
         </div>
         <div class="carousel-item">
@@ -72,52 +72,57 @@
         </div>
     </div>
 </div>
-<div class ="container">
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h1 style="text-align: center">List of Cars</h1><br>
-        <div class="row" [hidden]="!deleteMessage">
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1 style="text-align: center">List of Cars</h1><br>
+            <div class="row" [hidden]="!deleteMessage">
 
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <div class="alert alert-info alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Car Data Deleted</strong>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Car Data Deleted</strong>
+                    </div>
                 </div>
+                <div class="col-sm-4"></div>
             </div>
-            <div class="col-sm-4"></div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-5">
+                <label>Search:</label>
+                <input type="text" [(ngModel)]="student.search" />
+            </div>
+        </div> -->
+        <div class="panel-body">
+            <table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead class="thead-dark">
+                    <tr id="list-header">
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students ">
+                        <td>{{student.student_name}}</td>
+                        <td>{{student.student_email}}</td>
+                        <td>{{student.student_branch}}</td>
+                        <td>
+                            <button (click)="deleteStudent(student.student_id)" class='btn btn-danger'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                            <button (click)="updateStudent(student.student_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button>&nbsp;
+                            <button [routerLink]="['/add-student']" class='btn btn-success'>Add</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <br>
+            </table>
+            <button type="button" class="btn btn-primary" id="btnReloadData">Reload data</button>
         </div>
     </div>
-
-
-    <div class="panel-body">
-        <table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
-            <thead class="thead-dark">
-                <tr id="list-header">
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Action</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let student of students ">
-                    <td>{{student.student_name}}</td>
-                    <td>{{student.student_email}}</td>
-                    <td>{{student.student_branch}}</td>
-                    <td>
-                        <button (click)="deleteStudent(student.student_id)" class='btn btn-danger'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
-                        <button (click)="updateStudent(student.student_id)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Update</button>&nbsp;
-                        <button [routerLink]="['/add-student']" class='btn btn-success'>Add</button>
-                    </td>
-                </tr>
-            </tbody>
-            <br>
-        </table>
-        <button type="button" class="btn btn-primary" id="btnReloadData">Reload data</button>
-    </div>
-</div>
 </div>
 
 <div class="modal" id="myModal">
@@ -250,10 +255,10 @@
             <h2>Lamborghini Aventador SV</h2>
             <p>After taking delivery of a new Lamborghini Aventador SV earlier this year, he decided to wrap it in a deep woods motif for this year’s Gumball 3000. In a YouTube video uploaded earlier today, Marchettino has revealed the wild LP 750 being
                 unloaded for a leg of the rally. </p>
-                <figure class="highcharts-figure">
-                    <div id="container-chart"></div>
-                    <p class="highcharts-descriptionription"></p>
-                </figure>
+            <figure class="highcharts-figure">
+                <div id="container-chart"></div>
+                <p class="highcharts-descriptionription"></p>
+            </figure>
             <br>
         </div>
         <div class="col-lg-6">

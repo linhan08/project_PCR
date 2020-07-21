@@ -1,4 +1,4 @@
-package config;
+package com.carshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

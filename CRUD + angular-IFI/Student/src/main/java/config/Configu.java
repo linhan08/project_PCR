@@ -1,4 +1,4 @@
-package config;
+package com.carshop.config;
 
 import java.util.Properties;
 
@@ -23,7 +23,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class})
 @ComponentScans(value = {@ComponentScan("boot.entry"),
         @ComponentScan("Model"),
-        @ComponentScan("Controller"),
+        @ComponentScan("com.carshop.Controller"),
         @ComponentScan("DAO"),
         @ComponentScan("Service")})
 public class Configu {

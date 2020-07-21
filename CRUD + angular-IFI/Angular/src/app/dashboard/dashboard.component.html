@@ -72,12 +72,12 @@
     </div>
 </div>
 
-<div class ="container">
+<div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1 style="text-align: center">List of Cars</h1><br>
             <div class="row" [hidden]="!deleteMessage">
-    
+
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <div class="alert alert-info alert-dismissible">
@@ -88,7 +88,13 @@
                 <div class="col-sm-4"></div>
             </div>
         </div>
-    
+
+        <!-- <div class="row">
+            <div class="col-md-5">
+                <label>Search:</label>
+                <input type="text" [(ngModel)]="student.search" />
+            </div>
+        </div> -->
         <div class="panel-body">
             <table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
                 <thead class="thead-dark">
