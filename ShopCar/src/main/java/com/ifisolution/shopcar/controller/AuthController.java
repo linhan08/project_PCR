@@ -73,8 +73,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         List<String> lst = new ArrayList<>();
-        lst.add("user");
-        signUpRequest.setRole(lst);
+        lst.add(signUpRequest.getRole());
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()
@@ -92,7 +91,7 @@ public class AuthController {
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 
-        List<String> strRoles = signUpRequest.getRole();
+        List<String> strRoles = lst;
         List<Role> roles = new ArrayList<>();
 
         if (strRoles == null) {

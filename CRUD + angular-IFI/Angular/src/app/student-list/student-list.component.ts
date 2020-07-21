@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StudentService} from '../services/student.service';
 import {Student} from '../model/student';
 import {Observable, Subject} from "rxjs";
-
+import { TokenStorageService } from '../services/token-storage.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -11,8 +11,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-
-  constructor(private studentservice: StudentService) {
+  currentUser: any;
+  constructor(private studentservice: StudentService, private token: TokenStorageService) {
   }
 
   studentsArray: any[] = [];
@@ -27,7 +27,12 @@ export class StudentListComponent implements OnInit {
   isupdated = false;
 
 
+  signOut(){
+    window.sessionStorage.clear();
+  }
+
   ngOnInit() {
+    this.currentUser = this.token.getUser();
     this.isupdated = false;
     this.dtOptions = {
       pageLength: 6,

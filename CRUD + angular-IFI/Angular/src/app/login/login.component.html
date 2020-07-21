@@ -2,28 +2,26 @@
     <div class="cont">
         <div class="form sign-in">
             <h2>Sign In</h2>
-        <form (ngSubmit)="login()">
-            <label>
-                <span>Username</span>
-            <input type="text" name="username" [(ngModel)]="loginModel.username" required>
-            </label>
-    <label>
-      <span>Password</span>
-      <input type="password"  name="password" [(ngModel)]="loginModel.password" required>
-    </label>
-            <button class="submit" type="button">Sign In</button>
-        </form>
-
+            <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.loginModel.valid && onSubmitLogin()">
+                <label>
+            <span>Username</span>
+            <input type="text " name="username " [(ngModel)]="loginModel.username " required>
+        </label>
+                <label>
+          <span>Password</span>
+          <input type="password "  name="password " [(ngModel)]="loginModel.password " required minlength="6 ">
+        </label>
+            </form>
+            <button (click)="onSubmitLogin()" class=" submit " type="button ">Sign In</button>
             <div class="social-media">
                 <ul>
-                    <li><img src="./assets/images/facebook.png"></li>
-                    <li><img src="./assets/images/twitter.png"></li>
-                    <li><img src="./assets/images/linkedin.png"></li>
-                    <li><img src="./assets/images/instagram.png"></li>
+                    <li><img src="./assets/images/facebook.png "></li>
+                    <li><img src="./assets/images/twitter.png "></li>
+                    <li><img src="./assets/images/linkedin.png "></li>
+                    <li><img src="./assets/images/instagram.png "></li>
                 </ul>
             </div>
         </div>
-
         <div class="sub-cont">
             <div class="img">
                 <div class="img-text m-up">
@@ -34,34 +32,34 @@
                     <h2>One of us?</h2>
                     <p>If you already has an account, just sign in. We've missed you!</p>
                 </div>
-                <div class="img-btn" (click)="ngOnInit()">
+                <div class="img-btn" (click)="signupButton() ">
                     <span class="m-up">Sign Up</span>
                     <span class="m-in">Sign In</span>
                 </div>
             </div>
             <div class="form sign-up">
                 <h2>Sign Up</h2>
-    <form (ngSubmit)="signupUser()">
-        <label>
-        <span>Username</span>
-        <input type="text"  name="username" [(ngModel)]="signModel.username" required>
-      </label>
-        <label>
-        <span>Email</span>
-        <input type="text"  name="email" [(ngModel)]="signModel.email" required>
-      </label>
-        <label>
-        <span>Password</span>
-        <input type="password"  name="password" [(ngModel)]="signModel.password" required>
-      </label>
-        <label>
-            <select [(ngModel)]="signModel.role" [ngModelOptions]="{standalone: true}">
-                <option value="user">USER</option>
-                <option value="admin">ADMIN</option>
-            </select>
-      </label>
-            <button (click)="signupUser()" type="button" class="submit">Sign Up Now</button>
-    </form>
+                <form *ngIf="!isSuccessful " name="form " (ngSubmit)="f.signModel.valid && onSubmitSignup()">
+                    <label>
+                    <span>User Name</span>
+                  <input type="text "  name="name " [(ngModel)]="signModel.username ">
+                </label>
+                    <label>
+                      <span>Email</span>
+                      <input type="email "  name="email " [(ngModel)]="signModel.email ">
+                    </label>
+                    <label>
+                  <span>Password</span>
+                  <input type="password "  name="password " [(ngModel)]="signModel.password " required minlength="6 ">
+                </label>
+                    <label>
+                  <select (change)="changeRole($event) ">
+                      <option value="user ">USER</option>
+                      <option value="admin ">ADMIN</option>
+                  </select>
+                </label>
+                    <button (click)="onSubmitSignup() " type="button " class="submit ">Sign Up Now</button>
+                </form>
             </div>
         </div>
     </div>

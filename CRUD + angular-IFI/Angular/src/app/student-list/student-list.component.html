@@ -24,10 +24,10 @@
                 <a class="nav-link" [routerLink]="['/student-list']" routerLinkActive="active">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/student-list']" routerLinkActive="active">Buy</a>
+                <a class="nav-link" routerLinkActive="active"><strong>{{ currentUser.username }}</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Log Out</a>
+                <a class="nav-link" (click)="signOut()" [routerLink]="['/login']" routerLinkActive="active">Log Out</a>
             </li>
         </ul>
     </div>
@@ -69,6 +69,12 @@
                 fiber monocoque. The elegance and vanity of a Roadster meet the power of a naturally aspirated 6.5 liter V-12 engine putting out 515 kW (700 CV), with incredible torque available at all engine speeds. The Aventador Roadster is an open-top
                 supercar that combines sportiness and style. Discover the technical specifications and the full features of the Lamborghini Aventador Roadster.
             </p>
+            <strong>Roles:</strong>
+            <ul>
+                <li *ngFor="let role of currentUser.roles">
+                    {{ role }}
+                </li>
+            </ul>
         </div>
     </div>
 </div>

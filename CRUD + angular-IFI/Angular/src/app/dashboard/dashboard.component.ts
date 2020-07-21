@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService} from '../services/student.service';
 import {Student} from '../model/student';
-import {Observable, Subject} from "rxjs";
+import {Observable, Subject} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-
+import { TokenStorageService } from '../services/token-storage.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private studentservice: StudentService) {
+  currentUser: any;
+  constructor(private studentservice: StudentService, private token: TokenStorageService) {
   }
 
   studentsArray: any[] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
-
 
   students: Observable<Student[]>;
   student: Student = new Student();
@@ -27,6 +26,7 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
+    this.currentUser = this.token.getUser();
     this.isupdated = false;
     this.dtOptions = {
       pageLength: 6,
