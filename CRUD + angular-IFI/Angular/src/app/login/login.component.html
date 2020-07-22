@@ -2,17 +2,18 @@
     <div class="cont">
         <div class="form sign-in">
             <h2>Sign In</h2>
-            <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.loginModel.valid && onSubmitLogin()">
+            <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmitLogin()" #f="ngForm">
                 <label>
             <span>Username</span>
-            <input type="text " name="username " [(ngModel)]="loginModel.username " required>
+            <input type="text " name="username " [(ngModel)]="loginModel.username " required minlength="3" maxlength="20" #username="ngModel">
         </label>
                 <label>
           <span>Password</span>
           <input type="password "  name="password " [(ngModel)]="loginModel.password " required minlength="6 ">
         </label>
-            </form>
+            
             <button (click)="onSubmitLogin()" class=" submit " type="button ">Sign In</button>
+        </form>
             <div class="social-media">
                 <ul>
                     <li><img src="./assets/images/facebook.png "></li>
@@ -39,7 +40,7 @@
             </div>
             <div class="form sign-up">
                 <h2>Sign Up</h2>
-                <form *ngIf="!isSuccessful " name="form " (ngSubmit)="f.signModel.valid && onSubmitSignup()">
+                <form *ngIf="!isSuccessful " name="form " (ngSubmit)=" onSubmitSignup()">
                     <label>
                     <span>User Name</span>
                   <input type="text "  name="name " [(ngModel)]="signModel.username ">

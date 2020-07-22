@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  role: string[] = [];
+  role: '';
 
   //register
   isSuccessful = false;
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginModel).subscribe(
       data => {
         console.log(data);
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
 
         this.isLoginFailed = false;
