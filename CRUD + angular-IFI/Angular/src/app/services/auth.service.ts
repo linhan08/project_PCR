@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { BehaviorSubject} from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
@@ -12,6 +12,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  private currentUserSubject: BehaviorSubject<>;
+    public currentUser: Observable<re>;
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +33,10 @@ export class AuthService {
       role: user.role
     }, httpOptions);
   }
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+}
 }
