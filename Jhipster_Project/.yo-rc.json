@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ifisolution.pcr",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "",
+    "packageName": "com.ifisolution.pcr",
+    "packageFolder": "com/ifisolution/pcr",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NWY3MGJlODYxODI2ZGNjODEzNjUwNDE3YjRmYzUxMzMwMTA0NjkzNThlN2E5NTg5ZjI1MzhiZTQzZWQ2NDRlOWFhNTI3MWFiODdiNTBhZDcxNmIzYWQ5MzFkNDAxOTExMjZhZmZmODhmNWUxMzlkYjM4ZTZjZGJmZjYzMGM1Zjc=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1595687929621,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
