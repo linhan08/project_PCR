@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 @Component({
@@ -7,6 +7,10 @@ import HC_exporting from 'highcharts/modules/exporting';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  @Input() label: string;
+  @Input() total: string;
+  @Input() percentage: string;
+  @Input() data = [];
   chartOptions= {};
   Highcharts = Highcharts;
   constructor() { }
@@ -31,23 +35,23 @@ export class CardComponent implements OnInit {
           outside: true
       },
       legend: {
-        enabled: false;
+        enabled: false,
       },
       credits: {
-        enabled: false;
+        enabled: false,
       },
       exporting: {
-        enabled: false;
+        enabled: false,
       },
       xAxis: {
         labels: {
           enabled: false,
         },
         title: {
-          text: null;
+          text: null
         },
-        startOnTrick: false;
-        endOnTrick: false;
+        startOnTrick: false,
+        endOnTrick: false,
         tickOptions: []
       },
       yAxis: {
@@ -55,14 +59,14 @@ export class CardComponent implements OnInit {
           enabled: false,
         },
         title: {
-          text: null;
+          text: 'null'
         },
-        startOnTrick: false;
-        endOnTrick: false;
+        startOnTrick: false,
+        endOnTrick: false,
         tickOptions: []
       },
       series: [{
-          data: [71,78,39,66]
+          data: this.data
       }]
     };
 
@@ -72,7 +76,7 @@ export class CardComponent implements OnInit {
       window.dispatchEvent(
         new Event('resize')
       );
-    }. 300);
+    }, 300);
   }
 
 }

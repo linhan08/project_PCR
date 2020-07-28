@@ -15,13 +15,15 @@ import { RouterModule } from '@angular/router';
 import { AreaComponent } from './widget/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widget/card/card.component';
+import { PieComponent } from './widget/pie/pie.component';
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent
+    CardComponent,
+    PieComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { CardComponent } from './widget/card/card.component';
     FooterComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent
+    CardComponent,
+    PieComponent
   ]
 })
 export class SharedModule { }
