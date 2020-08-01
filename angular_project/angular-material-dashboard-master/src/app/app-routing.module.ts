@@ -4,7 +4,8 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
   path: '',
   component: DefaultComponent,
   children: [{
@@ -13,7 +14,12 @@ const routes: Routes = [{
   }, {
     path: 'posts',
     component: PostsComponent
-  }]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  }
+]
 }];
 
 @NgModule({

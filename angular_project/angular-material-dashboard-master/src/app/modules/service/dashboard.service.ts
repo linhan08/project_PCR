@@ -9,25 +9,34 @@ export class DashboardService {
 
   bigChart() {
     return [{
-      name: 'Asia',
+      name: 'WizDx-COVID-19 Crystal Mix PCR Kit',
       data: [502, 635, 809, 947, 1402, 3634, 5268]
     }, {
-      name: 'Africa',
+      name: 'Berlin Procedure',
       data: [106, 107, 111, 133, 221, 767, 1766]
     }, {
-      name: 'Europe',
+      name: 'LightPower iVASARS_COV2 1stRT-rPCR Plus Kit',
       data: [163, 203, 276, 408, 547, 729, 628]
     }, {
-      name: 'America',
-      data: [18, 31, 54, 156, 339, 818, 1201]
+      name: 'QIAamp Viral RNA Mini QIAcube Kit ',
+      data: [80, 90, 954, 156, 339, 818, 1201]
     }, {
-      name: 'Oceania',
-      data: [2, 2, 2, 6, 13, 30, 46]
+      name: 'other',
+      data: [20, 42, 62, 76, 153, 230, 346]
     }];
   }
 
-  cards() {
-    return [71, 78, 39, 66];
+  lineChart() {
+      return [{
+        name: 'Tổng số mẫu bệnh phẩm',
+        data: [5, 3, 4, 7, 2]
+    }, {
+        name: 'Số mẫu được xét nghiệm hàng ngày',
+        data: [2, 2, 3, 2, 1]
+    }, {
+        name: 'Số mẫu dự kiên sắp tới',
+        data: [3, 4, 4, 2, 5]
+    }];
   }
 
   pieChart() {
