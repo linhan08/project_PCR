@@ -5,13 +5,14 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatFormFieldModule } from '@angular/material';
+import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatToolbarModule, MatSlideToggleModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/service/dashboard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { RegisterComponent } from 'src/app/modules/auth/register/register.component';
+import { HomeComponent } from 'src/app/modules/home/home.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { RegisterComponent } from 'src/app/modules/auth/register/register.compon
     PostsComponent,
     LoginComponent,
     RegisterComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,9 @@ import { RegisterComponent } from 'src/app/modules/auth/register/register.compon
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
   ],
   providers: [
     DashboardService,

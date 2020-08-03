@@ -23,10 +23,10 @@ export class AreaComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Random DATA'
+        text: 'Sinh Phẩm thay đổi theo các quý'
       },
       subtitle: {
-        text: 'Demo'
+        text: ''
       },
       tooltip: {
         split: true,

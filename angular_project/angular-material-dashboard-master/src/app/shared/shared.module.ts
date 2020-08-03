@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatOptionModule } from '@angular/material';
+import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatSlideToggleModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
@@ -36,7 +36,9 @@ import { LineComponent } from './widgets/line/line.component';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatSlideToggleModule,
+    MatCardModule
   ],
   exports: [
     HeaderComponent,

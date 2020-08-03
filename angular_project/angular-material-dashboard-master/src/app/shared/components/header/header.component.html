@@ -1,13 +1,13 @@
 <mat-toolbar color="primary" class="sticky">
-    <mat-toolbar-row *ngIf="!deviceXs">
+    <mat-toolbar-row >
         <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
 
         <span> PCR-Report </span>
-
-        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" *ngIf="!deviceXs">
-            <ul fxLayout="row" fxLayoutGap="20px" *ngIf="!deviceXs">
+        
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs >
+            <ul fxLayout="row" fxLayoutGap="20px" >
                 <li>
                     <button mat-icon-button>
                         <mat-icon>house</mat-icon>
