@@ -1,8 +1,8 @@
 <mat-nav-list *ngIf="!deviceXs">
-    <div class="profile-card" *ngIf="!deviceXs">
-        <div class="header">
+    <div class="profile-card1" *ngIf="!deviceXs">
+        <div class="header1">
             <h2>Adminstrator</h2>
-            <img src="../assets/images/admin.png" alt="Soufiane FADIL">
+            <img src="../assets/images/admin.png" alt="Soufiane FADIL" class="img1">
             <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
                 <mat-icon class="add_photo">add_a_photo</mat-icon>
             </a>
@@ -13,7 +13,7 @@
 
     <h2></h2>
     <div *ngIf="!deviceXs">
-        <mat-form-field appearance="fill" class="example-form" *ngIf="!deviceXs">
+        <mat-form-field appearance="fill" class="example-form1" *ngIf="!deviceXs">
             <mat-label>Area...</mat-label>
             <mat-select *ngIf="!deviceXs">
                 <mat-option value="option1">Miền Bắc</mat-option>
@@ -22,7 +22,7 @@
             </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-form" *ngIf="!deviceXs">
+        <mat-form-field appearance="fill" class="example-form1" *ngIf="!deviceXs">
             <mat-label>Virus Type...</mat-label>
             <mat-select *ngIf="!deviceXs">
                 <mat-option value="option1">SARS-COV-2</mat-option>

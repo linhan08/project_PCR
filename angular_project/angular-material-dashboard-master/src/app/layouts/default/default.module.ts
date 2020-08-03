@@ -5,7 +5,7 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatToolbarModule, MatSlideToggleModule } from '@angular/material';
+import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatToolbarModule, MatSlideToggleModule, MatExpansionModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule, MatAutocompleteModule, MatSelectModule, MatOptionModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/service/dashboard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,10 +40,22 @@ import { HomeComponent } from 'src/app/modules/home/home.component';
     MatFormFieldModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    MatListModule,
+    RouterModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    MatOptionModule,
   ],
   providers: [
     DashboardService,
-    
+
   ]
 })
 export class DefaultModule { }
