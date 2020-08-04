@@ -41,34 +41,15 @@ export class DashboardService {
 
   pieChart() {
     return [{
-      name: 'Chrome',
-      y: 61.41,
-      sliced: true,
-      selected: true
+      name: 'Số các bộ tham gia thực hiện',
+      y: 61.40
+
     }, {
-      name: 'Internet Explorer',
-      y: 11.84
+      name: 'Số các bộ đã được đào tạo thêm',
+      y: 18.60
     }, {
-      name: 'Firefox',
-      y: 10.85
-    }, {
-      name: 'Edge',
-      y: 4.67
-    }, {
-      name: 'Safari',
-      y: 4.18
-    }, {
-      name: 'Sogou Explorer',
-      y: 1.64
-    }, {
-      name: 'Opera',
-      y: 1.6
-    }, {
-      name: 'QQ',
-      y: 1.2
-    }, {
-      name: 'Other',
-      y: 2.61
+      name: 'Số các bộ đã được đào tạo',
+      y: 20.00
     }];
   }
 }

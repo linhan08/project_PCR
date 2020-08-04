@@ -1,1 +1,36 @@
-<p>register works!</p>
+
+<div class="body">
+    <div class="login">
+        <div class="wrap">
+            <div class="content">
+                <div id="slideshow">
+                    <div class="four">
+                        <h2><span>PCR Real-time</span></h2>
+                        <p>Share your works and knowledge with the community on the public showcase section</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user">
+                <div class="form-wrap">
+                    <div class="tabs">
+                        <h3 class="login-tab">
+                            <a class="log-in active">
+                                <span>Sign Up</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="tabs-content">
+                        <div id="signup-tab-content" class="active">
+                            <form class="signup-form" (ngSubmit)="signup()">
+                                <input name="email" type="text" class="input" autocomplete="off" placeholder="Email" [(ngModel)]="signModel.email" required>
+                                <input name="username" type="text" class="input" autocomplete="off" placeholder="Username" [(ngModel)]="signModel.username" required>
+                                <input name="password" type="password" class="input" autocomplete="off" placeholder="Password" [(ngModel)]="signModel.password" required>
+                                <input type="submit" class="btn btn-primary signupbtn" value="Sign up">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,30 +1,28 @@
-<mat-nav-list *ngIf="!deviceXs">
-    <div class="profile-card1" *ngIf="!deviceXs">
+<mat-nav-list >
+    <div class="profile-card1" >
         <div class="header1">
-            <h2>Adminstrator</h2>
             <img src="../assets/images/admin.png" alt="Soufiane FADIL" class="img1">
-            <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+            <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
                 <mat-icon class="add_photo">add_a_photo</mat-icon>
-            </a>
+            </a> -->
+            <h4>Name: <strong></strong></h4>
         </div>
     </div>
 
     <mat-divider></mat-divider>
-
-    <h2></h2>
-    <div *ngIf="!deviceXs">
-        <mat-form-field appearance="fill" class="example-form1" *ngIf="!deviceXs">
+    <div>
+        <mat-form-field appearance="fill" class="example-form1" >
             <mat-label>Area...</mat-label>
-            <mat-select *ngIf="!deviceXs">
+            <mat-select >
                 <mat-option value="option1">Miền Bắc</mat-option>
                 <mat-option value="option2">Miền Trung</mat-option>
                 <mat-option value="option3">Miền Nam</mat-option>
             </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-form1" *ngIf="!deviceXs">
+        <mat-form-field appearance="fill" class="example-form1" >
             <mat-label>Virus Type...</mat-label>
-            <mat-select *ngIf="!deviceXs">
+            <mat-select >
                 <mat-option value="option1">SARS-COV-2</mat-option>
                 <mat-option value="option2">EBONA</mat-option>
                 <mat-option value="option3">CANCER</mat-option>
@@ -34,25 +32,25 @@
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Dashboard</h2>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts" *ngIf="!deviceXs">Survey Form</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/manage" *ngIf="!deviceXs">Manage User</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts" >Survey Form</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/manage" >Manage User</a>
 
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Services</h2>
 
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" *ngIf="!deviceXs">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" >
         <mat-icon>how_to_reg</mat-icon>
         About us
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" *ngIf="!deviceXs">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" >
         <mat-icon>contact_phone</mat-icon>
         888-888-888
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" *ngIf="!deviceXs">
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts" >
         <mat-icon>attach_email</mat-icon>
         PCR_support@gmail.com
     </a>

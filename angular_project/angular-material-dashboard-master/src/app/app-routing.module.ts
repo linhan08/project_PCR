@@ -8,7 +8,16 @@ import { RegisterComponent } from './modules/auth/register/register.component';
 import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {
+    path: '', component: HomeComponent},
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
   {
   path: '',
   component: DefaultComponent,
@@ -22,14 +31,6 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
   }
 ]
 }];

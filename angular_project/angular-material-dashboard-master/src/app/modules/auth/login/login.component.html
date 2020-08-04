@@ -1,15 +1,40 @@
-<div fxLayoutAlign ="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex= "25">
-        <mat-toolbar color="primary">Welcome to Login Page</mat-toolbar>
-        <form fxLayoutAlign ="stretch" fxLayout= "column" class="login-form">
-            <mat-form-field>
-                <input matInput placeholder="Username">
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput type="password" placeholder="Password">
-            </mat-form-field>
-            <button mat-raised-button type="submit">Login</button>
-        </form>
-    </mat-card>
+<div class="body">
+    <div class="login">
+        <div class="wrap">
+            <div class="content">
+                <div id="slideshow">
+                    <div class="four">
+                        <h2><span>PCR Real-time</span></h2>
+                        <p>Share your works and knowledge with the community on the public showcase section</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user">
+                <div class="form-wrap">
+                    <div class="tabs">
+                        <h3 class="login-tab">
+                            <a class="log-in active">
+                                <span>Sign In</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="tabs-content">
+                        <div id="login-tab-content" class="active">
+                            <form class="login-form" (ngSubmit)="login()">
+                                <input name="username" type="text" class="input" autocomplete="off" placeholder="Email or Username" [(ngModel)]="loginModel.username" required>
+                                <input name="password" type="password" class="input" autocomplete="off" placeholder="Password" [(ngModel)]="loginModel.password" required>
+                                <button type="submit" class="signupbtn">Log In</button>
+                            </form>
+                            <div class="help-action">
+                                <p>
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                    <a class="fotgot" routerLink="/register">If you have not account?</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
