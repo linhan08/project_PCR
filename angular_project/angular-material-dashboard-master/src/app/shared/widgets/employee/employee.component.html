@@ -1,0 +1,17 @@
+<table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptionsEmployee" [dtTrigger]="dtTriggerEmployee">
+    <thead class="thead-dark">
+        <tr id="list-header">
+            <th>Số các bộ tham gia thực hiện</th>
+            <th>Số các bộ đã được đào tạo</th>
+            <th>Số các bộ đã được đào tạo thêm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees" >
+            <td>{{employee.employee_number_doing_test}}</td>
+            <td>{{employee.employee_number_using_PCR}}</td>
+            <td>{{employee.employee_number_incoming}}</td>
+        </tr>
+    </tbody>
+    <br>
+</table>

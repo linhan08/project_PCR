@@ -13,11 +13,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() { }
 
-  switchMode(isDarkMode: boolean) {
-    const hostClass = isDarkMode ? 'theme-dark' : 'theme-light';
-    this.renderer.setAttribute(this.document.body, 'class', hostClass);
-  }
-  
   toggleSideBar() {
     this.toggleSideBarForMe.emit();
     setTimeout(() => {

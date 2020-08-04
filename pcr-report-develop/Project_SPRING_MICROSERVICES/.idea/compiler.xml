@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Zuul" />
+        <module name="Eureka_server" />
+        <module name="netflix-zuul-gateway-server" />
+        <module name="auth" />
+      </profile>
+      <profile name="Annotation profile for realtime-prc" enabled="true">
+        <sourceOutputDir name="../survey service/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../survey service/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="survey-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="Eureka_server" target="1.8" />
+      <module name="netflix-zuul-gateway-server" target="1.8" />
+      <module name="survey-service" target="1.8" />
+      <module name="Zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Eureka_server" options="-parameters" />
+      <module name="Zuul" options="-parameters" />
+      <module name="auth" options="-parameters" />
+      <module name="netflix-zuul-gateway-server" options="-parameters" />
+      <module name="survey-service" options="-parameters" />
+    </option>
+  </component>
+</project>

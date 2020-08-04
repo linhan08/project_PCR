@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Eureka_server/Eureka_server.iml" filepath="$PROJECT_DIR$/Eureka_server/Eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Project_SPRING_MICROSERVICES.iml" filepath="$PROJECT_DIR$/.idea/Project_SPRING_MICROSERVICES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth/auth.iml" filepath="$PROJECT_DIR$/auth/auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netflix-zuul-gateway-server/netflix-zuul-gateway-server.iml" filepath="$PROJECT_DIR$/netflix-zuul-gateway-server/netflix-zuul-gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/survey-service/survey-service.iml" filepath="$PROJECT_DIR$/survey-service/survey-service.iml" />
+    </modules>
+  </component>
+</project>

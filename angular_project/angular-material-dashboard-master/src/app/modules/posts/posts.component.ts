@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -6,23 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  panelOpenState = false;
-  step = 0;
 
-  setStep(index: number) {
-    this.step = index;
-  }
 
-  nextStep() {
-    this.step++;
-  }
-
-  prevStep() {
-    this.step--;
-  }
+  @Output() panelOpenStateForMe: EventEmitter<any> = new EventEmitter()
   constructor() { }
 
   ngOnInit() {
   }
-
+  panelOpenState() {
+    this.panelOpenStateForMe.emit();
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
+  }
 }

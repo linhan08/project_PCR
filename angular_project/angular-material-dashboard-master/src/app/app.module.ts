@@ -8,9 +8,10 @@ import { DefaultModule } from './layouts/default/default.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './modules/auth/helpers/auth.interceptor';
+import {DataTablesModule} from 'angular-datatables';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +21,8 @@ import { authInterceptorProviders } from './modules/auth/helpers/auth.intercepto
     BrowserAnimationsModule,
     DefaultModule,
     ReactiveFormsModule,
+    DataTablesModule
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

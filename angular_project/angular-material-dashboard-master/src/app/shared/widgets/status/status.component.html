@@ -1,0 +1,17 @@
+<table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptionsTest" [dtTrigger]="dtTriggerTest">
+    <thead class="thead-dark">
+        <tr id="list-header">
+            <th>Tổng số mẫu bệnh phẩm</th>
+            <th>Số mẫu được xét nghiệm hàng ngày</th>
+            <th>Số mẫu dự kiên sắp tới</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let status_test of status_tests">
+            <td>{{status_test.test_number_execute_at_unit}}</td>
+            <td>{{status_test.test_number_each_day}}</td>
+            <td>{{status_test.test_number_incoming}}</td>
+        </tr>
+    </tbody>
+    <br>
+</table>

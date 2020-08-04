@@ -1,25 +1,210 @@
 <h4 class="h4-tag">BÁO CÁO THỰC TRẠNG XÉT NGHIỆM SARS-COV-2</h4>
-<!-- <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                A. Thông Tin Chung
-            </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-label>Area...</mat-label>
-        <mat-select *ngIf="!deviceXs">
-            <mat-option value="option1">Miền Bắc</mat-option>
-            <mat-option value="option2">Miền Trung</mat-option>
-            <mat-option value="option3">Miền Nam</mat-option>
-        </mat-select>
 
-        <mat-label>Virus Type...</mat-label>
-        <mat-select *ngIf="!deviceXs">
-            <mat-option value="option1">SARS-COV-2</mat-option>
-            <mat-option value="option2">EBONA</mat-option>
-            <mat-option value="option3">CANCER</mat-option>
-        </mat-select>
-    </mat-expansion-panel>
-</mat-accordion> -->
+<!--Accordion wrapper-->
+<div class="accordion md-accordion accordion-blocks main" id="accordionEx78" role="tablist"
+  aria-multiselectable="true">
+  <!-- Accordion card -->
+  <div class="card">
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingUnfiled">
+      <!-- Heading -->
+      <a class="collapseA1" (click)="panelOpenState()">
+        <h5 class="mt-1 mb-0">
+          <span>A.Thông Tin Chung</span>
+          <i class="fas fa-angle-down rotate-icon float-right"></i>
+        </h5>
+      </a>
+    </div>
+    <div id="collapseA" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
+      data-parent="#accordionEx78">
+      <div class="card-body">
+        <div class="table-ui p-2 mb-3 mx-3 mb-4">
+
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Bulk actions</option>
+                <option value="1">Delete</option>
+                <option value="2">Change folder</option>
+              </select>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled>Show only</option>
+                <option value="1" selected>All <span> (2000)</span></option>
+                <option value="2">Clicks <span> (200)</span></option>
+                <option value="3">Page <span> (1800)</span></option>
+                <option value="4">Scroll <span> (200)</span></option>
+                <option value="5">Forms <span> (50)</span></option>
+                <option value="6">Time <span> (50)</span></option>
+                <option value="7">UTM <span> (50)</span></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B.Trien khai xet nghiem -->
+  <div class="card">
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="heading79">
+      <!-- Heading -->
+      <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse79" aria-expanded="true"
+        aria-controls="collapse79">
+        <h5 class="mt-1 mb-0">
+          <span>B.Triển Khai Xét Nghiệm SARS-COV-2 Tại Đơn Vị</span>
+          <i class="fas fa-angle-down rotate-icon float-right"></i>
+        </h5>
+      </a>
+    </div>
+    <!-- Card body -->
+    <div id="collapse79" class="collapse show" role="tabpanel" aria-labelledby="heading79"
+      data-parent="#accordionEx78">
+      <div class="card-body">
+        <div class="table-ui p-2 mb-3 mx-3 mb-4">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Bulk actions</option>
+                <option value="1">Delete</option>
+                <option value="2">Change folder</option>
+              </select>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled>Show only</option>
+                <option value="1" selected>All <span> (2000)</span></option>
+                <option value="2">Clicks <span> (200)</span></option>
+                <option value="3">Page <span> (1800)</span></option>
+                <option value="4">Scroll <span> (200)</span></option>
+                <option value="5">Forms <span> (50)</span></option>
+                <option value="6">Time <span> (50)</span></option>
+                <option value="7">UTM <span> (50)</span></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion card -->
+  <div class="card">
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="heading80">
+      <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse80" aria-expanded="true"
+        aria-controls="collapse80">
+        <h5 class="mt-1 mb-0">
+          <span>C.Đào tạo cán bộ xét nghiệm SARS-COV-2</span>
+          <i class="fas fa-angle-down rotate-icon float-right"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapse80" class="collapse" role="tabpanel" aria-labelledby="heading80"
+      data-parent="#accordionEx78">
+      <div class="card-body">
+        <div class="table-ui p-2 mb-3 mx-3 mb-4">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Bulk actions</option>
+                <option value="1">Delete</option>
+                <option value="2">Change folder</option>
+              </select>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <!--Blue select-->
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Filter</option>
+                <option value="1">All <span> (100)</span></option>
+                <option value="1">Active <span> (2000)</span></option>
+                <option value="2">Inactive <span> (1000)</span></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion card -->
+  <div class="card">
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="heading81">
+      <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse81" aria-expanded="true"
+        aria-controls="collapse81">
+        <h5 class="mt-1 mb-0">
+          <span>D.Trang Thiết Bị</span>
+          <i class="fas fa-angle-down rotate-icon float-right"></i>
+        </h5>
+      </a>
+    </div>
+    <!-- Card body -->
+    <div id="collapse81" class="collapse" role="tabpanel" aria-labelledby="heading"
+      data-parent="#accordionEx78">
+      <div class="card-body">
+        <div class="table-ui p-2 mb-3 mx-3 mb-4">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Bulk actions</option>
+                <option value="1">Delete</option>
+                <option value="2">Change folder</option>
+              </select>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Filter</option>
+                <option value="1">All <span> (100)</span></option>
+                <option value="1">Active <span> (2000)</span></option>
+                <option value="2">Inactive <span> (1000)</span></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="heading82">
+      <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse82" aria-expanded="true"
+        aria-controls="collapse82">
+        <h5 class="mt-1 mb-0">
+          <span>E.Sinh Phẩm</span>
+          <i class="fas fa-angle-down rotate-icon float-right"></i>
+        </h5>
+      </a>
+    </div>
+    <!-- Card body -->
+    <div id="collapse82" class="collapse" role="tabpanel" aria-labelledby="heading"
+      data-parent="#accordionEx78">
+      <div class="card-body">
+        <div class="table-ui p-2 mb-3 mx-3 mb-4">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Bulk actions</option>
+                <option value="1">Delete</option>
+                <option value="2">Change folder</option>
+              </select>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+              <select class="mdb-select colorful-select dropdown-info mx-2">
+                <option value="" disabled selected>Filter</option>
+                <option value="1">All <span> (100)</span></option>
+                <option value="1">Active <span> (2000)</span></option>
+                <option value="2">Inactive <span> (1000)</span></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -77,8 +77,7 @@ export class DashboardComponent implements OnInit {
     this.student.student_email = this.StudentEmail.value;
     this.student.student_branch = this.StudentBranch.value;
     console.log(this.StudentBranch.value);
-
-
+    
     this.studentservice.updateStudent(this.student.student_id, this.student).subscribe(
       data => {
         this.isupdated = true;

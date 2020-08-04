@@ -1,0 +1,15 @@
+<table class="table table-hover table-sm" id="users" datatable [dtOptions]="dtOptionsDevice" [dtTrigger]="dtTriggerDevice">
+    <thead class="thead-dark">
+        <tr id="list-header">
+            <th>Tên Máy</th>
+            <th>Số Lượng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of devices" >
+            <td>{{device.device_name}}</td>
+            <td>{{device.number_of_machine_need}}</td>
+        </tr>
+    </tbody>
+    <br>
+</table>

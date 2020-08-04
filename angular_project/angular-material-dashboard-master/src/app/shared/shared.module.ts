@@ -12,6 +12,12 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { PieComponent } from './widgets/pie/pie.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LineComponent } from './widgets/line/line.component';
+import { ChemicalComponent } from './widgets/chemical/chemical.component';
+import { DeviceComponent } from './widgets/device/device.component';
+import { EmployeeComponent } from './widgets/employee/employee.component';
+import { StatusComponent } from './widgets/status/status.component';
+import {DataTablesModule} from 'angular-datatables';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -20,6 +26,10 @@ import { LineComponent } from './widgets/line/line.component';
     AreaComponent,
     PieComponent,
     LineComponent,
+    ChemicalComponent,
+    DeviceComponent,
+    EmployeeComponent,
+    StatusComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +48,8 @@ import { LineComponent } from './widgets/line/line.component';
     MatSelectModule,
     MatOptionModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    DataTablesModule
   ],
   exports: [
     HeaderComponent,
@@ -46,7 +57,11 @@ import { LineComponent } from './widgets/line/line.component';
     SidebarComponent,
     AreaComponent,
     PieComponent,
-    LineComponent
+    LineComponent,
+    ChemicalComponent,
+    DeviceComponent,
+    EmployeeComponent,
+    StatusComponent,
   ]
 })
 export class SharedModule { }
