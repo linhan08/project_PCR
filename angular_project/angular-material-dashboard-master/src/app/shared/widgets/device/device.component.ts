@@ -28,21 +28,21 @@ export class DeviceComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.deviceservice.getDeviceList().subscribe(data => {
+    this.deviceservice.deviceViews().subscribe(data => {
       this.devices = data;
       this.dtTriggerDevice.next();
-    })
+    });
   }
   deviceupdateform = new FormGroup({
-    device_name: new FormControl(),
-    number_of_machine_need: new FormControl(),
+    deviceName: new FormControl(),
+    totalMachine: new FormControl(),
   });
 
   get DeviceName() {
-    return this.deviceupdateform.get('device_name');
+    return this.deviceupdateform.get('deviceName');
   }
 
-  get NumberOfMachineNeed() {
-    return this.deviceupdateform.get('number_of_machine_neede_email');
+  get TotalMachine() {
+    return this.deviceupdateform.get('totalMachine');
   }
 }

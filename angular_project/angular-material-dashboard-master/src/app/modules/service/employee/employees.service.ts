@@ -6,28 +6,15 @@ import {Observable} from 'rxjs';
 })
 export class EmployeesService {
 
-  private baseUrl = 'http://localhost:8080/api/';
+  private baseUrl = 'http://localhost:8080/report/api/';
 
   constructor(private http: HttpClient) {
   }
 
-  getEmployeeList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + 'employees-list');
+  employeeResulViews(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'employee');
   }
-
-  createEmployee(employee: object): Observable<object> {
-    return this.http.post(`${this.baseUrl}` + 'save-employee', employee);
-  }
-
-  deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete-employee/${id}`, {responseType: 'text'});
-  }
-
-  getEmployee(id: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/employee/${id}`);
-  }
-
-  updateEmployee(id: number, value: any): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/update-employee/${id}`, value);
-  }
+  // getEmployee(id: number): Observable<Object> {
+  //   return this.http.get(`${this.baseUrl}/employee/${id}`);
+  // }
 }

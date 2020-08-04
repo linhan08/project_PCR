@@ -8,9 +8,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let status_test of status_tests">
-            <td>{{status_test.test_number_execute_at_unit}}</td>
-            <td>{{status_test.test_number_each_day}}</td>
-            <td>{{status_test.test_number_incoming}}</td>
+            <td>{{status_test.totalTest}}</td>
+            <td>{{status_test.totalTestEachDay}}</td>
+            <td>{{status_test.totalTestExcute}}</td>
+            <td>{{status_test.totalNumberIncoming}}</td>
         </tr>
     </tbody>
     <br>

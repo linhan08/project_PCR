@@ -13,12 +13,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
   }
-  panelOpenState() {
-    this.panelOpenStateForMe.emit();
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
-  }
+  // panelOpenState() {
+  //   this.panelOpenStateForMe.emit();
+  //   setTimeout(() => {
+  //     window.dispatchEvent(
+  //       new Event('resize')
+  //     );
+  //   }, 300);
+  // }
 }

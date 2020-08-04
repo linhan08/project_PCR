@@ -6,17 +6,17 @@ import {Observable} from 'rxjs';
 })
 export class StatusService {
 
-  private baseUrl = 'http://localhost:8080/api/';
+  private baseUrl = 'http://localhost:8080/report/api/';
 
   constructor(private http: HttpClient) {
   }
 
-  getStudentList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + 'students-list');
+  testReportviews(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + 'test');
   }
 
-  getStudent(id: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/student/${id}`);
-  }
+  // getTest(id: number): Observable<Object> {
+  //   return this.http.get(`${this.baseUrl}/student/${id}`);
+  // }
 
 }

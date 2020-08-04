@@ -28,27 +28,31 @@ export class StatusComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    // this.statusservice.getStudentList().subscribe(data => {
-    //   this.status_tests = data;
-    //   this.dtTriggerTest.next();
-    // })
+    this.statusservice.testReportviews().subscribe(data => {
+      this.status_tests = data;
+      this.dtTriggerTest.next();
+    });
   }
   statusupdateform = new FormGroup({
-    test_number_execute_at_unit: new FormControl(),
-    test_number_each_day: new FormControl(),
-    test_number_incoming: new FormControl(),
+    totalTest: new FormControl(),
+    totalTestEachDay: new FormControl(),
+    totalTestExcute: new FormControl(),
+    totalNumberIncoming: new FormControl(),
   });
 
-  get TestNumberExecuteAtUnit() {
-    return this.statusupdateform.get('test_number_execute_at_unit');
+  get TotalTest() {
+    return this.statusupdateform.get('totalTest');
   }
 
-  get TestNumberEachDay() {
-    return this.statusupdateform.get('test_number_each_day');
+  get TotalTestEachDay() {
+    return this.statusupdateform.get('totalTestEachDay');
   }
 
-  get TestNumberIncoming() {
-    return this.statusupdateform.get('test_number_incoming');
+  get TotalTestExcute() {
+    return this.statusupdateform.get('totalTestExcute');
+  }
+  get TotalNumberIncoming() {
+    return this.statusupdateform.get('totalNumberIncoming');
   }
 
 }

@@ -28,27 +28,27 @@ export class EmployeeComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.employeeservice.getEmployeeList().subscribe(data => {
+    this.employeeservice.employeeResulViews().subscribe(data => {
       this.employees = data;
       this.dtTriggerEmployee.next();
     })
   }
   employeeupdateform = new FormGroup({
-    employee_number_doing_test: new FormControl(),
-    employee_number_using_PCR: new FormControl(),
-    employee_number_incoming: new FormControl(),
+    totalEmployeeTest: new FormControl(),
+    totalEmployeePCR: new FormControl(),
+    totalEmployeeIncoming: new FormControl(),
   });
 
-  get EmployeeNumberDoingTest() {
-    return this.employeeupdateform.get('employee_number_doing_test');
+  get TotalEmployeeTest() {
+    return this.employeeupdateform.get('totalEmployeeTest');
   }
 
-  get EmployeeNumberUsingPCR() {
-    return this.employeeupdateform.get('employee_number_using_PCR');
+  get TotalEmployeePCR() {
+    return this.employeeupdateform.get('totalEmployeePCR');
   }
 
-  get EmployeeNumberIncoming() {
-    return this.employeeupdateform.get('employee_number_incoming');
+  get TotalEmployeeIncoming() {
+    return this.employeeupdateform.get('totalEmployeeIncoming');
   }
 
 

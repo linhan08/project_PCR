@@ -29,27 +29,27 @@ export class ChemicalComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.chemicalservice.getChemicalList().subscribe(data => {
+    this.chemicalservice.chemicalViews().subscribe(data => {
       this.chemicals = data;
       this.dtTriggerChemical.next();
-    })
+    });
   }
   chemicalupdateform = new FormGroup({
-    chemical_name: new FormControl(),
-    chemical_needd: new FormControl(),
-    chemical_number_usedd: new FormControl(),
+    chemicalName: new FormControl(),
+    totalChemical: new FormControl(),
+    totalChemicalUsed: new FormControl(),
   });
 
   get ChemicalName() {
-    return this.chemicalupdateform.get('chemical_name');
+    return this.chemicalupdateform.get('chemicalName');
   }
 
-  get ChemicalNeedd() {
-    return this.chemicalupdateform.get('chemical_needd');
+  get TotalChemical() {
+    return this.chemicalupdateform.get('totalChemical');
   }
 
-  get ChemicalNumberUsedd() {
-    return this.chemicalupdateform.get('chemical_number_usedd');
+  get TotalChemicalUsed() {
+    return this.chemicalupdateform.get('totalChemicalUsed');
   }
 
 }
