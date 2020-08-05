@@ -24,7 +24,9 @@ export class LineComponent implements OnInit {
           text: 'Số mẫu bệnh phẩm đã nhận, xét nghiệm và dự kiến'
       },
       xAxis: {
-          categories: ['Type 1', 'Type 2', 'Type 3', 'Type 4', 'Type 5']
+          categories: {
+
+          }
       },
       yAxis: {
           min: 0,

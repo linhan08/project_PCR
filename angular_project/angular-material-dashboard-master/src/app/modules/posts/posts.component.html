@@ -1,276 +1,332 @@
 <h4 class="h4-tag">BÁO CÁO THỰC TRẠNG XÉT NGHIỆM SARS-COV-2</h4>
 
 <div class="accordion md-accordion accordion-blocks">
-  <div class="card">
-    <div class="card-header expand">
-      <a data-toggle="collapse">
-        <h5 class="mt-1 mb-0">
-          <span>A. Thông tin chung</span>
-          <i class="fas fa-angle-down rotate-icon float-right"></i>
-        </h5>
-      </a>
-    </div>
-    <div class="collapse">
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label>1. Tên đơn vị: </label>
-            <input class="form-control">
-          </div>
-          <div class="form-group">
-            <label>2. Địa chỉ: </label>
-              <div class="row">
-                <div class="col-lg-2 col-md-4">
-                  <select class="mdb-select colorful-select dropdown-info mx-2">
+    <div class="card">
+        <div class="card-header expand">
+            <a data-toggle="collapse">
+                <h5 class="mt-1 mb-0">
+                    <span>A. Thông tin chung</span>
+                    <i class="fas fa-angle-down rotate-icon float-right"></i>
+                </h5>
+            </a>
+        </div>
+        <div class="collapse">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label>1. Tên đơn vị: </label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>2. Địa chỉ: </label>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4">
+                                <select class="mdb-select colorful-select dropdown-info mx-2 form-control">
                     <option value="1">Miền bắc</option>
                     <option value="2">Miền Trung</option>
                     <option value="3">Miền Nam</option>
                   </select>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                  <select class="mdb-select colorful-select dropdown-info mx-2">
+                            </div>
+                            <div class="col-lg-2 col-md-6 select1">
+                                <select class="mdb-select colorful-select dropdown-info mx-2 form-control ">
                     <option value="1">Hà Nội</option>
                     <option value="2">Đà Nẵng</option>
                     <option value="3">HCM </option>
                     <option value="4">Cần Thơ</option>
                   </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>3. Tên Trưởng khoa Xét nghiệm:  </label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>4. Email: </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label>5. Điện thoại: </label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="label1">6. Đơn vị có triển khai xét nghiệm SARS-COV-2: </label>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
+                            <label class="form-check-label" for="groupRadio1"> Có</label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
+                            <label class="form-check-label" for="groupRadio2">Không</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>7. Là đơn vị xét nghiệm: </label>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio3" value="option3">
+                            <label class="form-check-label" for="groupRadio3">Sàng lọc</label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio4" value="option4">
+                            <label class="form-check-label" for="groupRadio4">Khẳng định</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header expand" role="tab" aria-hidden="true">
+            <a data-toggle="collapse" aria-expanded="true" aria-controls="collapse79">
+                <h5 class="mt-1 mb-0">
+                    <span>B. Triển khai xét nghiệm SARS-COV-2 tại đơn vị</span>
+                    <i class="fas fa-angle-down rotate-icon float-right"></i>
+                </h5>
+            </a>
+        </div>
+        <div id="collapse79" class="collapse" role="tabpanel">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:
+                          <input class="form-control" name="groupTextOptions" id="groupText">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>2. Số mẫu xét nghiệm SARS-COV-2 đã chuyển đến đơn vị khác:
+                          <input class="form-control" name="groupTextOptions" id="groupText">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>7. Là đơn vị xét nghiệm: </label>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
+                            <label class="form-check-label" for="groupRadio1">NIHE</label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
+                            <label class="form-check-label" for="groupRadio2">Pasteur HCM </label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio3" value="option3">
+                            <label class="form-check-label" for="groupRadio3">Pasteur Nha Trang</label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio4" value="option4">
+                            <label class="form-check-label" for="groupRadio4">TIHE </label>
+                        </div>
+                        <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio5" value="option5">
+                            <label class="form-check-label" for="groupRadio5">Khác (ghi rõ) </label>
+                            <input class="form-control text1" name="groupTextOptions" id="groupText">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>4. Số mẫu thực hiện xét nghiệm tại đơn vị:
+                        <input class="form-control" name="groupTextOptions" id="groupText">
+                      </label>
+                    </div>
+                    <div class="form-group">
+                        <label>5. Số mẫu trung bình được xét nghiệm hàng ngày:
+                      <input class="form-control" name="groupTextOptions" id="groupText">
+                    </label>
+                    </div>
+                    <div class="form-group">
+                        <label>6. Số mẫu xét nghiệm SARS-COV-2 dự kiến sắp tới
+                    <input class="form-control" name="groupTextOptions" id="groupText">
+                  </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header expand" role="tab" id="heading80">
+            <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true" aria-controls="collapse80">
+                <h5 class="mt-1 mb-0">
+                    <span>C. Đào tạo cán bộ xét nghiệm SARS-COV-2</span>
+                    <i class="fas fa-angle-down rotate-icon float-right"></i>
+                </h5>
+            </a>
+        </div>
+        <div id="collapse80" class="collapse" role="tabpanel" aria-labelledby="heading80" data-parent="#accordionEx78">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:
+                      <input class="form-control" name="groupTextOptions" id="groupText">
+                    </label>
+                    </div>
+                    <div class="form-group">
+                        <label>2. Số cán bộ được đào tạo xét nghiệm SARS-COV-2 sử dụng máy RealTime-PCR
+                      <input class="form-control" name="groupTextOptions" id="groupText">
+                    </label>
+                    </div>
+                    <div class="form-group">
+                        <label>3. Quy trình xét nghiệm SARS-COV-2 được đào tạo:
+                          <div class="form-check form-check-group">
+                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioWHO" value="option3">
+                            <label class="form-check-label" for="groupRadioWHO">WHO </label>
+                    </div>
+                    <div class="form-check form-check-group">
+                        <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioVietA" value="option4">
+                        <label class="form-check-label" for="groupRadioVietA">Việt Á </label>
+                    </div>
+                    <div class="form-check form-check-group">
+                        <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioOther" value="option5">
+                        <label class="form-check-label" for="groupRadioOther">Khác (ghi rõ) </label>
+                        <input class="form-control text1" name="groupTextOptions" id="groupText">
+                    </div>
+                    </label>
+            </div>
+            <div class="form-group">
+                <label>4. Nơi đào tạo: </label>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioNIHE" value="option1">
+                    <label class="form-check-label" for="groupRadioNIHE">NIHE</label>
                 </div>
-              </div>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioHCM" value="option2">
+                    <label class="form-check-label" for="groupRadioHCM">Pasteur HCM </label>
+                </div>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioNT" value="option3">
+                    <label class="form-check-label" for="groupRadioNT">Pasteur Nha Trang</label>
+                </div>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioTIHE" value="option4">
+                    <label class="form-check-label" for="groupRadioTIHE">TIHE </label>
+                </div>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadioOther1" value="option5">
+                    <label class="form-check-label" for="groupRadioOther1">Khác (ghi rõ) </label>
+                    <input class="form-control text1" name="groupTextOptions" id="groupText">
+                </div>
             </div>
-          <div class="form-group">
-            <label>3. Tên Trưởng khoa Xét nghiệm:  </label>
-            <input class="form-control">
-          </div>
-          <div class="form-group">
-            <label>4. Email: </label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="form-group">
-            <label >5. Điện thoại: </label>
-            <input class="form-control">
-          </div>
-          <div class="form-group">
-            <label >6. Đơn vị có triển khai xét nghiệm SARS-COV-2: </label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1" *ngIf="yes">Có</label>
+            <div class="form-group">
+                <label>5. Số mẫu trung bình được xét nghiệm hàng ngày:
+                  <input class="form-control" name="groupTextOptions" id="groupText">
+                </label>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Không</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label >7. Là đơn vị xét nghiệm: </label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-              <label class="form-check-label" for="inlineRadio3">Sàng lọc</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-              <label class="form-check-label" for="inlineRadio4">Khẳng định</label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header expand" role="tab"  aria-hidden="true">
-      <a data-toggle="collapse" aria-expanded="true" aria-controls="collapse79">
-        <h5 class="mt-1 mb-0">
-          <span>B. Triển khai xét nghiệm SARS-COV-2 tại đơn vị</span>
-          <i class="fas fa-angle-down rotate-icon float-right"></i>
-        </h5>
-      </a>
-    </div>
-    <div id="collapse79" class="collapse" role="tabpanel">
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:</label>
-            <!-- <mat-form-field>
-              <mat-label>Snack bar duration (seconds)</mat-label>
-              <input type="number" [(ngModel)]="durationInSeconds" matInput>
-            </mat-form-field> -->
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-        </form>
-
-        <div class="table-ui p-2 mb-3 mx-3 mb-4">
-          <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled>Show only</option>
-                <option value="1" selected>All <span> (2000)</span></option>
-                <option value="2">Clicks <span> (200)</span></option>
-                <option value="3">Page <span> (1800)</span></option>
-                <option value="4">Scroll <span> (200)</span></option>
-                <option value="5">Forms <span> (50)</span></option>
-                <option value="6">Time <span> (50)</span></option>
-                <option value="7">UTM <span> (50)</span></option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Filter</option>
-                <option value="1">All <span> (100)</span></option>
-                <option value="1">Active <span> (2000)</span></option>
-                <option value="2">Inactive <span> (1000)</span></option>
-              </select>
-            </div>
-
-          </div>
-
+            </form>
         </div>
-  
-      </div>
     </div>
-  </div>
+</div>
 
-  <div class="card">
-    <div class="card-header expand" role="tab" id="heading80">
-      <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true"
-        aria-controls="collapse80">
-        <h5 class="mt-1 mb-0">
-          <span>C. Đào tạo cán bộ xét nghiệm SARS-COV-2</span>
-          <i class="fas fa-angle-down rotate-icon float-right"></i>
-        </h5>
-      </a>
-    </div>
-    <div id="collapse80" class="collapse" role="tabpanel" aria-labelledby="heading80"
-      data-parent="#accordionEx78">
-      <div class="card-body">
-        <div class="table-ui p-2 mb-3 mx-3 mb-4">
-          <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Filter</option>
-                <option value="1">All <span> (100)</span></option>
-                <option value="1">Active <span> (2000)</span></option>
-                <option value="2">Inactive <span> (1000)</span></option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
+<div class="card">
     <div class="card-header expand" role="tab" id="heading">
-      <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true"
-        aria-controls="collapse81">
-        <h5 class="mt-1 mb-0">
-          <span>D. Trang Thiết Bị</span>
-          <i class="fas fa-angle-down rotate-icon float-right"></i>
-        </h5>
-      </a>
+        <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true" aria-controls="collapse81">
+            <h5 class="mt-1 mb-0">
+                <span>D. Trang Thiết Bị</span>
+                <i class="fas fa-angle-down rotate-icon float-right"></i>
+            </h5>
+        </a>
     </div>
-    <div id="collapse81" class="collapse" role="tabpanel" aria-labelledby="heading"
-      data-parent="#accordionEx78">
-      <div class="card-body">
-        <div class="table-ui p-2 mb-3 mx-3 mb-4">
-          <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Filter</option>
-                <option value="1">All <span> (100)</span></option>
-                <option value="1">Active <span> (2000)</span></option>
-                <option value="2">Inactive <span> (1000)</span></option>
-              </select>
-            </div>
-          </div>
-
-          <label for="example-date-input" class="col-2 col-form-label">Date</label>
-          <div class="col-10">
-            <input class="form-control" type="date" value="date" id="example-date-input">
-          </div>
-
+    <div id="collapse81" class="collapse" role="tabpanel" aria-labelledby="heading" data-parent="#accordionEx78">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label>1. Số máy RealTime-PCR có tại cơ sở:
+                  <input class="form-control" name="groupTextOptions" id="groupText">
+                </label>
+                </div>
+                <div class="form-group">
+                    <label>2. Đơn vị có kế hoạch bổ sung máy RealTime-PCR không:
+                      <div class="form-check form-check-group">
+                        <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
+                        <label class="form-check-label" for="groupRadio1"> Có</label>
+                </div>
+                <div class="form-check form-check-group">
+                    <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
+                    <label class="form-check-label" for="groupRadio2">Không</label>
+                </div>
+                </label>
         </div>
-      </div>
+        <div class="form-group">
+            <label>3. Số máy RealTime-PCR cần bổ sung </label>
+            <input class="form-control" name="groupTextOptions" id="groupText">
+        </div>
+        <div class="form-group">
+            <label>4. Số máy tách chiết ARN có tại cơ sở:
+                        <input class="form-control" name="groupTextOptions" id="groupText">
+                      </label>
+        </div>
+        <div class="form-group">
+            <label>5. Đơn vị có kế hoạch bổ sung máy tách chiết ARN không:
+                              <div class="form-check form-check-group">
+                                <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
+                                <label class="form-check-label" for="groupRadio1"> Có</label>
+        </div>
+        <div class="form-check form-check-group">
+            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
+            <label class="form-check-label" for="groupRadio2">Không</label>
+        </div>
+        </label>
     </div>
-  </div>
+    <div class="form-group">
+        <label>6. Số máy tách chiết ARN cần bổ sung
+                    <input class="form-control" name="groupTextOptions" id="groupText">
+                  </label>
+    </div>
+    </form>
+    <label for="example-date-input" class="col-2 col-form-label">Date</label>
+    <div class="col-10">
+        <input class="form-control" type="date" value="date" id="example-date-input">
+    </div>
+</div>
+</div>
+</div>
 
-  <div class="card">
+<div class="card">
     <div class="card-header expand" role="tab" id="heading82">
-      <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true"
-        aria-controls="collapse80">
-        <h5 class="mt-1 mb-0">
-          <span>E. Sinh Phẩm</span>
-          <i class="fas fa-angle-down rotate-icon float-right"></i>
-        </h5>
-      </a>
+        <a data-toggle="collapse" data-parent="#accordionEx78" aria-expanded="true" aria-controls="collapse80">
+            <h5 class="mt-1 mb-0">
+                <span>E. Sinh Phẩm</span>
+                <i class="fas fa-angle-down rotate-icon float-right"></i>
+            </h5>
+        </a>
     </div>
-    <div id="collapse82" class="collapse" role="tabpanel" aria-labelledby="heading82"
-      data-parent="#accordionEx78">
-      <div class="card-body">
-        <div class="table-ui p-2 mb-3 mx-3 mb-4">
-          <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Bulk actions</option>
-                <option value="1">Delete</option>
-                <option value="2">Change folder</option>
-              </select>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <select class="mdb-select colorful-select dropdown-info mx-2">
-                <option value="" disabled selected>Filter</option>
-                <option value="1">All <span> (100)</span></option>
-                <option value="1">Active <span> (2000)</span></option>
-                <option value="2">Inactive <span> (1000)</span></option>
-              </select>
-            </div>
-          </div>
+    <div id="collapse82" class="collapse" role="tabpanel" aria-labelledby="heading82" data-parent="#accordionEx78">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label>1. Sinh phẩm xét nghiệm RealTime-PCR:
+                    <input class="form-control" name="groupTextOptions" id="groupText">
+                    </label>
+                </div>
+                <div class="form-inline" style="margin: 10px;" id="row{{index}}">
+                    <b>Skills:</b>
+                    <select [(ngModel)]="selectedSkill" class="form-control">
+                      <option *ngFor="let item of skills" [value]="item">{{item}}</option>
+                  </select>
+
+                    <b>Experiences: </b>
+                    <input [(ngModel)]="yearsOfExperiences" type="text" class="form-control" style="margin-left:10px; margin-right:10px; width: 60px;">
+
+                    <b>Rating: </b>
+                    <select [(ngModel)]="selectedRating" class="form-control" style="width:70px;">
+                      <option *ngFor="let item of ratings" [value]="item">{{item}}</option>
+                  </select>
+                    <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeSkills()"></i>
+                </div>
+                <div class="form-group">
+                    <label>2. Sinh phẩm tách chiết ARN tự động:
+                      <input class="form-control" name="groupTextOptions" id="groupText">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>3. Sinh phẩm tách chiết ARN bằng tay (thủ công): </label>
+                    <input class="form-control" name="groupTextOptions" id="groupText">
+                </div>
+
+            </form>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+</div>
+<div class="btn1">
+    <button type="submit" class="btn btn-primary">Lưu bản nháp</button>
+    <button type="submit" class="btn btn-success">Hoàn Thành</button>
 </div>
