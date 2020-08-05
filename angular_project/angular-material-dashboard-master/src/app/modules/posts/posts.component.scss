@@ -1,10 +1,18 @@
-
+.bs-example{
+  margin: 20px;
+}
+.accordion .fa{
+  margin-right: 0.5rem;
+}
 .mt-1 {
     color: #ece9e9;
     font-size: 20px;
 }
 .card-header {
-    background-color: rgb(50, 59, 146);
+    background-color: rgb(23, 87, 81);
+}
+.card-header:hover {
+  background-color: rgb(173, 132, 90);
 }
 .example-form1 {
     min-width: 10px;
@@ -20,83 +28,10 @@
 .A-gen-info {
     background-color: slategray;
 }
-
-  .check{
-    margin-left : 250px; 
-    margin-top : 10px;
-    outline : none;
-  }
-  .doCheck{
-    margin-left : 50px; 
-    margin-top : 10px;
-    outline : none;
-  }
-  a{
-    text-decoration: none;
-    color :#FFF;
-  }
-  
-  a:hover{
-    color : #FFF;
-  }
-  
-  .box{
-    padding:50px;  
-    width : 500px;
-  }
-  
-  .triangle{
-      border-right: 10px solid; 
-      border-bottom: 10px solid;
-      width: 30px; height: 30px;
-      transform: rotate(45deg);
-  }
-  
-  .circle {
-    width: 5%;
-    height: 0;
-    padding-bottom: 4%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #fff;
-    position: relative;
-    border: 1px solid #333;
-    outline : none;
-  }
-  .circle:before {
-    content: '';
-    display: block;
-    border-top: solid 10px transparent;
-    border-left: solid 10px red;
-    border-bottom: solid 10px transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -10px 0 0 -3px;
-  /* /*   transform: rotate(90deg); --- down arrow */
-  /* /*   transform: rotate(270deg);  ---up arrow */
-  }
-  
-  .element {
-      position: relative;
-  }
-   
-  /*replace the content value with the
-  corresponding value from the list below*/
-   
-  .element:before {
-      content: "\f01a";
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: inherit;
-  /*--adjust as necessary--*/
-       
-      color: red;
-      font-size: 18px;
-      padding-right: 0.5em;
-      position: absolute;
-      top: 10px;
-      left: 0;
-  }
+.form-check {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.example-pizza-party {
+  color: hotpink;
+}
