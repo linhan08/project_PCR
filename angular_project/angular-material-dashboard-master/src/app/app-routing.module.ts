@@ -6,6 +6,7 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { RegisterComponent } from './modules/auth/register/register.component';
 import { HomeComponent } from './modules/home/home.component';
+import { SkillsRatingComponent } from './modules/skills-rating/skills-rating.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   }, {
     path: 'posts',
     component: PostsComponent
+  },
+  {
+    path: 'skills-rating',
+    component: SkillsRatingComponent
   },
   {
     path: 'dashboard',

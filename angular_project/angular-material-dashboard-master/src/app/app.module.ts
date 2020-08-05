@@ -9,7 +9,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './modules/auth/helpers/auth.interceptor';
 import {DataTablesModule} from 'angular-datatables';
-import { PostsComponent } from './modules/posts/posts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +26,5 @@ import { PostsComponent } from './modules/posts/posts.component';
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
-  entryComponents:[PostsComponent]
 })
 export class AppModule { }

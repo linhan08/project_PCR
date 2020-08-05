@@ -14,6 +14,7 @@ import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { RegisterComponent } from 'src/app/modules/auth/register/register.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
 import {DataTablesModule} from 'angular-datatables';
+import { SkillsRatingComponent } from 'src/app/modules/skills-rating/skills-rating.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {DataTablesModule} from 'angular-datatables';
     PostsComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    SkillsRatingComponent
   ],
   imports: [
     CommonModule,
@@ -61,6 +63,6 @@ import {DataTablesModule} from 'angular-datatables';
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
 
   ],
-  entryComponents:[PostsComponent]
+  entryComponents:[SkillsRatingComponent]
 })
 export class DefaultModule { }
