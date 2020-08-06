@@ -1,11 +1,11 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-skills-rating',
-  templateUrl: './skills-rating.component.html',
-  styleUrls: ['./skills-rating.component.scss']
+  selector: 'app-dynamic-device',
+  templateUrl: './dynamic-device.component.html',
+  styleUrls: ['./dynamic-device.component.scss']
 })
-export class SkillsRatingComponent implements OnInit {
+export class DynamicDeviceComponent implements OnInit {
 
   reference: any;
   index: number;
@@ -21,6 +21,7 @@ export class SkillsRatingComponent implements OnInit {
   removeSkills() {
     this.reference.destroy();
   }
+
   ngOnInit() {
   }
 

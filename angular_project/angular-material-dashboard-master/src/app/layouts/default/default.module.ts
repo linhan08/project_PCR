@@ -14,7 +14,14 @@ import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { RegisterComponent } from 'src/app/modules/auth/register/register.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
 import {DataTablesModule} from 'angular-datatables';
-import { SkillsRatingComponent } from 'src/app/modules/skills-rating/skills-rating.component';
+import { GeneInfoComponent } from 'src/app/modules/surveys/gene-info/gene-info.component';
+import { DeviceInfoComponent } from 'src/app/modules/surveys/device-info/device-info.component';
+import { ChemicalInfoComponent } from 'src/app/modules/surveys/chemical-info/chemical-info.component';
+import { EmployeeInfoComponent } from 'src/app/modules/surveys/employee-info/employee-info.component';
+import { TestInfoComponent } from 'src/app/modules/surveys/test-info/test-info.component';
+import { DynamicChemicalComponent } from 'src/app/modules/surveys/dynamic-chemical/dynamic-chemical.component';
+import { DynamicDeviceComponent } from 'src/app/modules/surveys/dynamic-device/dynamic-device.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +31,14 @@ import { SkillsRatingComponent } from 'src/app/modules/skills-rating/skills-rati
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    SkillsRatingComponent
+    GeneInfoComponent,
+    DeviceInfoComponent,
+    ChemicalInfoComponent,
+    EmployeeInfoComponent,
+    TestInfoComponent,
+    DynamicDeviceComponent,
+    DynamicChemicalComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -63,6 +77,6 @@ import { SkillsRatingComponent } from 'src/app/modules/skills-rating/skills-rati
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
 
   ],
-  entryComponents:[SkillsRatingComponent]
+  entryComponents:[DynamicDeviceComponent, DynamicChemicalComponent]
 })
 export class DefaultModule { }

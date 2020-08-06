@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './modules/auth/helpers/auth.interceptor';
 import {DataTablesModule} from 'angular-datatables';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,

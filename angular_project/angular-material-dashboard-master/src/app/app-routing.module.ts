@@ -6,7 +6,13 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { RegisterComponent } from './modules/auth/register/register.component';
 import { HomeComponent } from './modules/home/home.component';
-import { SkillsRatingComponent } from './modules/skills-rating/skills-rating.component';
+import { DynamicDeviceComponent } from './modules/surveys/dynamic-device/dynamic-device.component';
+import { DynamicChemicalComponent } from './modules/surveys/dynamic-chemical/dynamic-chemical.component';
+import { EmployeeInfoComponent } from './modules/surveys/employee-info/employee-info.component';
+import { TestInfoComponent } from './modules/surveys/test-info/test-info.component';
+import { ChemicalInfoComponent } from './modules/surveys/chemical-info/chemical-info.component';
+import { DeviceInfoComponent } from './modules/surveys/device-info/device-info.component';
+import { GeneInfoComponent } from './modules/surveys/gene-info/gene-info.component';
 
 const routes: Routes = [
   {
@@ -30,8 +36,32 @@ const routes: Routes = [
     component: PostsComponent
   },
   {
-    path: 'skills-rating',
-    component: SkillsRatingComponent
+    path: 'dynamic-device',
+    component: DynamicDeviceComponent
+  },
+  {
+    path: 'dynamic-chemical',
+    component: DynamicChemicalComponent
+  },
+  {
+    path: 'gene-info',
+    component: GeneInfoComponent
+  },
+  {
+    path: 'device-info',
+    component: DeviceInfoComponent
+  },
+  {
+    path: 'chemical-info',
+    component: ChemicalInfoComponent
+  },
+  {
+    path: 'test-info',
+    component: TestInfoComponent
+  },
+  {
+    path: 'employee-info',
+    component: EmployeeInfoComponent
   },
   {
     path: 'dashboard',

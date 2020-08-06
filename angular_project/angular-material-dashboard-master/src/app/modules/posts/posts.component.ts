@@ -1,6 +1,7 @@
 import { Component, OnInit, ComponentFactoryResolver, Injectable, ViewContainerRef} from '@angular/core';
 import * as $ from 'jquery';
-import { SkillsRatingComponent } from '../skills-rating/skills-rating.component';
+import { DynamicDeviceComponent } from '../surveys/dynamic-device/dynamic-device.component';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -8,13 +9,16 @@ import { SkillsRatingComponent } from '../skills-rating/skills-rating.component'
 })
 @Injectable()
 export class PostsComponent implements OnInit {
+
+  submitted = false;
+
   rootViewContainer:any;
   constructor(public viewContainerRef: ViewContainerRef, private factoryResolver: ComponentFactoryResolver) { }
   public setRootViewContainerRef(viewContainerRef) {
     this.rootViewContainer = viewContainerRef
   }
   public addDynamicComponent() {
-    const factory = this.factoryResolver.resolveComponentFactory(SkillsRatingComponent);
+    const factory = this.factoryResolver.resolveComponentFactory(DynamicDeviceComponent);
     const component = factory.create(this.rootViewContainer.parentInjector);
     this.rootViewContainer.insert(component.hostView);
   }
@@ -24,6 +28,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.submitted = false;
     $(function() {
       $(".expand").on( "click", function() {
         $(this).next().slideToggle(200);
@@ -35,6 +40,11 @@ export class PostsComponent implements OnInit {
       });
     });
   }
+
+  // addSurveyForm() {
+  //   this.submitted = false;
+  //   this.surveysaveform.reset();
+  // }
 
   
 }
