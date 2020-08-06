@@ -1,1 +1,27 @@
-<p>dynamic-chemical works!</p>
+<div class="form-group" style="margin: 10px;" id="collapse82">
+    <b>Tên Máy:</b>
+    <select [(ngModel)]="selectedSkill" class="form-control">
+    <option *ngFor="let item of skills" [value]="item">{{item}}</option>
+</select>
+
+    <b>Thời gian bắt đầu sử dụng: </b>
+    <input [(ngModel)]="yearsOfExperiences" type="text" class="form-control" style="margin-left:10px; margin-right:10px; width: 60px;">
+    <b>Mục đích sử dụng </b>
+    <select [(ngModel)]="selectedRating" class="form-control" style="width:70px;">
+    <option *ngFor="let item of ratings" [value]="item">{{item}}</option>
+  </select>
+    <b>Số mẫu xét nghiệm được trong một lượt (Mẫu/lượt) </b>
+    <select [(ngModel)]="selectedRating" class="form-control" style="width:70px;">
+    <option *ngFor="let item of ratings" [value]="item">{{item}}</option>
+  </select>
+    <b>Công suất tối đa (Mẫu/ngày) </b>
+    <select [(ngModel)]="selectedRating" class="form-control" style="width:70px;">
+    <option *ngFor="let item of ratings" [value]="item">{{item}}</option>
+  </select>
+    <b>Ghi Chú</b>
+    <select [(ngModel)]="selectedRating" class="form-control" style="width:70px;">
+    <option *ngFor="let item of ratings" [value]="item">{{item}}</option>
+
+</select>
+    <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeSkills()"></i>
+</div>

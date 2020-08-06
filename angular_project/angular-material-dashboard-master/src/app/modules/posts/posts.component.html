@@ -14,10 +14,8 @@
             <div class="card-body">
                 <form>
                     <div class="form-group">
-                        <label>1. Tên đơn vị: 
-                            <input class="form-control" name="groupTextOptions" id="groupText">
-                        </label>
-                        
+                        <label>1. Tên đơn vị: </label>
+                        <input class="form-control">
                     </div>
                     <div class="form-group">
                         <label>2. Địa chỉ: </label>
@@ -40,22 +38,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>3. Tên Trưởng khoa Xét nghiệm:
-                            <input class="form-control" name="groupTextOptions" id="groupText">
-                        </label>
-                        
+                        <label>3. Tên Trưởng khoa Xét nghiệm:  </label>
+                        <input class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>4. Email: 
-                            <input type="email" name="groupTextOptions" id="groupText" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </label>
-                        
+                        <label>4. Email: </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label>5. Điện thoại: 
-                            <input class="form-control" name="groupTextOptions" id="groupText">
-                        </label>
-                        
+                        <label>5. Điện thoại: </label>
+                        <input class="form-control">
                     </div>
                     <div class="form-group">
                         <label class="label1">6. Đơn vị có triển khai xét nghiệm SARS-COV-2: </label>
@@ -304,12 +296,17 @@
                     <input class="form-control" name="groupTextOptions" id="groupText">
                     </label>
                 </div>
-                
-                <div class="form-inline">                  
-                      <button type="button" value ="addComponent" (click)="add()" class="btn btn-primary">
-                        <i class="fas fa-plus"></i>
-                      </button>
-                      <p style="margin-top: 12px; margin-left: 5px;">(click để thêm thiết bị)</p>
+                <div class="form-inline">
+
+                    <button type="button" (click)="addNewSkills()" class="btn btn-primary">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                    <p style="margin-top: 12px; margin-left: 5px;">(Ấn vào nút + để thêm thông tin máy)</p>
+                    <div #dynamicContainer></div>
+                    <ng-container *ngFor="let item of numChemical; let i = index">
+                        <app-dynamic-chemical *ngIf="isShowChemical" (removeSkill)="removeSkillFromParent($event, i)"></app-dynamic-chemical>
+                    </ng-container>
+
                 </div>
                 <div class="form-group">
                     <label>2. Sinh phẩm tách chiết ARN tự động:
@@ -327,6 +324,6 @@
 </div>
 </div>
 <div class="btn1">
-    <button type="submit" class="btn btn-primary">Lưu bản nháp</button>&nbsp;
+    <button type="submit" class="btn btn-primary">Lưu bản nháp</button>
     <button type="submit" class="btn btn-success">Hoàn Thành</button>
 </div>

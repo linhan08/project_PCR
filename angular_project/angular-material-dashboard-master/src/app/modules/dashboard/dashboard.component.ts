@@ -8,7 +8,7 @@ import { DashboardService } from '../service/dashboard/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  areaChart = [];
+  ChemicalQuarterLyViews = [];
   pieChart = [];
   lineChart = [];
 
@@ -16,9 +16,9 @@ export class DashboardComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.areaChart = this.dashboardService.areaChart();
-    this.pieChart = this.dashboardService.pieChart();
-    this.lineChart = this.dashboardService.lineChart();
+    this.dashboardService.ChemicalQuarterLyViews();
+    this.dashboardService.pieChart();
+    this.dashboardService.lineChart();
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, Injectable, ViewContainerRef} from '@angular/core';
 import * as $ from 'jquery';
-import { DynamicDeviceComponent } from '../surveys/dynamic-device/dynamic-device.component';
 
 @Component({
   selector: 'app-posts',
@@ -13,19 +12,13 @@ export class PostsComponent implements OnInit {
   submitted = false;
 
   rootViewContainer:any;
-  constructor(public viewContainerRef: ViewContainerRef, private factoryResolver: ComponentFactoryResolver) { }
-  public setRootViewContainerRef(viewContainerRef) {
-    this.rootViewContainer = viewContainerRef
-  }
-  public addDynamicComponent() {
-    const factory = this.factoryResolver.resolveComponentFactory(DynamicDeviceComponent);
-    const component = factory.create(this.rootViewContainer.parentInjector);
-    this.rootViewContainer.insert(component.hostView);
-  }
-  add(){
-    this.setRootViewContainerRef(this.viewContainerRef);
-    this.addDynamicComponent()
-  }
+
+  isShowChemical = false;
+
+  numAdd = 0;
+
+  numChemical = [];
+  constructor() { }
 
   ngOnInit() {
     this.submitted = false;
@@ -41,11 +34,19 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  // addSurveyForm() {
-  //   this.submitted = false;
-  //   this.surveysaveform.reset();
-  // }
 
-  
+  addNewSkills() {
+    this.numAdd++;
+    this.isShowChemical = true;
+    this.numChemical.push(this.numAdd);
+  }
+
+  removeSkillFromParent(val, id) {
+    if(val && val == -1) {
+      this.numChemical.splice(id, 1);
+    }
+
+  }
+
 }
 

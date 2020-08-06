@@ -1,30 +1,34 @@
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
+  private baseUrl = 'http://localhost:8080/report/api/';
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  areaChart() {
-    return [{
-      name: 'WizDx-COVID-19 Crystal Mix PCR Kit',
-      data: [502, 635, 809, 947, 1402, 3634, 5268]
-    }, {
-      name: 'Berlin Procedure',
-      data: [106, 107, 111, 133, 221, 767, 1766]
-    }, {
-      name: 'LightPower iVASARS_COV2 1stRT-rPCR Plus Kit',
-      data: [163, 203, 276, 408, 547, 729, 628]
-    }, {
-      name: 'QIAamp Viral RNA Mini QIAcube Kit ',
-      data: [80, 90, 954, 156, 339, 818, 1201]
-    }, {
-      name: 'other',
-      data: [20, 42, 62, 76, 153, 230, 346]
-    }];
-  }
+    ChemicalQuarterLyViews(): Observable<any> {
+      return this.http.get(`${this.baseUrl}` + 'chemical-quarter');
+    }
+  // areaChart() {
+  //   return [{
+  //     name: 'WizDx-COVID-19 Crystal Mix PCR Kit',
+  //     data: [0, 635, 809, 947, 1402, 3634]
+  //   }, {
+  //     name: 'Berlin Procedure',
+  //     data: [0, 107, 111, 133, 221, 767]
+  //   }, {
+  //     name: 'LightPower iVASARS_COV2 1stRT-rPCR Plus Kit',
+  //     data: [0, 203, 276, 408, 547, 729]
+  //   }, {
+  //     name: 'QIAamp Viral RNA Mini QIAcube Kit ',
+  //     data: [0, 90, 954, 156, 339, 818]
+  //   }, {
+  //     name: 'other',
+  //     data: [0, 42, 62, 76, 153, 230]
+  //   }];
+  // }
 
   lineChart() {
       return [{
