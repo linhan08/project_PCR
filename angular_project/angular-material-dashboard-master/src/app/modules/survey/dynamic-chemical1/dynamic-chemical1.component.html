@@ -1,21 +1,29 @@
-<div class="form-group" style="margin: 10px; margin-top: 0px;">
-    <!-- <b>Tên sinh phẩm (theo QĐ-2245 BYT-DP)</b> -->
-    <select class="form-control">
-        <option value="QIAamp Viral RNA Mini QIAcube Kit" name="qiaamp">QIAamp Viral RNA Mini QIAcube Kit</option>
-        <option name="other">Khác</option>
-    </select>
+<div class="row">
 
-    <!-- <b>Số sinh phẩm đã sử dụng </b> -->
-    <input  type="text" class="form-control" >
+    <div class="form-group">
+        <!-- <b>Tên sinh phẩm (theo QĐ-2265 BYT-DP)</b> -->
+        <div>
+            <select class="form-control" style="width: 70%; margin-left: 30px;">
+          <option value="QIAamp Viral RNA Mini QIAcube Kit" name="qiaamp">QIAamp Viral RNA Mini QIAcube Kit</option>
+          <option name="other">Khác</option>
+        </select>
+        </div>
 
-    <!-- <b>Số sinh phẩm còn </b> -->
-    <input  type="text" class="form-control" >
+        <div class="col-lg-2 col-md-6">
+            <input type="text" class="form-control" style="width: 90%; margin-left: 0px;">
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <input type="text" class="form-control" style="width: 90%; margin-left: 15px;">
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <input type="text" class="form-control" style="width: 90%; margin-left: 20px;">
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <input type="text" class="form-control" style="width: 90%; margin-left: 20px;">
+        </div>
 
-    <!-- <b>(Số sinh phẩm cần bổ sung) </b> -->
-    <input  type="text" class="form-control" >
+        <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical1()"></i>
+    </div>
 
-    <!-- <b>Ghi Chú</b> -->
-    <input  type="text" class="form-control" >
 
-    <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical1()"></i>
 </div>
