@@ -13,14 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from 'src/app/modules/auth/login/login.component';
 import { RegisterComponent } from 'src/app/modules/auth/register/register.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
-import {DataTablesModule} from 'angular-datatables';
-import { GeneInfoComponent } from 'src/app/modules/surveys/gene-info/gene-info.component';
-import { DeviceInfoComponent } from 'src/app/modules/surveys/device-info/device-info.component';
-import { ChemicalInfoComponent } from 'src/app/modules/surveys/chemical-info/chemical-info.component';
-import { EmployeeInfoComponent } from 'src/app/modules/surveys/employee-info/employee-info.component';
-import { TestInfoComponent } from 'src/app/modules/surveys/test-info/test-info.component';
-import { DynamicChemicalComponent } from 'src/app/modules/surveys/dynamic-chemical/dynamic-chemical.component';
-import { DynamicDeviceComponent } from 'src/app/modules/surveys/dynamic-device/dynamic-device.component';
+import {DataTablesModule} from 'angular-datatables';;
+import { DynamicChemicalComponent } from 'src/app/modules/survey/dynamic-chemical/dynamic-chemical.component';
+import { DynamicDeviceComponent } from 'src/app/modules/survey/dynamic-device/dynamic-device.component';
+import { DynamicChemical1Component } from 'src/app/modules/survey/dynamic-chemical1/dynamic-chemical1.component';
+import { DynamicChemical2Component } from 'src/app/modules/survey/dynamic-chemical2/dynamic-chemical2.component';
+import { DynamicDevice1Component } from 'src/app/modules/survey/dynamic-device1/dynamic-device1.component';
 
 
 @NgModule({
@@ -31,13 +29,11 @@ import { DynamicDeviceComponent } from 'src/app/modules/surveys/dynamic-device/d
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    GeneInfoComponent,
-    DeviceInfoComponent,
-    ChemicalInfoComponent,
-    EmployeeInfoComponent,
-    TestInfoComponent,
     DynamicDeviceComponent,
+    DynamicDevice1Component,
     DynamicChemicalComponent,
+    DynamicChemical1Component,
+    DynamicChemical2Component,
     
   ],
   imports: [
@@ -77,6 +73,12 @@ import { DynamicDeviceComponent } from 'src/app/modules/surveys/dynamic-device/d
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
 
   ],
-  entryComponents:[DynamicDeviceComponent, DynamicChemicalComponent]
+  entryComponents:[
+    DynamicDeviceComponent, 
+    DynamicDevice1Component,
+    DynamicChemicalComponent,
+    DynamicChemical1Component,
+    DynamicChemical2Component
+  ]
 })
 export class DefaultModule { }

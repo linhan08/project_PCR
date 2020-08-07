@@ -11,7 +11,6 @@ import { authInterceptorProviders } from './modules/auth/helpers/auth.intercepto
 import {DataTablesModule} from 'angular-datatables';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
