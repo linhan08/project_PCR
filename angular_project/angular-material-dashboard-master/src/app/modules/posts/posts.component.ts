@@ -1,5 +1,8 @@
 import { Component, OnInit, Injectable} from '@angular/core';
 import * as $ from 'jquery';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SurveyInfo } from '../survey/models/model/survey-info.model';
+import { SurveyInfoService } from '../service/survey-info/survey-info.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,7 +12,8 @@ import * as $ from 'jquery';
 @Injectable()
 export class PostsComponent implements OnInit {
 
-  
+  surveyInfo: SurveyInfo = new SurveyInfo();
+  surveyForm: FormGroup;
   submitted = false;
 
   //chemical
@@ -32,7 +36,7 @@ export class PostsComponent implements OnInit {
 
   numDevice = [];
   numDevice1= [];
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private surveyInfoService: SurveyInfoService) { }
 
   ngOnInit() {
     this.submitted = false;
@@ -114,5 +118,63 @@ export class PostsComponent implements OnInit {
       this.numAddDevice1--;
     }
   }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.surveyForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.surveyForm.invalid) {
+          return;
+      }
+      // display form values on success
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.surveyForm.value, null, 4));
+  }
+
+  surveySaveForm = new FormGroup({
+    unitName: new FormControl(),
+    address: new FormControl(),
+    headOfApartment: new FormControl()
+  });
+
+  saveSurvey(saveSurvey) {
+    this.surveyInfo = new SurveyInfo();
+    this.surveyInfo.geneInfoSurvey.unitName = this.UnitName.value;
+    this.surveyInfo.geneInfoSurvey.address = this.Address.value;
+    this.surveyInfo.geneInfoSurvey.headOfApartment = this.HeadOfApartment.value;
+
+    this.submitted = true;
+    this.save();
+  }
+
+  addSurveyForm() {
+    this.submitted = false;
+    this.surveySaveForm.reset();
+  }
+  onReset() {
+      this.submitted = false;
+      this.surveyForm.reset();
+  }
+  
+  save() {
+    this.surveyInfoService.createStudent(this.surveyInfo)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.surveyInfo = new SurveyInfo();
+  }
+
+  get UnitName() {
+    return this.UnitName.get('unitName');
+  }
+
+  get Address() {
+    return this.surveySaveForm.get('address');
+  }
+
+  get HeadOfApartment() {
+    return this.surveySaveForm.get('headOfApartment');
+  }
+
 }
 

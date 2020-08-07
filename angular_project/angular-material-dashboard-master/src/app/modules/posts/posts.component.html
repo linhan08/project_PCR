@@ -11,24 +11,24 @@
             </a>
         </div>
         <div class="collapse">
-            <div class="card-body">
-                <form>
+            <div class="card-body" [hidden]="submitted"> 
+                <form [formGroup]="surveySaveForm" #saveSurvey (ngSubmit)="saveSurvey()">
                     <div class="form-inline">
                         <label><h6>1. Tên đơn vị:</h6> </label>
-                        <input class="form-control" style="width: 25%; margin-bottom: 15px;">
+                        <input class="form-control" formControlName="unitName" style="width: 25%; margin-bottom: 15px;">
                     </div>
                     <div class="form-inline">
                         <label><h6>2. Địa chỉ:</h6> </label>
                         <div class="row">
                             <div class="col-lg-2 col-md-4" style=" margin-bottom: 15px;">
-                                <select class="mdb-select colorful-select dropdown-info mx-2 form-control">
+                                <select formControlName="address" class="mdb-select colorful-select dropdown-info mx-2 form-control">
                                     <option value="1">Miền bắc</option>
                                     <option value="2">Miền Trung</option>
                                     <option value="3">Miền Nam</option>
                                 </select>
                             </div>
                             <div class="col-lg-2 col-md-6 select1" style=" margin-bottom: 15px;">
-                                <select class="mdb-select colorful-select dropdown-info mx-2 form-control ">
+                                <select formControlName="address" class="mdb-select colorful-select dropdown-info mx-2 form-control ">
                                     <option value="1">Hà Nội</option>
                                     <option value="2">Đà Nẵng</option>
                                     <option value="3">HCM </option>
@@ -39,35 +39,35 @@
                     </div>
                     <div class="form-inline">
                         <label><h6>3. Tên Trưởng khoa Xét nghiệm:</h6>  </label>
-                        <input class="form-control" style="width: 25%; margin-bottom: 15px;">
+                        <input class="form-control" formControlName="headOfApartment" style="width: 25%; margin-bottom: 15px;">
                     </div>
                     <div class="form-inline">
                         <label><h6>4. Email: </h6></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 25%; margin-bottom: 15px;">
+                        <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 25%; margin-bottom: 15px;">
                     </div>
                     <div class="form-inline">
                         <label><h6>5. Điện thoại:</h6> </label>
-                        <input class="form-control" style="width: 25%; margin-bottom: 15px;">
+                        <input class="form-control" formControlName="phoneNumber" style="width: 25%; margin-bottom: 15px;">
                     </div>
                     <div class="form-inline">
                         <label class="label1"><h6>6. Đơn vị có triển khai xét nghiệm SARS-COV-2:</h6> </label>
                         <div class="form-check form-check-group">
-                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
+                            <input formControlName="isExecutedTesting" class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio1" value="option1">
                             <label class="form-check-label" for="groupRadio1"> Có</label>
                         </div>
                         <div class="form-check form-check-group">
-                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
+                            <input formControlName="isExecutedTesting" class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio2" value="option2">
                             <label class="form-check-label" for="groupRadio2">Không</label>
                         </div>
                     </div>
                     <div class="form-inline">
                         <label><h6>7. Là đơn vị xét nghiệm:</h6> </label>
                         <div class="form-check form-check-group">
-                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio3" value="option3">
+                            <input formControlName="typeOfUnit" class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio3" value="option3">
                             <label class="form-check-label" for="groupRadio3">Sàng lọc</label>
                         </div>
                         <div class="form-check form-check-group">
-                            <input class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio4" value="option4">
+                            <input formControlName="typeOfUnit" class="form-check-input" type="radio" name="groupRadioOptions" id="groupRadio4" value="option4">
                             <label class="form-check-label" for="groupRadio4">Khẳng định</label>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
         </div>
         <div id="collapse79" class="collapse" role="tabpanel">
             <div class="card-body">
-                <form>
+                <form [formGroup]="surveySaveForm" #saveSurvey (ngSubmit)="saveSurvey()">
                     <div class="form-inline">
                         <label><h6>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:</h6> </label>
                         <input class="form-control" style="width: 10%; margin-bottom: 15px;">
@@ -152,7 +152,7 @@
         </div>
         <div id="collapse80" class="collapse" role="tabpanel" aria-labelledby="heading80" data-parent="#accordionEx78">
             <div class="card-body">
-                <form>
+                <form [formGroup]="surveySaveForm" #saveSurvey (ngSubmit)="saveSurvey()">
                     <div class="form-inline">
                         <label><h6>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:</h6>
                         </label>
@@ -224,7 +224,7 @@
     </div>
     <div id="collapse81" class="collapse" role="tabpanel" aria-labelledby="heading" data-parent="#accordionEx78">
         <div class="card-body">
-            <form>
+            <form [formGroup]="surveySaveForm" #saveSurvey (ngSubmit)="saveSurvey()">
                 <div class="form-group">
                     <div class="form-group">
                         <label><h6>1. Số máy RealTime-PCR có tại cơ sở: {{ numAddDevice }}</h6></label>
@@ -351,7 +351,7 @@
     </div>
     <div id="collapse82" class="collapse" role="tabpanel" aria-labelledby="heading82" data-parent="#accordionEx78">
         <div class="card-body">
-            <form>
+            <form [formGroup]="surveySaveForm" #saveSurvey (ngSubmit)="saveSurvey()">
                 <div class="form-group">
                     <label><h6>1. Sinh phẩm xét nghiệm RealTime-PCR: {{ numAddChemical1 }}</h6></label>
                     <br>
@@ -460,7 +460,9 @@
     </div>
 </div>
 </div>
-<div class="btn1">
-    <button type="submit" class="btn btn-primary">Lưu bản nháp</button>
-    <button type="submit" class="btn btn-success">Hoàn Thành</button>
+<div class="btn1" [hidden]="!submitted">
+    <h5>Student Added SuccessFully!</h5>
+    <button type="submit" class="btn btn-primary">Lưu bản nháp</button>&nbsp;
+    <button type="submit" class="btn btn-success" (click)="addSurveyForm()">Hoàn Thành</button>&nbsp;
+    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
 </div>
