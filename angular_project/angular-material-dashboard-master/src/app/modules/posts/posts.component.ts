@@ -16,11 +16,14 @@ export class PostsComponent implements OnInit {
   surveyForm: FormGroup;
   submitted = false;
 
+    numberOfTestAtUnit: 0;
+    numberOfTestPerDay: number;
+
   //chemical
   isShowChemical = false;
   isShowChemical2 = false;
   isShowChemical3 = false;
-  
+
   numAddChemical1 = 0;
   numAddChemical2 = 0;
   numAddChemical3 = 0;
@@ -37,8 +40,17 @@ export class PostsComponent implements OnInit {
   numDevice = [];
   numDevice1= [];
 
-  showAll = false;
-  showSomeFiled = false;
+  showAll = true;
+  showSomeFiled = true;
+
+
+  showBlock = {
+    blockA: true,
+    blockB: true,
+    blockC: true,
+    blockD: true,
+    blockE: true,
+  }
 
   constructor(private formBuilder: FormBuilder, private surveyInfoService: SurveyInfoService) { }
 
@@ -56,9 +68,28 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  radioShowAll(){
-    this.showAll = true;
+  radioShowAll(val) {
 
+    if(val.target.value === "1") {
+      this.showSomeFiled = false;
+      this.showBlock = {
+        blockA: false,
+        blockB: false,
+        blockC: false,
+        blockD: false,
+        blockE: false,
+      }
+    } else {
+      this.showSomeFiled = true;
+      this.showBlock = {
+        blockA: false,
+        blockB: false,
+        blockC: true,
+        blockD: false,
+        blockE: true,
+      }
+      this.NumberOfTestAtUnit = null;
+    }
   }
 
   radioShowSomeField() {
@@ -188,7 +219,7 @@ export class PostsComponent implements OnInit {
       this.submitted = false;
       this.surveyForm.reset();
   }
-  
+
   save() {
     this.surveyInfoService.unitReport()
       .subscribe(data => console.log(data), error => console.log(error));
@@ -216,9 +247,7 @@ export class PostsComponent implements OnInit {
   }
 
   saveSurvey(saveSurvey) {
-    this.submitted = false;
     this.surveyInfo = new SurveyInfo();
-
     //gene-info
     this.surveyInfo.geneInfoSurvey.unitName = this.UnitName.value;
     this.surveyInfo.geneInfoSurvey.address = this.Address.value;
