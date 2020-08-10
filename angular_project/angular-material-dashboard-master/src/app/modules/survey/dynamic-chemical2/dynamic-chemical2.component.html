@@ -2,18 +2,15 @@
 
     <div class="form-group">
         
-            <input type="text" class="form-control form-control1" >
+        <input formControlName="chemicalName" type="text" class="form-control form-control1" >
       
-            <input type="text" class="form-control form-control2" >
-      
-        
-            <input type="text" class="form-control form-control3" >
-    
-        
-            <input type="text" class="form-control form-control4" >
-      
-        
-            <input type="text" class="form-control form-control5" >
+        <input formControlName="chemicalNumberUsed" type="text" class="form-control form-control2" >
+
+        <input formControlName="chemicalNumberLeft" type="text" class="form-control form-control3" >
+
+        <input formControlName="chemicalnumberNeed" type="text" class="form-control form-control4" >
+
+        <input formControlName="noteChemical" type="text" class="form-control form-control5" >
   
         <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical2()"></i>
     </div>

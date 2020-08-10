@@ -7,29 +7,33 @@ import {Observable} from 'rxjs'
 })
 export class SurveyInfoService {
 
-  private baseUrl = 'http://localhost:8080/api/';
+  private baseUrl = 'http://localhost:8080/survey/api/v1';
 
   constructor(private http: HttpClient) {
   }
 
-  getStudentList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + 'students-list');
+  unitReport(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
   }
 
-  createStudent(student: object): Observable<object> {
-    return this.http.post(`${this.baseUrl}` + 'save-student', student);
+  testResult(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
   }
 
-  deleteStudent(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete-student/${id}`, {responseType: 'text'});
+  employeeResult(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
   }
 
-  getStudent(id: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/student/${id}`);
+  deviceNeed(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
   }
 
-  updateStudent(id: number, value: any): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/update-student/${id}`, value);
+  deviceReports(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
+  }
+
+  chemicalReports(): Observable<any> {
+    return this.http.get(`${this.baseUrl}` + '/');
   }
 
 }

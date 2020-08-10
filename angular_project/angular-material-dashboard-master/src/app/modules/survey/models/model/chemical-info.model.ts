@@ -4,6 +4,6 @@ export class ChemicalInfo {
     chemicalNumberUsed: number;
     chemicalNumberLeft: number;
     chemicalnumberNeed: number;
-    note: string;
+    noteChemical: string;
 
 }

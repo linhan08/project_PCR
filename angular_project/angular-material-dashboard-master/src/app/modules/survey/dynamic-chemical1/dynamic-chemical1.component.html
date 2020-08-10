@@ -1,18 +1,18 @@
 
     <div class="form-group">
 
-        <select class="form-control form-control1">
+        <select formControlName="chemicalName" class="form-control form-control1">
           <option value="QIAamp Viral RNA Mini QIAcube Kit" name="qiaamp">QIAamp Viral RNA Mini QIAcube Kit</option>
           <option name="other">Khác</option>
         </select>
 
-            <input type="text" class="form-control form-control2" >
+        <input formControlName="chemicalNumberUsed" type="text" class="form-control form-control2" >
 
-            <input type="text" class="form-control form-control3" >
+        <input formControlName="chemicalNumberLeft" type="text" class="form-control form-control3" >
 
-            <input type="text" class="form-control form-control4" >
+        <input formControlName="chemicalnumberNeed" type="text" class="form-control form-control4" >
 
-            <input type="text" class="form-control form-control5" >
+        <input formControlName="noteChemical" type="text" class="form-control form-control5" >
 
         <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical1()"></i>
     </div>

@@ -1,19 +1,19 @@
 <div class="form-group">
 
-        <select class="form-control form-control1">
+        <select formControlName="chemicalName" class="form-control form-control1">
           <option value="WizDx-COVID-19 Crystal Mix PCR kit" name="wizdx">WizDx-COVID-19 Crystal Mix PCR kit</option>
           <option value="Berlin Procedure" name="berlin">Berlin Procedure</option>
           <option value="LightPower iVASARS-COV2 1stRT-rPCR Plus Kit" name="light_power">LightPower iVASARS-COV2 1stRT-rPCR Plus Kit</option>
           <option name="other">Khác</option>
         </select>
 
-            <input type="text" class="form-control form-control2" >
+            <input formControlName="chemicalNumberUsed" type="text" class="form-control form-control2" >
 
-            <input type="text" class="form-control form-control3" >
+            <input formControlName="chemicalNumberLeft" type="text" class="form-control form-control3" >
 
-            <input type="text" class="form-control form-control4" >
+            <input formControlName="chemicalnumberNeed" type="text" class="form-control form-control4" >
 
-            <input type="text" class="form-control form-control5" >
+            <input formControlName="noteChemical" type="text" class="form-control form-control5" >
 
         <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical()"></i>
 </div>

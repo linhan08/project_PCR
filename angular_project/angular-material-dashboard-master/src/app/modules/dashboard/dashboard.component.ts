@@ -17,8 +17,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.dashboardService.ChemicalQuarterLyViews();
-    this.dashboardService.pieChart();
-    this.dashboardService.lineChart();
+    this.pieChart = this.dashboardService.pieChart();
+    this.lineChart = this.dashboardService.lineChart();
   }
 
 }
