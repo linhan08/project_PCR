@@ -8,6 +8,7 @@ import { RegisterComponent } from './modules/auth/register/register.component';
 import { HomeComponent } from './modules/home/home.component';
 import { DynamicDeviceComponent } from './modules/survey/dynamic-device/dynamic-device.component';
 import { DynamicChemicalComponent } from './modules/survey/dynamic-chemical/dynamic-chemical.component';
+import { ModalSurveyComponent } from './modules/modal-survey/modal-survey.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'modal-survey',
+    component: ModalSurveyComponent
   },
   {
   path: '',

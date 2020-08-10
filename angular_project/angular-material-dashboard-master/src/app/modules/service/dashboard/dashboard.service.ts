@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DashboardService {
-  private baseUrl = 'http://localhost:8080/report/api/';
+  private baseUrl = 'http://localhost:8080/auth/report/api/';
   constructor(private http: HttpClient) { }
 
     ChemicalQuarterLyViews(): Observable<any> {

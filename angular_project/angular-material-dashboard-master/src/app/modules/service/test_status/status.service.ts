@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 })
 export class StatusService {
 
-  private baseUrl = 'http://localhost:8080/report/api/';
+  private baseUrl = 'http://localhost:8080/auth/report/api/';
 
   constructor(private http: HttpClient) {
   }

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChemicalsService {
 
-  private baseUrl = 'http://localhost:8080/report/api/';
+  private baseUrl = 'http://localhost:8080/auth/report/api/';
 
   constructor(private http: HttpClient) {
   }
