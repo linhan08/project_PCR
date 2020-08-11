@@ -1,24 +1,52 @@
 <div class="form-group" style="margin: 10px; margin-top: 0px;">
 
-  <select formControlName="deviceName" class="form-control form-control1">
+  <select formGroupName="deviceName" class="form-control form-control1">
+    <option value="null">--Select--</option>
       <option value="Qiagen" name="qiagen">Qiagen</option>
       <option value="Roche Cobas 4800" name="roche_cobas_4800">Roche Cobas 4800</option>
       <option name="other">Khác</option>
   </select>
 
-  <input formControlName="startUsingDate"  type="date" class="form-control form-control2" >
+  <input formGroupName="startUsingDate"  type="date" class="form-control form-control2" >
 
-  <select formControlName="devicePurpose" class="form-control form-control3">
+  <select formGroupName="devicePurpose" class="form-control form-control3">
       <option value="VGB/HIV" name="vgb_hiv">VGB/HIV</option>
       <option value="Xét nghiệm COVID-19" name="covid_19">Xét nghiệm COVID-19</option>
       <option name="other">Khác</option>
   </select>
 
-  <input formControlName="testEachTime"  type="text" class="form-control form-control4" >
+  <input formGroupName="testEachTime"  type="text" class="form-control form-control4" >
 
-  <input formControlName="testEachDay"  type="text" class="form-control form-control5" >
+  <input formGroupName="testEachDay"  type="text" class="form-control form-control5" >
 
-  <input formControlName="note"  type="text" class="form-control form-control6" >
+  <input formGroupName="note"  type="text" class="form-control form-control6" >
 
   <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeDevice()"></i>
 </div>
+
+<!-- <div class="form-group" style="margin: 10px; margin-top: 0px;">
+
+  <select [(ngModel)]="surveyInfo.deviceInfoSurvey.deviceName" class="form-control form-control1">
+    <option value="null">--Select--</option>
+      <option value="Qiagen" name="qiagen">Qiagen</option>
+      <option value="Roche Cobas 4800" name="roche_cobas_4800">Roche Cobas 4800</option>
+      <option name="other">Khác</option>
+  </select>
+
+  <input [(ngModel)]="surveyInfo.deviceInfoSurvey.startUsingDate"  type="date" class="form-control form-control2" >
+
+  <select [(ngModel)]="surveyInfo.deviceInfoSurvey.devicePurpose" class="form-control form-control3">
+    <option value="null">--Select--</option>
+      <option value="VGB/HIV" name="vgb_hiv">VGB/HIV</option>
+      <option value="Xét nghiệm COVID-19" name="covid_19">Xét nghiệm COVID-19</option>
+      <option name="other">Khác</option>
+  </select>
+
+  <input [(ngModel)]="surveyInfo.deviceInfoSurvey.testEachTime"  type="text" class="form-control form-control4" >
+
+  <input [(ngModel)]="surveyInfo.deviceInfoSurvey.testEachDay"  type="text" class="form-control form-control5" >
+
+  <input [(ngModel)]="surveyInfo.deviceInfoSurvey.note"  type="text" class="form-control form-control6" >
+
+  <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeDevice()"></i>
+</div> -->

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter,Output } from '@angular/core';
+import { SurveyInfo } from '../models/model/survey-info.model';
 
 @Component({
   selector: 'app-dynamic-chemical2',
@@ -6,7 +7,7 @@ import { Component, OnInit, EventEmitter,Output } from '@angular/core';
   styleUrls: ['./dynamic-chemical2.component.scss']
 })
 export class DynamicChemical2Component implements OnInit {
-
+  surveyInfo: SurveyInfo = new SurveyInfo();
   @Output('removeChemical2') removeChemical3 = new EventEmitter();
 
   constructor() { }

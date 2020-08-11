@@ -2,15 +2,30 @@
 
     <div class="form-group">
         
-        <input formControlName="chemicalName" type="text" class="form-control form-control1" >
+        <input formGroupName="chemicalName" type="text" class="form-control form-control1" >
       
-        <input formControlName="chemicalNumberUsed" type="text" class="form-control form-control2" >
+        <input formGroupName="chemicalNumberUsed" type="text" class="form-control form-control2" >
 
-        <input formControlName="chemicalNumberLeft" type="text" class="form-control form-control3" >
+        <input formGroupName="chemicalNumberLeft" type="text" class="form-control form-control3" >
 
-        <input formControlName="chemicalnumberNeed" type="text" class="form-control form-control4" >
+        <input formGroupName="chemicalnumberNeed" type="text" class="form-control form-control4" >
 
-        <input formControlName="noteChemical" type="text" class="form-control form-control5" >
+        <input formGroupName="noteChemical" type="text" class="form-control form-control5" >
   
         <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical2()"></i>
     </div>
+
+    <!-- <div class="form-group">
+        
+        <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalName" type="text" class="form-control form-control1" >
+      
+        <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberUsed" type="text" class="form-control form-control2" >
+
+        <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberLeft" type="text" class="form-control form-control3" >
+
+        <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalnumberNeed" type="text" class="form-control form-control4" >
+
+        <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.noteChemical" type="text" class="form-control form-control5" >
+  
+        <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical2()"></i>
+    </div> -->

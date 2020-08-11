@@ -23,7 +23,7 @@
                             <form class="login-form" (ngSubmit)="login()">
                                 <input name="username" type="text" class="input" autocomplete="off" placeholder="Email or Username" [(ngModel)]="loginModel.username" required>
                                 <input name="password" type="password" class="input" autocomplete="off" placeholder="Password" [(ngModel)]="loginModel.password" required>
-                                <button type="submit" class="signupbtn">Log In</button>
+                                <button (click)="login()" type="submit" class="signupbtn">Log In</button>
                             </form>
                             <div class="help-action">
                                 <p>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable} from '@angular/core';
+import { Component, OnInit, Injectable, ɵbypassSanitizationTrustResourceUrl} from '@angular/core';
 import * as $ from 'jquery';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SurveyInfo } from '../survey/models/model/survey-info.model';
@@ -16,8 +16,6 @@ export class PostsComponent implements OnInit {
   surveyForm: FormGroup;
   submitted = false;
 
-    numberOfTestAtUnit: 0;
-    numberOfTestPerDay: number;
 
   //chemical
   isShowChemical = false;
@@ -88,7 +86,8 @@ export class PostsComponent implements OnInit {
         blockD: false,
         blockE: true,
       }
-      this.NumberOfTestAtUnit = null;
+      // this.typeOfUnit.value.A7 = 0;
+      // this.NumberOfTestAtUnit.value.B4 = 0;
     }
   }
 

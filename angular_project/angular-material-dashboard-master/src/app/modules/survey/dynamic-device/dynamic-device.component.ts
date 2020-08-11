@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { SurveyInfo } from '../models/model/survey-info.model';
 
 @Component({
   selector: 'app-dynamic-device',
@@ -6,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./dynamic-device.component.scss']
 })
 export class DynamicDeviceComponent implements OnInit {
-
+  surveyInfo: SurveyInfo = new SurveyInfo();
   @Output('removeDevice') removeDevice1 = new EventEmitter();
 
   constructor() { }
