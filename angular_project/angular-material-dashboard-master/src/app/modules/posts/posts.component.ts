@@ -243,6 +243,7 @@ export class PostsComponent implements OnInit {
     this.surveyInfoService.chemicalReports()
       .subscribe(data => console.log(data), error => console.log(error));
     this.surveyInfo = new SurveyInfo();
+    console.log('Save successfully!');
   }
 
   saveSurvey(saveSurvey) {
