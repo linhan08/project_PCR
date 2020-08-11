@@ -1,8 +1,18 @@
 import { Component, OnInit, Injectable, ɵbypassSanitizationTrustResourceUrl} from '@angular/core';
 import * as $ from 'jquery';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { SurveyInfo } from '../survey/models/model/survey-info.model';
 import { SurveyInfoService } from '../service/survey-info/survey-info.service';
+import { ErrorStateMatcher } from '@angular/material';
+import { Router } from '@angular/router';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-posts',
@@ -12,6 +22,7 @@ import { SurveyInfoService } from '../service/survey-info/survey-info.service';
 @Injectable()
 export class PostsComponent implements OnInit {
 
+  matcher = new MyErrorStateMatcher()
   surveyInfo: SurveyInfo = new SurveyInfo();
   surveySaveForm: FormGroup;
   submitted = false;
@@ -50,7 +61,7 @@ export class PostsComponent implements OnInit {
     blockE: true,
   }
 
-  constructor(private formBuilder: FormBuilder, private surveyInfoService: SurveyInfoService) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private surveyInfoService: SurveyInfoService) { }
 
   ngOnInit() {
     this.submitted = false;
@@ -63,6 +74,54 @@ export class PostsComponent implements OnInit {
           $expand.text("fa-angle-up");
         }
       });
+    });
+
+    this.surveySaveForm = this.formBuilder.group({
+      //unit
+      unitName:  [null, Validators.required],
+      areaName:  [null, Validators.required],
+      provinceName:  [null, Validators.required],
+      headOfApartment:  [null, Validators.required],
+      email:  [null, Validators.required],
+      phoneNumber:  [null, Validators.required],
+      isExecutedTesting:  [null, Validators.required],
+      typeOfUnit:  [null, Validators.required],
+  
+      //test-info
+      numberOfTestFrom21:  [null, Validators.required],
+      numberOfTestMoving:  [null, Validators.required],
+      placeTestMoving:     [null, Validators.required],
+      numberOfTestAtUnit:  [null, Validators.required],
+      numberOfTestPerDay:  [null, Validators.required],
+      numberOfTestIncoming:  [null, Validators.required],
+  
+      //employee-info
+      numberOfEmployeeDoTest: [null, Validators.required],
+      numberOfEmployeeUsePRC:  [null, Validators.required],
+      employeeTestTrainingPlace:  [null, Validators.required],
+      trainingPlace:  [null, Validators.required],
+      numberOfEmployeeIncoming:  [null, Validators.required],
+  
+      //device-info
+      deviceTypeId:  [null, Validators.required],
+      deviceName:  [null, Validators.required],
+      // deviceId:  [Validators.required]),
+      devicePurpose:  [null, Validators.required],
+      testEachDay:  [null, Validators.required],
+      testEachTime:  [null, Validators.required],
+      startUsingDate:  [null, Validators.required],
+      note:  [null, Validators.required],
+      numberOfMachineNeed:  [null, Validators.required],
+      isNeedMoreMachine:  [null, Validators.required],
+  
+      //chemical-info
+      // chemicalTypeId:  [Validators.required]),
+      chemicalName:  [null, Validators.required],
+      chemicalNumberUsed:  [null, Validators.required],
+      chemicalNumberLeft:  [null, Validators.required],
+      chemicalnumberNeed:  [null, Validators.required],
+      noteChemical:  [null, Validators.required],
+  
     });
   }
 
@@ -163,52 +222,7 @@ export class PostsComponent implements OnInit {
     }
   }
 
-  surveySaveForm = new FormGroup({
-    //unit
-    unitName: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required]),
-    headOfApartment: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
-    phoneNumber: new FormControl('', [Validators.required]),
-    isExecutedTesting: new FormControl('', [Validators.required]),
-    typeOfUnit: new FormControl('', [Validators.required]),
-
-    //test-info
-    numberOfTestFrom21: new FormControl('', [Validators.required]),
-    numberOfTestMoving: new FormControl('', [Validators.required]),
-    placeTestMoving:    new FormControl('', [Validators.required]),
-    numberOfTestAtUnit: new FormControl('', [Validators.required]),
-    numberOfTestPerDay: new FormControl('', [Validators.required]),
-    numberOfTestIncoming: new FormControl('', [Validators.required]),
-
-    //employee-info
-    numberOfEmployeeDoTest:new FormControl('', [Validators.required]),
-    numberOfEmployeeUsePRC: new FormControl('', [Validators.required]),
-    employeeTestTrainingPlace: new FormControl('', [Validators.required]),
-    trainingPlace: new FormControl('', [Validators.required]),
-    numberOfEmployeeIncoming: new FormControl('', [Validators.required]),
-
-    //device-info
-    deviceTypeId: new FormControl('', [Validators.required]),
-    deviceName: new FormControl('', [Validators.required]),
-    // deviceId: new FormControl('', [Validators.required]),
-    devicePurpose: new FormControl('', [Validators.required]),
-    testEachDay: new FormControl('', [Validators.required]),
-    testEachTime: new FormControl('', [Validators.required]),
-    startUsingDate: new FormControl('', [Validators.required]),
-    note: new FormControl('', [Validators.required]),
-    numberOfMachineNeed: new FormControl('', [Validators.required]),
-    isNeedMoreMachine: new FormControl('', [Validators.required]),
-
-    //chemical-info
-    // chemicalTypeId: new FormControl('', [Validators.required]),
-    chemicalName: new FormControl('', [Validators.required]),
-    chemicalNumberUsed: new FormControl('', [Validators.required]),
-    chemicalNumberLeft: new FormControl('', [Validators.required]),
-    chemicalnumberNeed: new FormControl('', [Validators.required]),
-    noteChemical: new FormControl('', [Validators.required]),
-
-  });
+  
 
   addSurveyForm() {
     this.submitted = false;
@@ -226,23 +240,23 @@ export class PostsComponent implements OnInit {
 
     this.surveyInfoService.testResult()
       .subscribe(data => console.log(data), error => console.log(error));
-    this.surveyInfo = new SurveyInfo();
+    
 
     this.surveyInfoService.employeeResult()
       .subscribe(data => console.log(data), error => console.log(error));
-    this.surveyInfo = new SurveyInfo();
+    
 
     this.surveyInfoService.deviceNeed()
       .subscribe(data => console.log(data), error => console.log(error));
-    this.surveyInfo = new SurveyInfo();
+   
 
     this.surveyInfoService.deviceReports()
       .subscribe(data => console.log(data), error => console.log(error));
-    this.surveyInfo = new SurveyInfo();
+
 
     this.surveyInfoService.chemicalReports()
       .subscribe(data => console.log(data), error => console.log(error));
-    this.surveyInfo = new SurveyInfo();
+    
     console.log('Save successfully!');
   }
 
@@ -251,6 +265,8 @@ export class PostsComponent implements OnInit {
     //gene-info
     this.surveyInfo.geneInfoSurvey.unitName = this.UnitName.value;
     this.surveyInfo.geneInfoSurvey.address = this.Address.value;
+    this.surveyInfo.geneInfoSurvey.provinceName = this.ProvinceName.value;
+    this.surveyInfo.geneInfoSurvey.areaName = this.AreaName.value;
     this.surveyInfo.geneInfoSurvey.headOfApartment = this.HeadOfApartment.value;
     this.surveyInfo.geneInfoSurvey.email = this.Email.value;
     this.surveyInfo.geneInfoSurvey.phoneNumber = this.PhoneNumber.value;
@@ -296,6 +312,12 @@ export class PostsComponent implements OnInit {
   //gene-info
   get UnitName() {
     return this.UnitName.get('unitName');
+  }
+  get AreaName() {
+    return this.surveySaveForm.get('areaName');
+  }
+  get ProvinceName() {
+    return this.surveySaveForm.get('provinceName');
   }
   get Address() {
     return this.surveySaveForm.get('address');
