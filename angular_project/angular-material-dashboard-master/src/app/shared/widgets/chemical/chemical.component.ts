@@ -14,13 +14,25 @@ export class ChemicalComponent implements OnInit {
   dtOptionsChemical: DataTables.Settings = {};
   dtTriggerChemical: Subject<any> = new Subject();
 
+
   chemicalsArray: any[] = [];
   chemicals: Observable<Chemical[]>;
   chemical: Chemical = new Chemical();
   deleteMessage = false;
   chemicallist: any;
 
-  constructor(private chemicalservice: ChemicalsService) { }
+  listChemical = [];
+
+
+  constructor(private chemicalservice: ChemicalsService) {
+    this.chemicalservice.chemicalViews().subscribe(data =>{
+      this.listChemical = data;
+      console.log(this.listChemical);
+    },err=>{
+
+    });
+
+   }
 
   ngOnInit() {
     this.dtOptionsChemical = {
@@ -29,10 +41,10 @@ export class ChemicalComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.chemicalservice.chemicalViews().subscribe(data => {
-      this.chemicals = data;
-      this.dtTriggerChemical.next();
-    });
+    // this.chemicalservice.chemicalViews().subscribe(data => {
+    //   // this.chemicals = data;
+    //   this.dtTriggerChemical.next();
+    // });
   }
   chemicalupdateform = new FormGroup({
     chemicalName: new FormControl(),

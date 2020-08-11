@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let chemical of chemicals">
-            <td>{{chemical.chemical_name}}</td>
-            <td>{{chemical.chemical_needd}}</td>
-            <td>{{chemical.chemical_number_usedd}}</td>
+        <tr *ngFor="let chemical of listChemical">
+            <td>{{chemical.chemicalName}}</td>
+            <td>{{chemical.totalChemical}}</td>
+            <td>{{chemical.totalChemicalUsed}}</td>
         </tr>
     </tbody>
     <br>
