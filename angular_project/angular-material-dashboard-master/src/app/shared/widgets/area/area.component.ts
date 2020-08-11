@@ -23,7 +23,7 @@ export class AreaComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Sinh Phẩm thay đổi theo các quý'
+        text: 'Sinh Phẩm thay đổi theo tháng'
       },
       subtitle: {
         text: ''
