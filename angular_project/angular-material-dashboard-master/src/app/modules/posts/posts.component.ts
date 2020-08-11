@@ -13,7 +13,7 @@ import { SurveyInfoService } from '../service/survey-info/survey-info.service';
 export class PostsComponent implements OnInit {
 
   surveyInfo: SurveyInfo = new SurveyInfo();
-  surveyForm: FormGroup;
+  surveySaveForm: FormGroup;
   submitted = false;
 
 
@@ -214,10 +214,10 @@ export class PostsComponent implements OnInit {
     this.submitted = false;
     this.surveySaveForm.reset();
   }
-  onReset() {
-      this.submitted = false;
-      this.surveyForm.reset();
-  }
+  // onReset() {
+  //     this.submitted = false;
+  //     this.surveyForm.reset();
+  // }
 
   save() {
     this.surveyInfoService.unitReport()
