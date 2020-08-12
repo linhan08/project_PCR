@@ -19,7 +19,13 @@ export class StatusComponent implements OnInit {
   deleteMessage = false;
   status_testlist: any;
 
-  constructor(private statusservice: StatusService) { }
+  listTest = [];
+
+  constructor(private statusservice: StatusService) {
+    this.statusservice.testReportviews().subscribe(data=>{
+      this.listTest = data;
+    },error=>{});
+  }
 
   ngOnInit() {
     this.dtOptionsTest = {
@@ -28,10 +34,7 @@ export class StatusComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.statusservice.testReportviews().subscribe(data => {
-      this.status_tests = data;
-      this.dtTriggerTest.next();
-    });
+
   }
   statusupdateform = new FormGroup({
     totalTest: new FormControl(),

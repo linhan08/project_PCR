@@ -19,7 +19,16 @@ export class DeviceComponent implements OnInit {
   deleteMessage = false;
   devicelist: any;
 
-  constructor(private deviceservice: DevicesService) { }
+  listDevice = [];
+
+  constructor(private deviceservice: DevicesService) {
+    this.deviceservice.deviceViews().subscribe(data =>{
+      this.listDevice = data;
+      console.log(this.listDevice);
+    },err=>{
+
+    });
+  }
 
   ngOnInit() {
     this.dtOptionsDevice = {
@@ -28,10 +37,10 @@ export class DeviceComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.deviceservice.deviceViews().subscribe(data => {
-      this.devices = data;
-      this.dtTriggerDevice.next();
-    });
+    // this.deviceservice.deviceViews().subscribe(data => {
+    //   this.devices = data;
+    //   this.dtTriggerDevice.next();
+    // });
   }
   deviceupdateform = new FormGroup({
     deviceName: new FormControl(),

@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let status_test of status_tests">
+        <tr *ngFor="let status_test of listTest">
             <td>{{status_test.totalTest}}</td>
             <td>{{status_test.totalTestEachDay}}</td>
-            <td>{{status_test.totalTestExcute}}</td>
+            <!-- <td>{{status_test.totalExcute}}</td> -->
             <td>{{status_test.totalNumberIncoming}}</td>
         </tr>
     </tbody>

@@ -19,7 +19,14 @@ export class EmployeeComponent implements OnInit {
   deleteMessage = false;
   employeelist: any;
 
-  constructor(private employeeservice: EmployeesService) { }
+  listEmployee = [];
+
+  constructor(private employeeservice: EmployeesService) {
+    this.employeeservice.employeeResulViews().subscribe(data =>{
+      this.listEmployee = data;
+    },error=>{ }
+    );
+   }
 
   ngOnInit() {
     this.dtOptionsEmployee = {
@@ -28,10 +35,6 @@ export class EmployeeComponent implements OnInit {
       lengthMenu: [[6, 16, 20, -1], [6, 16, 20, "All"]],
       processing: true
     };
-    this.employeeservice.employeeResulViews().subscribe(data => {
-      this.employees = data;
-      this.dtTriggerEmployee.next();
-    })
   }
   employeeupdateform = new FormGroup({
     totalEmployeeTest: new FormControl(),
