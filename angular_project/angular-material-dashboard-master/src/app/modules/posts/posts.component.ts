@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable, ɵbypassSanitizationTrustResourceUrl} from '@angular/core';
+import { Component, OnInit, Injectable,} from '@angular/core';
 import * as $ from 'jquery';
 import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { SurveyInfo } from '../survey/models/model/survey-info.model';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(control: FormControl | '', form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
@@ -49,19 +49,22 @@ export class PostsComponent implements OnInit {
   numDevice = [];
   numDevice1= [];
 
+  isExecutedTesting = null;
   showAll = true;
   showSomeFiled = true;
-
-
   showBlock = {
     blockA: true,
     blockB: true,
     blockC: true,
     blockD: true,
     blockE: true,
+    blockA7: true,
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private surveyInfoService: SurveyInfoService) { }
+  constructor(
+    private router: Router, 
+    private formBuilder: FormBuilder, 
+    private surveyInfoService: SurveyInfoService) { }
 
   ngOnInit() {
     this.submitted = false;
@@ -78,53 +81,57 @@ export class PostsComponent implements OnInit {
 
     this.surveySaveForm = this.formBuilder.group({
       //unit
-      unitName:  [null, Validators.required],
-      areaName:  [null, Validators.required],
-      provinceName:  [null, Validators.required],
-      headOfApartment:  [null, Validators.required],
-      email:  [null, Validators.required],
-      phoneNumber:  [null, Validators.required],
-      isExecutedTesting:  [null, Validators.required],
-      typeOfUnit:  [null, Validators.required],
+      unitName:  ['', Validators.required,],
+      areaName:  ['', Validators.required],
+      provinceName:  ['', Validators.required],
+      headOfApartment:  ['', Validators.required,],
+      email:  ['', Validators.required,],
+      phoneNumber:  ['', Validators.required],
+      isExecutedTesting:  ['', Validators.required],
+      typeOfUnit:  ['', Validators.required],
   
       //test-info
-      numberOfTestFrom21:  [null, Validators.required],
-      numberOfTestMoving:  [null, Validators.required],
-      placeTestMoving:     [null, Validators.required],
-      numberOfTestAtUnit:  [null, Validators.required],
-      numberOfTestPerDay:  [null, Validators.required],
-      numberOfTestIncoming:  [null, Validators.required],
+      numberOfTestFrom21:  ['', Validators.required],
+      numberOfTestMoving:  ['', Validators.required],
+      placeTestMoving:     ['', Validators.required],
+      numberOfTestAtUnit:  ['', Validators.required],
+      numberOfTestPerDay:  ['', Validators.required],
+      numberOfTestIncoming:  ['', Validators.required],
   
       //employee-info
-      numberOfEmployeeDoTest: [null, Validators.required],
-      numberOfEmployeeUsePRC:  [null, Validators.required],
-      employeeTestTrainingPlace:  [null, Validators.required],
-      trainingPlace:  [null, Validators.required],
-      numberOfEmployeeIncoming:  [null, Validators.required],
+      numberOfEmployeeDoTest: ['', Validators.required],
+      numberOfEmployeeUsePRC:  ['', Validators.required],
+      employeeTestTrainingPlace:  ['', Validators.required],
+      trainingPlace:  ['', Validators.required],
+      numberOfEmployeeIncoming:  ['', Validators.required],
   
       //device-info
-      deviceTypeId:  [null, Validators.required],
-      deviceName:  [null, Validators.required],
+      deviceTypeId:  ['', Validators.required],
+      deviceName:  ['', Validators.required],
       // deviceId:  [Validators.required]),
-      devicePurpose:  [null, Validators.required],
-      testEachDay:  [null, Validators.required],
-      testEachTime:  [null, Validators.required],
-      startUsingDate:  [null, Validators.required],
-      note:  [null, Validators.required],
-      numberOfMachineNeed:  [null, Validators.required],
-      isNeedMoreMachine:  [null, Validators.required],
+      devicePurpose:  ['', Validators.required],
+      testEachDay:  ['', Validators.required],
+      testEachTime:  ['', Validators.required],
+      startUsingDate:  ['', Validators.required],
+      note:  ['', Validators.required],
+      numberOfMachineNeed:  ['', Validators.required],
+      isNeedMoreMachine:  ['', Validators.required],
   
       //chemical-info
       // chemicalTypeId:  [Validators.required]),
-      chemicalName:  [null, Validators.required],
-      chemicalNumberUsed:  [null, Validators.required],
-      chemicalNumberLeft:  [null, Validators.required],
-      chemicalnumberNeed:  [null, Validators.required],
-      noteChemical:  [null, Validators.required],
+      chemicalName:  ['', Validators.required],
+      chemicalNumberUsed:  ['', Validators.required],
+      chemicalNumberLeft:  ['', Validators.required],
+      chemicalnumberNeed:  ['', Validators.required],
+      noteChemical:  ['', Validators.required],
   
     });
   }
 
+  //showfield
+  radioShowSomeField() {
+    this.showSomeFiled = true;
+  }
   radioShowAll(val) {
 
     if(val.target.value === "1") {
@@ -135,8 +142,9 @@ export class PostsComponent implements OnInit {
         blockC: false,
         blockD: false,
         blockE: false,
+        blockA7: false,
       }
-    } else {
+    } else if(val.target.value === "0"){
       this.showSomeFiled = true;
       this.showBlock = {
         blockA: false,
@@ -144,14 +152,11 @@ export class PostsComponent implements OnInit {
         blockC: true,
         blockD: false,
         blockE: true,
+        blockA7:true,
       }
       // this.typeOfUnit.value.A7 = 0;
       // this.NumberOfTestAtUnit.value.B4 = 0;
     }
-  }
-
-  radioShowSomeField() {
-    this.showSomeFiled = true;
   }
 
   get f() { return this.surveySaveForm.controls; }
@@ -222,16 +227,39 @@ export class PostsComponent implements OnInit {
     }
   }
 
-  
-
   addSurveyForm() {
-    this.submitted = false;
-    this.surveySaveForm.reset();
+    this.submitted = true;
+    if (this.surveySaveForm.invalid) {
+      return;
+    }
+    alert('SUCCESS!! \n\n');
+  } 
+
+  saveNote(){
+    this.submitted = true;
+      
   }
-  // onReset() {
-  //     this.submitted = false;
-  //     this.surveyForm.reset();
-  // }
+
+  onReset() {
+      this.surveySaveForm.reset();
+    //   $(document).ready(function() {
+    //     $("#btnReloadData").on("click", function() {
+    //         alert("Do you want to reload data ?")
+    //         window.location.reload();
+    //     });
+    // });
+    if(this.IsExecutedTesting.value === null) {
+      this.showSomeFiled = false;
+      this.showBlock = {
+        blockA: true,
+        blockB: true,
+        blockC: true,
+        blockD: true,
+        blockE: true,
+        blockA7: true,
+      }
+    }
+  }
 
   save() {
     this.surveyInfoService.unitReport()
@@ -307,6 +335,10 @@ export class PostsComponent implements OnInit {
 
     this.submitted = true;
     this.save();
+    if (this.surveySaveForm.invalid) {
+      return;
+    }
+    alert('SUCCESS!! \n\n');
   }
 
   //gene-info
