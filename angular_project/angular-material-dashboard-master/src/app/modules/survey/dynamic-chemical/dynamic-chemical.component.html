@@ -1,4 +1,4 @@
-<div class="form-group">
+<!-- <div class="form-group">
 
         <select formGroupName="chemicalName" class="form-control form-control1">
           <option value="null">--Select--</option>
@@ -17,11 +17,11 @@
             <input formGroupName="noteChemical" type="text" class="form-control form-control5" >
 
         <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical()"></i>
-</div>
+</div> -->
 
-<!-- <div [formGroup]="surveySaveForm"  class="form-group">
+<div [formGroup]="surveySaveForm" class="form-group">
 
-  <select [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalName" class="form-control form-control1">
+    <select [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalName" class="form-control form-control1">
     <option value="null">--Select--</option>
     <option value="WizDx-COVID-19 Crystal Mix PCR kit" name="wizdx">WizDx-COVID-19 Crystal Mix PCR kit</option>
     <option value="Berlin Procedure" name="berlin">Berlin Procedure</option>
@@ -29,13 +29,13 @@
     <option name="other">Khác</option>
   </select>
 
-      <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberUsed" type="text" class="form-control form-control2" >
+    <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberUsed" type="text" class="form-control form-control2">
 
-      <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberLeft" type="text" class="form-control form-control3" >
+    <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalNumberLeft" type="text" class="form-control form-control3">
 
-      <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalnumberNeed" type="text" class="form-control form-control4" >
+    <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.chemicalnumberNeed" type="text" class="form-control form-control4">
 
-      <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.noteChemical" type="text" class="form-control form-control5" >
+    <input [(ngModel)]="surveyInfo.chemicalInfoSurvey.noteChemical" type="text" class="form-control form-control5">
 
-  <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical()"></i>
-</div> -->
+    <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeChemical()"></i>
+</div>

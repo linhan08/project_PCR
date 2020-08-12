@@ -62,8 +62,8 @@ export class PostsComponent implements OnInit {
   }
 
   constructor(
-    private router: Router, 
-    private formBuilder: FormBuilder, 
+    private router: Router,
+    private formBuilder: FormBuilder,
     private surveyInfoService: SurveyInfoService) { }
 
   ngOnInit() {
@@ -89,7 +89,7 @@ export class PostsComponent implements OnInit {
       phoneNumber:  ['', Validators.required],
       isExecutedTesting:  ['', Validators.required],
       typeOfUnit:  ['', Validators.required],
-  
+
       //test-info
       numberOfTestFrom21:  ['', Validators.required],
       numberOfTestMoving:  ['', Validators.required],
@@ -97,14 +97,14 @@ export class PostsComponent implements OnInit {
       numberOfTestAtUnit:  ['', Validators.required],
       numberOfTestPerDay:  ['', Validators.required],
       numberOfTestIncoming:  ['', Validators.required],
-  
+
       //employee-info
       numberOfEmployeeDoTest: ['', Validators.required],
       numberOfEmployeeUsePRC:  ['', Validators.required],
       employeeTestTrainingPlace:  ['', Validators.required],
       trainingPlace:  ['', Validators.required],
       numberOfEmployeeIncoming:  ['', Validators.required],
-  
+
       //device-info
       deviceTypeId:  ['', Validators.required],
       deviceName:  ['', Validators.required],
@@ -116,7 +116,7 @@ export class PostsComponent implements OnInit {
       note:  ['', Validators.required],
       numberOfMachineNeed:  ['', Validators.required],
       isNeedMoreMachine:  ['', Validators.required],
-  
+
       //chemical-info
       // chemicalTypeId:  [Validators.required]),
       chemicalName:  ['', Validators.required],
@@ -124,7 +124,7 @@ export class PostsComponent implements OnInit {
       chemicalNumberLeft:  ['', Validators.required],
       chemicalnumberNeed:  ['', Validators.required],
       noteChemical:  ['', Validators.required],
-  
+
     });
   }
 
@@ -233,21 +233,17 @@ export class PostsComponent implements OnInit {
       return;
     }
     alert('SUCCESS!! \n\n');
-  } 
+  }
 
   saveNote(){
     this.submitted = true;
-      
+
   }
 
   onReset() {
-      this.surveySaveForm.reset();
-    //   $(document).ready(function() {
-    //     $("#btnReloadData").on("click", function() {
-    //         alert("Do you want to reload data ?")
-    //         window.location.reload();
-    //     });
-    // });
+    this.surveyInfo = new SurveyInfo();
+    this.surveySaveForm.reset();
+
     if(this.IsExecutedTesting.value === null) {
       this.showSomeFiled = false;
       this.showBlock = {
@@ -268,15 +264,15 @@ export class PostsComponent implements OnInit {
 
     this.surveyInfoService.testResult()
       .subscribe(data => console.log(data), error => console.log(error));
-    
+
 
     this.surveyInfoService.employeeResult()
       .subscribe(data => console.log(data), error => console.log(error));
-    
+
 
     this.surveyInfoService.deviceNeed()
       .subscribe(data => console.log(data), error => console.log(error));
-   
+
 
     this.surveyInfoService.deviceReports()
       .subscribe(data => console.log(data), error => console.log(error));
@@ -284,7 +280,7 @@ export class PostsComponent implements OnInit {
 
     this.surveyInfoService.chemicalReports()
       .subscribe(data => console.log(data), error => console.log(error));
-    
+
     console.log('Save successfully!');
   }
 
