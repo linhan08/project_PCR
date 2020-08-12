@@ -514,8 +514,11 @@
                 <form (ngSubmit)="saveSurvey(saveSurvey)">
                     <div class="form-inline">
                         <label><h6>1. Tên đơn vị:</h6> </label>
-                        <input type="text" name="unitName" class="form-control" [(ngModel)]="surveyInfo.geneInfoSurvey.unitName" style="width: 25%; margin-bottom: 15px;">
-                        <!-- <span class="validate" *ngIf="!surveySaveForm.get('unitName').valid && surveySaveForm.get('unitName').touched">Please enter</span> -->
+                        <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="text" name="unitName" class="form-control" [(ngModel)]="surveyInfo.geneInfoSurvey.unitName" style="width: 25%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.unitName.errors" class="invalid-feedback">
+                            <div *ngIf="f.unitName.errors.required">unitName is required</div>
+                            <div *ngIf="f.unitName.errors.unitName">unitName must be a valid email address</div>
+                        </div>
                     </div>
                     <div class="form-inline">
                         <label><h6>2. Địa chỉ:</h6> </label>
@@ -771,13 +774,13 @@
                 <div class="form-inline">
                     <label>
                         <h6>2. Đơn vị có kế hoạch bổ sung máy RealTime-PCR không:</h6>
-                        <div class="form-check form-check-group" >
-                            <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachine" class="form-check-input" type="radio"  id="groupRadio18" value="Có">
-                            <label class="form-check-label" for="groupRadio18"> Có</label>
+                        <div class="form-check " >
+                            <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox"  id="checkbox1" value="Có">
+                            <label class="form-check-label" for="checkbox1"> Có</label>
                 </div>
-                <div class="form-check form-check-group">
-                    <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachine" class="form-check-input" type="radio" id="groupRadio19" value="Không">
-                    <label class="form-check-label" for="groupRadio19">Không</label>
+                <div class="form-check ">
+                    <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox" id="checkbox2" value="Không">
+                    <label class="form-check-label" for="checkbox2">Không</label>
                 </div>
                 </label>
         </div>
@@ -827,11 +830,11 @@
         <div class="form-inline">
             <label><h6>5. Đơn vị có kế hoạch bổ sung máy tách chiết ARN không:</h6>
                     <div class="form-check form-check-group" >
-                        <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachine" class="form-check-input" type="radio"  id="groupRadio20" value="Có">
+                        <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachineARN" class="form-check-input" type="radio"  id="groupRadio20" value="yes">
                         <label class="form-check-label" for="groupRadio20"> Có</label>
         </div>
         <div class="form-check form-check-group">
-            <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachine" class="form-check-input" type="radio" id="groupRadio21" value="Không">
+            <input [(ngModel)]="surveyInfo.deviceNeedSurvey.isNeedMoreMachine" name="isNeedMoreMachineARN" class="form-check-input" type="radio" id="groupRadio21" value="no">
             <label class="form-check-label" for="groupRadio21">Không</label>
         </div>
         </label>

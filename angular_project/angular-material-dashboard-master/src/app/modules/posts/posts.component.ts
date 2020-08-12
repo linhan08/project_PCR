@@ -81,7 +81,7 @@ export class PostsComponent implements OnInit {
 
     this.surveySaveForm = this.formBuilder.group({
       //unit
-      unitName:  ['', Validators.required,],
+      unitName:  ['', Validators.required, Validators.minLength(3)],
       areaName:  ['', Validators.required],
       provinceName:  ['', Validators.required],
       headOfApartment:  ['', Validators.required,],
@@ -235,12 +235,13 @@ export class PostsComponent implements OnInit {
     alert('SUCCESS!! \n\n');
   }
 
-  saveNote(){
+  saveNote() {
     this.submitted = true;
 
   }
 
   onReset() {
+    this.submitted = false;
     this.surveyInfo = new SurveyInfo();
     this.surveySaveForm.reset();
 
@@ -331,10 +332,6 @@ export class PostsComponent implements OnInit {
 
     this.submitted = true;
     this.save();
-    if (this.surveySaveForm.invalid) {
-      return;
-    }
-    alert('SUCCESS!! \n\n');
   }
 
   //gene-info
