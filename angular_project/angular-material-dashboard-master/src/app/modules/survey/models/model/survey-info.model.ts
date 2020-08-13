@@ -6,11 +6,11 @@ import { ChemicalInfo } from './chemical-info.model';
 import { DeviceNeed } from './device-need.model';
 
 export class SurveyInfo {
-    geneInfoSurvey: GeneInfo = new GeneInfo();
-    testInfoSurvey: TestInfo = new TestInfo();
-    employeeInfoSurvey: EmployeeInfo = new EmployeeInfo();
-    deviceInfoSurvey: DeviceInfo = new DeviceInfo();
-    deviceNeedSurvey: DeviceNeed = new DeviceNeed();
-    chemicalInfoSurvey: ChemicalInfo = new ChemicalInfo();
+    unit: GeneInfo = new GeneInfo();
+    testResult: TestInfo = new TestInfo();
+    employeeResult: EmployeeInfo = new EmployeeInfo();
+    devices: DeviceInfo = new DeviceInfo();
+    deviceNeed: DeviceNeed = new DeviceNeed();
+    chemicals: ChemicalInfo = new ChemicalInfo();
 
 }

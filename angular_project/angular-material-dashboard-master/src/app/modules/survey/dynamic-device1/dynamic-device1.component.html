@@ -26,29 +26,29 @@
   </div> -->
 
 
-<div class="form-group" style="margin: 10px; margin-top: 0px;">
+ <div class="form-group" style="margin: 10px; margin-top: 0px;">
 
-    <select [(ngModel)]="surveyInfo.deviceInfoSurvey.deviceName" class="form-control form-control1">
+    <select [(ngModel)]="surveyInfo.devices.deviceName" class="form-control form-control1">
         <option value="null">--Select--</option>
         <option value="Miracle AutoXT-Hàn Quốc" name="miracle_autoxt">Miracle AutoXT-Hàn Quốc</option>
         <option value="DNA/RNA KingFisher Duo Prime" name="king_fisher">DNA/RNA KingFisher Duo Prime</option>
         <option value="khác" name="other">Khác</option>
     </select>
 
-    <input [(ngModel)]="surveyInfo.deviceInfoSurvey.startUsingDate" type="date" class="form-control form-control2">
+    <input [(ngModel)]="surveyInfo.devices.startUsingDate" type="date" class="form-control form-control2">
 
-    <select [(ngModel)]="surveyInfo.deviceInfoSurvey.devicePurpose" class="form-control form-control3">
+    <select [(ngModel)]="surveyInfo.devices.devicePurpose" class="form-control form-control3">
         <option value="null">--Select--</option>
         <option value="VGB/HIV" name="vgb_hiv">VGB/HIV</option>
         <option value="Xét nghiệm COVID-19" name="covid_19">Xét nghiệm COVID-19</option>
         <option value="khác" name="other">Khác</option>
     </select>
 
-    <input [(ngModel)]="surveyInfo.deviceInfoSurvey.testEachTime" type="text" class="form-control form-control4">
+    <input [(ngModel)]="surveyInfo.devices.testEachTime" type="text" class="form-control form-control4">
 
-    <input [(ngModel)]="surveyInfo.deviceInfoSurvey.testEachDay" type="text" class="form-control form-control5">
+    <input [(ngModel)]="surveyInfo.devices.testEachDay" type="text" class="form-control form-control5">
 
-    <input [(ngModel)]="surveyInfo.deviceInfoSurvey.note" type="text" class="form-control form-control6">
+    <input [(ngModel)]="surveyInfo.devices.note" type="text" class="form-control form-control6">
 
     <i class="far fa-trash-alt" width="15" height="15" title="Remove" (click)="removeDevice1()"></i>
 </div>

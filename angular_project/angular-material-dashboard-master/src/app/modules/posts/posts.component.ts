@@ -81,11 +81,11 @@ export class PostsComponent implements OnInit {
 
     this.surveySaveForm = this.formBuilder.group({
       //unit
-      unitName:  ['', Validators.required,],
+      unitName:  ['', Validators.required],
       areaName:  ['', Validators.required],
       provinceName:  ['', Validators.required],
       headOfApartment:  ['', Validators.required,],
-      email:  ['', Validators.required,],
+      email:  ['', Validators.required, Validators.email],
       phoneNumber:  ['', Validators.required],
       isExecutedTesting:  ['', Validators.required],
       typeOfUnit:  ['', Validators.required],
@@ -108,12 +108,13 @@ export class PostsComponent implements OnInit {
       //device-info
       deviceTypeId:  ['', Validators.required],
       deviceName:  ['', Validators.required],
-      // deviceId:  [Validators.required]),
+      deviceId:  ['', Validators.required],
       devicePurpose:  ['', Validators.required],
       testEachDay:  ['', Validators.required],
       testEachTime:  ['', Validators.required],
       startUsingDate:  ['', Validators.required],
       note:  ['', Validators.required],
+
       numberOfMachineNeed:  ['', Validators.required],
       isNeedMoreMachine:  ['', Validators.required],
 
@@ -235,12 +236,13 @@ export class PostsComponent implements OnInit {
     alert('SUCCESS!! \n\n');
   }
 
-  saveNote(){
+  saveNote() {
     this.submitted = true;
 
   }
 
   onReset() {
+    this.submitted = false;
     this.surveyInfo = new SurveyInfo();
     this.surveySaveForm.reset();
 
@@ -258,28 +260,14 @@ export class PostsComponent implements OnInit {
   }
 
   save() {
-    this.surveyInfoService.unitReport()
+    this.submitted = true;
+    if (this.surveySaveForm.invalid) {
+      return;
+    }
+    alert('SUCCESS!! \n\n');
+    this.surveyInfoService.unit(this.surveyInfo)
       .subscribe(data => console.log(data), error => console.log(error));
     this.surveyInfo = new SurveyInfo();
-
-    this.surveyInfoService.testResult()
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.employeeResult()
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.deviceNeed()
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.deviceReports()
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.chemicalReports()
-      .subscribe(data => console.log(data), error => console.log(error));
 
     console.log('Save successfully!');
   }
@@ -287,59 +275,65 @@ export class PostsComponent implements OnInit {
   saveSurvey(saveSurvey) {
     this.surveyInfo = new SurveyInfo();
     //gene-info
-    this.surveyInfo.geneInfoSurvey.unitName = this.UnitName.value;
-    this.surveyInfo.geneInfoSurvey.address = this.Address.value;
-    this.surveyInfo.geneInfoSurvey.provinceName = this.ProvinceName.value;
-    this.surveyInfo.geneInfoSurvey.areaName = this.AreaName.value;
-    this.surveyInfo.geneInfoSurvey.headOfApartment = this.HeadOfApartment.value;
-    this.surveyInfo.geneInfoSurvey.email = this.Email.value;
-    this.surveyInfo.geneInfoSurvey.phoneNumber = this.PhoneNumber.value;
-    this.surveyInfo.geneInfoSurvey.isExecutedTesting = this.IsExecutedTesting.value;
-    this.surveyInfo.geneInfoSurvey.typeOfUnit = this.TypeOfUnit.value;
+    this.surveyInfo.unit.unitId = this.UnitId.value;
+    this.surveyInfo.unit.unitName = this.UnitName.value;
+    this.surveyInfo.unit.address = this.Address.value;
+    this.surveyInfo.unit.provinceName = this.ProvinceName.value;
+    this.surveyInfo.unit.areaName = this.AreaName.value;
+    this.surveyInfo.unit.headOfApartment = this.HeadOfApartment.value;
+    this.surveyInfo.unit.email = this.Email.value;
+    this.surveyInfo.unit.phoneNumber = this.PhoneNumber.value;
+    this.surveyInfo.unit.isExecutedTesting = this.IsExecutedTesting.value;
+    this.surveyInfo.unit.typeOfUnit = this.TypeOfUnit.value;
 
     //test-info
-    this.surveyInfo.testInfoSurvey.numberOfTestFrom21 = this.NumberOfTestFrom21.value;
-    this.surveyInfo.testInfoSurvey.numberOfTestMoving = this.NumberOfTestMoving.value;
-    this.surveyInfo.testInfoSurvey.placeTestMoving = this.PlaceTestMoving.value;
-    this.surveyInfo.testInfoSurvey.numberOfTestAtUnit = this.NumberOfTestAtUnit.value;
-    this.surveyInfo.testInfoSurvey.numberOfTestPerDay = this.NumberOfTestPerDay.value;
-    this.surveyInfo.testInfoSurvey.numberOfTestIncoming = this.NumberOfTestIncoming.value;
+    this.surveyInfo.testResult.testResultId = this.TestResultId.value;
+    this.surveyInfo.testResult.numberOfTestFrom21 = this.NumberOfTestFrom21.value;
+    this.surveyInfo.testResult.numberOfTestMoving = this.NumberOfTestMoving.value;
+    this.surveyInfo.testResult.placeTestMoving = this.PlaceTestMoving.value;
+    this.surveyInfo.testResult.numberOfTestAtUnit = this.NumberOfTestAtUnit.value;
+    this.surveyInfo.testResult.numberOfTestPerDay = this.NumberOfTestPerDay.value;
+    this.surveyInfo.testResult.numberOfTestIncoming = this.NumberOfTestIncoming.value;
 
     //employee-info
-    this.surveyInfo.employeeInfoSurvey.numberOfEmployeeDoTest = this.NumberOfEmployeeDoTest.value;
-    this.surveyInfo.employeeInfoSurvey.numberOfEmployeeUsePRC = this.NumberOfEmployeeUsePRC.value;
-    this.surveyInfo.employeeInfoSurvey.employeeTestTrainingPlace = this.EmployeeTestTrainingPlace.value;
-    this.surveyInfo.employeeInfoSurvey.trainingPlace = this.TrainingPlace.value;
-    this.surveyInfo.employeeInfoSurvey.numberOfEmployeeIncoming = this.NumberOfEmployeeIncoming.value;
+    this.surveyInfo.employeeResult.employeeResultId = this.EmployeeResultId.value;
+    this.surveyInfo.employeeResult.numberOfEmployeeDoTest = this.NumberOfEmployeeDoTest.value;
+    this.surveyInfo.employeeResult.numberOfEmployeeUsePRC = this.NumberOfEmployeeUsePRC.value;
+    this.surveyInfo.employeeResult.employeeTestTrainingPlace = this.EmployeeTestTrainingPlace.value;
+    this.surveyInfo.employeeResult.trainingPlace = this.TrainingPlace.value;
+    this.surveyInfo.employeeResult.numberOfEmployeeIncoming = this.NumberOfEmployeeIncoming.value;
 
     //device-info
-    this.surveyInfo.deviceInfoSurvey.deviceName = this.DeviceName.value;
-    this.surveyInfo.deviceInfoSurvey.devicePurpose = this.DevicePurpose.value;
-    this.surveyInfo.deviceInfoSurvey.testEachDay = this.TestEachDay.value;
-    this.surveyInfo.deviceInfoSurvey.testEachTime = this.TestEachTime.value;
-    this.surveyInfo.deviceInfoSurvey.startUsingDate = this.StartUsingDate.value;
-    this.surveyInfo.deviceInfoSurvey.note = this.Note.value;
-    this.surveyInfo.deviceNeedSurvey.isNeedMoreMachine = this.IsNeedMoreMachine.value;
-    this.surveyInfo.deviceNeedSurvey.numberOfMachineNeed = this.NumberOfMachineNeed.value;
+    this.surveyInfo.deviceNeed.deviceTypeId = this.DeviceTypeId.value;
+    this.surveyInfo.devices.deviceId = this.DeviceId.value;
+    this.surveyInfo.devices.deviceName = this.DeviceName.value;
+    this.surveyInfo.devices.devicePurpose = this.DevicePurpose.value;
+    this.surveyInfo.devices.testEachDay = this.TestEachDay.value;
+    this.surveyInfo.devices.testEachTime = this.TestEachTime.value;
+    this.surveyInfo.devices.startUsingDate = this.StartUsingDate.value;
+    this.surveyInfo.devices.note = this.note.value;
+    this.surveyInfo.deviceNeed.isNeedMoreMachine = this.IsNeedMoreMachine.value;
+    this.surveyInfo.deviceNeed.numberOfMachineNeed = this.NumberOfMachineNeed.value;
 
     //chemical-info
-    this.surveyInfo.chemicalInfoSurvey.chemicalName = this.ChemicalName.value;
-    this.surveyInfo.chemicalInfoSurvey.chemicalNumberUsed = this.ChemicalNumberUsed.value;
-    this.surveyInfo.chemicalInfoSurvey.chemicalNumberLeft = this.ChemicalNumberLeft.value;
-    this.surveyInfo.chemicalInfoSurvey.chemicalnumberNeed = this.ChemicalnumberNeed.value;
-    this.surveyInfo.chemicalInfoSurvey.noteChemical = this.NoteChemical.value;
+    this.surveyInfo.chemicals.chemicalId = this.ChemicalId.value;
+    this.surveyInfo.chemicals.chemicalTypeId = this.ChemicalTypeId.value;
+    this.surveyInfo.chemicals.chemicalName = this.ChemicalName.value;
+    this.surveyInfo.chemicals.chemicalNumberUsed = this.ChemicalNumberUsed.value;
+    this.surveyInfo.chemicals.chemicalNumberLeft = this.ChemicalNumberLeft.value;
+    this.surveyInfo.chemicals.chemicalnumberNeed = this.ChemicalnumberNeed.value;
+    this.surveyInfo.chemicals.note = this.Note.value;
 
     this.submitted = true;
     this.save();
-    if (this.surveySaveForm.invalid) {
-      return;
-    }
-    alert('SUCCESS!! \n\n');
   }
 
   //gene-info
   get UnitName() {
     return this.UnitName.get('unitName');
+  }
+  get UnitId() {
+    return this.UnitName.get('unitId');
   }
   get AreaName() {
     return this.surveySaveForm.get('areaName');
@@ -367,6 +361,9 @@ export class PostsComponent implements OnInit {
   }
 
   //test-info
+  get TestResultId() {
+    return this.surveySaveForm.get('testResultId');
+  }
   get NumberOfTestFrom21() {
     return this.surveySaveForm.get('numberOfTestFrom21');
   }
@@ -387,6 +384,9 @@ export class PostsComponent implements OnInit {
   }
 
   //employee-info
+  get EmployeeResultId() {
+    return this.surveySaveForm.get('employeeResultId');
+  }
   get NumberOfEmployeeDoTest() {
     return this.surveySaveForm.get('numberOfEmployeeDoTest');
   }
@@ -404,8 +404,14 @@ export class PostsComponent implements OnInit {
   }
 
   //device-info
-  get DeviceName() {
-    return this.surveySaveForm.get('deviceName');
+  get DeviceName(){
+    return this.surveySaveForm.get('deviceName')
+  }
+  get DeviceTypeId() {
+    return this.surveySaveForm.get('deviceTypeId');
+  }
+  get DeviceId() {
+    return this.surveySaveForm.get('deviceId');
   }
   get DevicePurpose() {
     return this.surveySaveForm.get('devicePurpose');
@@ -419,7 +425,7 @@ export class PostsComponent implements OnInit {
   get StartUsingDate() {
     return this.surveySaveForm.get('startUsingDate');
   }
-  get Note() {
+  get note() {
     return this.surveySaveForm.get('note');
   }
   get IsNeedMoreMachine() {
@@ -430,9 +436,15 @@ export class PostsComponent implements OnInit {
   }
 
   //chemical-info
+  get ChemicalId() {
+    return this.surveySaveForm.get('chemicalId');
+  }
   get ChemicalName() {
     return this.surveySaveForm.get('chemicalName');
   }
+   get ChemicalTypeId() {
+     return this.surveySaveForm.get('chemicalTypeId');
+   }
   get ChemicalNumberUsed() {
     return this.surveySaveForm.get('chemicalNumberUsed');
   }
@@ -442,8 +454,8 @@ export class PostsComponent implements OnInit {
   get ChemicalnumberNeed() {
     return this.surveySaveForm.get('chemicalnumberNeed');
   }
-  get NoteChemical() {
-    return this.surveySaveForm.get('noteChemical');
+  get Note() {
+    return this.surveySaveForm.get('note');
   }
 }
 

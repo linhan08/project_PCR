@@ -1,4 +1,5 @@
 export class GeneInfo {
+    unitId: number;
     unitName : string;
     headOfApartment: string;
     address: string;
