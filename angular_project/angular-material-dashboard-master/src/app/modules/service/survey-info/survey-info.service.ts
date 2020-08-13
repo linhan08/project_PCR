@@ -28,8 +28,7 @@ export class SurveyInfoService {
   }
 
   unit(myPostBody: object): Observable<object> {
-    return this.http.post(`${this.baseUrl}`, myPostBody)
-                .pipe(map((response: Response) => <object>response.json()));
+    return this.http.post(`${this.baseUrl}`, myPostBody).pipe(map((response: Response) => <object>response.json()));
   }
 
 }

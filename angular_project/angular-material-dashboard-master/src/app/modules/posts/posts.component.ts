@@ -81,11 +81,11 @@ export class PostsComponent implements OnInit {
 
     this.surveySaveForm = this.formBuilder.group({
       //unit
-      unitName:  ['', Validators.required, Validators.minLength(3)],
+      unitName:  ['', Validators.required],
       areaName:  ['', Validators.required],
       provinceName:  ['', Validators.required],
       headOfApartment:  ['', Validators.required,],
-      email:  ['', Validators.required,],
+      email:  ['', Validators.required, Validators.email],
       phoneNumber:  ['', Validators.required],
       isExecutedTesting:  ['', Validators.required],
       typeOfUnit:  ['', Validators.required],
@@ -260,6 +260,11 @@ export class PostsComponent implements OnInit {
   }
 
   save() {
+    this.submitted = true;
+    if (this.surveySaveForm.invalid) {
+      return;
+    }
+    alert('SUCCESS!! \n\n');
     this.surveyInfoService.unit(this.surveyInfo)
       .subscribe(data => console.log(data), error => console.log(error));
     this.surveyInfo = new SurveyInfo();
