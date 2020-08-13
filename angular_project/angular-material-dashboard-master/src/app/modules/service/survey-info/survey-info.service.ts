@@ -7,33 +7,35 @@ import {Observable} from 'rxjs';
 })
 export class SurveyInfoService {
 
-  private baseUrl = 'http://localhost:8080/survey/api/v1';
+  private baseUrl = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) {
   }
 
-  unitReport(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  unit(unitId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${unitId}`, value);
   }
 
-  testResult(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  testResult(testResultId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${testResultId}`, value);
   }
 
-  employeeResult(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  employeeResult(employeeResultId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${employeeResultId}`, value);
   }
 
-  deviceNeed(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  deviceNeed(deviceTypeId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${deviceTypeId}`, value);
   }
 
-  deviceReports(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  devices(deviceId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${deviceId}`, value);
   }
 
-  chemicalReports(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + '/');
+  chemicals(chemicalId: number, value: any): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/${chemicalId}`, value);
   }
+
+
 
 }
