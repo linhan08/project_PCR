@@ -81,11 +81,11 @@ export class PostsComponent implements OnInit {
 
     this.surveySaveForm = this.formBuilder.group({
       //unit
-      unitName:  ['', Validators.required, Validators.minLength(3)],
+      unitName:  ['', Validators.required],
       areaName:  ['', Validators.required],
       provinceName:  ['', Validators.required],
       headOfApartment:  ['', Validators.required,],
-      email:  ['', Validators.required,],
+      email:  ['', Validators.required, Validators.email],
       phoneNumber:  ['', Validators.required],
       isExecutedTesting:  ['', Validators.required],
       typeOfUnit:  ['', Validators.required],
@@ -260,28 +260,14 @@ export class PostsComponent implements OnInit {
   }
 
   save() {
-    this.surveyInfoService.unit(this.surveyInfo.unit.unitId, this.surveyInfo)
+    this.submitted = true;
+    if (this.surveySaveForm.invalid) {
+      return;
+    }
+    alert('SUCCESS!! \n\n');
+    this.surveyInfoService.unit(this.surveyInfo)
       .subscribe(data => console.log(data), error => console.log(error));
     this.surveyInfo = new SurveyInfo();
-
-    this.surveyInfoService.testResult(this.surveyInfo.testResult.testResultId, this.surveyInfo)
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.employeeResult(this.surveyInfo.employeeResult.employeeResultId, this.surveyInfo)
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.deviceNeed(this.surveyInfo.deviceNeed.deviceTypeId, this.surveyInfo)
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.devices(this.surveyInfo.devices.deviceId, this.surveyInfo)
-      .subscribe(data => console.log(data), error => console.log(error));
-
-
-    this.surveyInfoService.chemicals(this.surveyInfo.chemicals.chemicalId, this.surveyInfo)
-      .subscribe(data => console.log(data), error => console.log(error));
 
     console.log('Save successfully!');
   }

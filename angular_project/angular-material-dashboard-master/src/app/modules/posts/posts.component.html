@@ -513,7 +513,7 @@
                 <form (ngSubmit)="saveSurvey(saveSurvey)">
                     <div class="form-inline">
                         <label><h6>1. Tên đơn vị:</h6> </label>
-                        <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="text" name="unitName" class="form-control" [(ngModel)]="surveyInfo.unit.unitName" style="width: 25%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" name="unitName" class="form-control" [(ngModel)]="surveyInfo.unit.unitName" style="width: 25%; margin-bottom: 15px;">
                         <div *ngIf="submitted && f.unitName.errors" class="invalid-feedback">
                             <div *ngIf="f.unitName.errors.required">unitName is required</div>
                             <div *ngIf="f.unitName.errors.unitName">unitName must be a valid email address</div>
@@ -523,39 +523,58 @@
                         <label><h6>2. Địa chỉ:</h6> </label>
                         <div class="row">
                             <div class="col-lg-2 col-md-4" style=" margin-bottom: 15px;">
-                                <select [(ngModel)]="surveyInfo.unit.areaName" name="areaName" class="mdb-select colorful-select dropdown-info mx-2 form-control">
+                                <select [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" [(ngModel)]="surveyInfo.unit.areaName" name="areaName" class="mdb-select colorful-select dropdown-info mx-2 form-control">
                                     <option value="null">--Select--</option>
                                     <option value="MB">Miền bắc</option>
                                     <option value="MT">Miền Trung</option>
                                     <option value="MN">Miền Nam</option>
                                 </select>
-                                
+                                <div *ngIf="submitted && f.areaName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.areaName.errors.required">areaName is required</div>
+                                    <div *ngIf="f.areaName.errors.areaName">areaName must be a valid email address</div>
+                                </div>
                             </div>
                             <div class="col-lg-2 col-md-6 select1" style=" margin-bottom: 15px;">
-                                <select [(ngModel)]="surveyInfo.unit.provinceName" name="provinceName" class="mdb-select colorful-select dropdown-info mx-2 form-control ">
+                                <select [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" [(ngModel)]="surveyInfo.unit.provinceName" name="provinceName" class="mdb-select colorful-select dropdown-info mx-2 form-control ">
                                     <option value="null">--Select--</option>
                                     <option value="HN">Hà Nội</option>
                                     <option value="DN">Đà Nẵng</option>
                                     <option value="HCM">HCM </option>
                                     <option value="CT">Cần Thơ</option>
                                 </select>
-                                
+                                <div *ngIf="submitted && f.provinceName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.provinceName.errors.required">unitName is required</div>
+                                    <div *ngIf="f.provinceName.errors.provinceName">unitName must be a valid email address</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-inline">
                         <label><h6>3. Tên Trưởng khoa Xét nghiệm:</h6>  </label>
-                        <input type="text" name="headOfApartment" class="form-control" [(ngModel)]="surveyInfo.unit.headOfApartment" style="width: 25%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" name="headOfApartment" class="form-control" [(ngModel)]="surveyInfo.unit.headOfApartment" style="width: 25%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.headOfApartment.errors" class="invalid-feedback">
+                            <div *ngIf="f.headOfApartment.errors.required">HeadOfApartment is required</div>
+                            <div *ngIf="f.headOfApartment.errors.headOfApartment">HeadOfApartment must be a valid email address</div>
+                        </div>
                     </div>
+
                     <div class="form-inline">
                         <label><h6>4. Email: </h6></label>
-                        <input type="text" type="email" class="form-control" [(ngModel)]="surveyInfo.unit.email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 25%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="text" type="email" class="form-control" [(ngModel)]="surveyInfo.unit.email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 25%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">email is required</div>
+                            <div *ngIf="f.email.errors.email">email must be a valid email address</div>
+                        </div>
                     </div>
                     <div class="form-inline">
                         <label><h6>5. Điện thoại:</h6> </label>
-                        <input type="text" class="form-control" [(ngModel)]="surveyInfo.unit.phoneNumber" name="phoneNumber" style="width: 25%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" type="text" class="form-control" [(ngModel)]="surveyInfo.unit.phoneNumber" name="phoneNumber" style="width: 25%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.phoneNumber.errors.required">phoneNumber is required</div>
+                            <div *ngIf="f.phoneNumber.errors.phoneNumber">phoneNumber must be a valid email address</div>
+                        </div>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-inline" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                         <label class="label1"><h6>6. Đơn vị có triển khai xét nghiệm SARS-COV-2:</h6> </label>
                         <div class="form-check form-check-group">
                             <input type="radio" (click)="radioShowAll($event)" [(ngModel)]="surveyInfo.unit.isExecutedTesting" name="isExecutedTesting" class="form-check-input" type="radio" id="groupRadio1" value="1">
@@ -565,8 +584,12 @@
                             <input type="radio" (click)="radioShowAll($event)" [(ngModel)]="surveyInfo.unit.isExecutedTesting" name="isExecutedTesting" class="form-check-input" type="radio" id="groupRadio2" value="0">
                             <label class="form-check-label" for="groupRadio2">Không</label>
                         </div>
+                        <div *ngIf="submitted && f.isExecutedTesting.errors" class="invalid-feedback">
+                            <div *ngIf="f.isExecutedTesting.errors.required">isExecutedTesting is required</div>
+                            <div *ngIf="f.isExecutedTesting.errors.isExecutedTesting">isExecutedTesting must be a valid email address</div>
+                        </div>
                     </div>
-                    <div class="form-inline" [hidden]="showBlock.blockA7 " *ngIf="!showSomeFiled">
+                    <div class="form-inline" [hidden]="showBlock.blockA7 " *ngIf="!showSomeFiled" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                         <label><h6>7. Là đơn vị xét nghiệm:</h6> </label>
                         <div class="form-check form-check-group">
                             <input type="radio" [(ngModel)]="surveyInfo.unit.typeOfUnit" name="typeOfUnit" class="form-check-input" id="groupRadio3" type="radio" value="">
@@ -575,6 +598,10 @@
                         <div class="form-check form-check-group">
                             <input type="radio" [(ngModel)]="surveyInfo.unit.typeOfUnit" name="typeOfUnit" class="form-check-input" id="groupRadio4" type="radio" value="">
                             <label class="form-check-label" for="groupRadio4">Khẳng định</label>
+                        </div>
+                        <div *ngIf="submitted && f.typeOfUnit.errors" class="invalid-feedback">
+                            <div *ngIf="f.typeOfUnit.errors.required">typeOfUnit is required</div>
+                            <div *ngIf="f.typeOfUnit.errors.typeOfUnit">typeOfUnit must be a valid email address</div>
                         </div>
                     </div>
                 </form>
@@ -596,14 +623,22 @@
                 <form (ngSubmit)="saveSurvey(saveSurvey)">
                     <div class="form-inline">
                         <label><h6>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:</h6> </label>
-                        <input type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestFrom21" name="numberOfTestFrom21" class="form-control" style="width: 10%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestFrom21" name="numberOfTestFrom21" class="form-control" style="width: 10%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.numberOfTestFrom21.errors" class="invalid-feedback">
+                            <div *ngIf="f.numberOfTestFrom21.errors.required">numberOfTestFrom21 is required</div>
+                            <div *ngIf="f.numberOfTestFrom21.errors.numberOfTestFrom21">numberOfTestFrom21 must be a valid email address</div>
+                        </div>
                     </div>
                     <div class="form-inline">
                         <label><h6>2. Số mẫu xét nghiệm SARS-COV-2 đã chuyển đến đơn vị khác:</h6>
                         </label>
-                        <input type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestMoving" name="numberOfTestMoving" class="form-control" style="width: 10%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestMoving" name="numberOfTestMoving" class="form-control" style="width: 10%; margin-bottom: 15px;">
+                        <div *ngIf="submitted && f.numberOfTestMoving.errors" class="invalid-feedback">
+                            <div *ngIf="f.numberOfTestMoving.errors.required">numberOfTestFrom21 is required</div>
+                            <div *ngIf="f.numberOfTestMoving.errors.numberOfTestMoving">numberOfTestFrom21 must be a valid email address</div>
+                        </div>
                     </div>
-                    <div class="form-inline">
+                    <div class="form-inline" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                         <label><h6>3. Là đơn vị xét nghiệm:</h6></label>
                         <div class="form-check form-check-group">
                             <input [(ngModel)]="surveyInfo.testResult.placeTestMoving" name="placeTestMoving" class="form-check-input" type="radio" id="groupRadio5" value="">
@@ -630,17 +665,17 @@
                     <div class="form-inline" *ngIf="!showSomeFiled">
                         <label><h6>4. Số mẫu thực hiện xét nghiệm tại đơn vị:</h6>
                       </label>
-                        <input type="text" value="B4" [(ngModel)]="surveyInfo.testResult.numberOfTestAtUnit" name="numberOfTestAtUnit" class="form-control" style="width: 10%; margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" value="B4" [(ngModel)]="surveyInfo.testResult.numberOfTestAtUnit" name="numberOfTestAtUnit" class="form-control" style="width: 10%; margin-bottom: 15px;">
                     </div>
                     <div class="form-inline" *ngIf="!showSomeFiled">
                         <label><h6>5. Số mẫu trung bình được xét nghiệm hàng ngày:</h6>
                         </label>
-                        <input type="text" value="B5" [(ngModel)]="surveyInfo.testResult.numberOfTestPerDay" name="numberOfTestPerDay" class="form-control" style="width: 10%;margin-bottom: 5px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" value="B5" [(ngModel)]="surveyInfo.testResult.numberOfTestPerDay" name="numberOfTestPerDay" class="form-control" style="width: 10%;margin-bottom: 5px;">
                     </div>
                     <div class="form-inline">
                         <label><h6>6. Số mẫu xét nghiệm SARS-COV-2 dự kiến sắp tới</h6>
                         </label>
-                        <input type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestIncoming" name="numberOfTestIncoming" class="form-control" style="width: 19%;margin-bottom: 5px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.testResult.numberOfTestIncoming" name="numberOfTestIncoming" class="form-control" style="width: 19%;margin-bottom: 5px;">
                     </div>
                 </form>
             </div>
@@ -662,13 +697,13 @@
                     <div class="form-inline">
                         <label><h6>1. Số mẫu xét nghiệm SARS-COV-2 thu nhập từ ngày 21 tháng 1 năm 2020 đến nay:</h6>
                         </label>
-                        <input type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeDoTest" name="employeeTestTrainingPlace" class="form-control" style="width: 10%;margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeDoTest" name="employeeTestTrainingPlace" class="form-control" style="width: 10%;margin-bottom: 15px;">
                     </div>
                     <div class="form-inline">
                         <label><h6>2. Số cán bộ được đào tạo xét nghiệm SARS-COV-2 sử dụng máy RealTime-PCR</h6></label>
-                        <input type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeUsePRC" name="employeeTestTrainingPlace" class="form-control" style="width: 10%;margin-bottom: 15px;">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeUsePRC" name="employeeTestTrainingPlace" class="form-control" style="width: 10%;margin-bottom: 15px;">
                     </div>
-                    <div class="form-inline">
+                    <div class="form-inline" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                         <label><h6>3. Quy trình xét nghiệm SARS-COV-2 được đào tạo:</h6>
                           <div class="form-check form-check-group">
                             <input  [(ngModel)]="surveyInfo.employeeResult.employeeTestTrainingPlace" name="employeeTestTrainingPlace" class="form-check-input" type="radio"  id="groupRadio10" value="">
@@ -685,7 +720,7 @@
                     </div>
                     </label>
             </div>
-            <div class="form-inline">
+            <div class="form-inline" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                 <label><h6>4. Nơi đào tạo:</h6> </label>
                 <div class="form-check form-check-group">
                     <input [(ngModel)]="surveyInfo.employeeResult.trainingPlace" name="trainingPlace" class="form-check-input" type="radio" id="groupRadio13" value="">
@@ -712,7 +747,7 @@
             <div class="form-inline">
                 <label><h6>5. Số mẫu trung bình được xét nghiệm hàng ngày:</h6>
                 </label>
-                <input type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeIncoming" name="numberOfEmployeeIncoming" class="form-control" style="width: 10%;margin-bottom: 15px;">
+                <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.employeeResult.numberOfEmployeeIncoming" name="numberOfEmployeeIncoming" class="form-control" style="width: 10%;margin-bottom: 15px;">
             </div>
             </form>
         </div>
@@ -744,7 +779,7 @@
                         <br>
                     </div>
 
-                    <div class="form-inline" [hidden]="showBlock.blockD">
+                    <div class="form-inline" [hidden]="showBlock.blockD" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                         <div class="row">
                             <div class="col-lg-2">
                                 <label>Tên máy</label>
@@ -774,18 +809,18 @@
                     <label>
                         <h6>2. Đơn vị có kế hoạch bổ sung máy RealTime-PCR không:</h6>
                         <div class="form-check " >
-                            <input [(ngModel)]="surveyInfo.deviceNeed.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox"  id="checkbox1" value="">
+                            <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" [(ngModel)]="surveyInfo.deviceNeed.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox"  id="checkbox1" value="">
                             <label class="form-check-label" for="checkbox1"> Có</label>
                 </div>
                 <div class="form-check ">
-                    <input [(ngModel)]="surveyInfo.deviceNeed.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox" id="checkbox2" value="">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" [(ngModel)]="surveyInfo.deviceNeed.isNeedMoreMachine" name="isNeedMoreMachinePCR" class="form-check-input" type="checkbox" id="checkbox2" value="">
                     <label class="form-check-label" for="checkbox2">Không</label>
                 </div>
                 </label>
         </div>
         <div class="form-inline">
             <label><h6>3. Số máy RealTime-PCR cần bổ sung</h6></label>
-            <input type="text" [(ngModel)]="surveyInfo.deviceNeed.numberOfMachineNeed" name="numberOfMachineNeed" class="form-control" style="width: 8%; margin-bottom: 15px;">
+            <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.deviceNeed.numberOfMachineNeed" name="numberOfMachineNeed" class="form-control" style="width: 8%; margin-bottom: 15px;">
         </div>
         <div class="form-group" [hidden]="showBlock.blockD">
             <div class="form-group">
@@ -800,7 +835,7 @@
                 <br>
             </div>
 
-            <div class="form-inline" [hidden]="showBlock.blockD">
+            <div class="form-inline" [hidden]="showBlock.blockD" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                 <div class="row">
                     <div class="col-lg-2">
                         <label>Tên máy</label>
@@ -840,7 +875,7 @@
     </div>
     <div class="form-inline">
         <label><h6>6. Số máy tách chiết ARN cần bổ sung</h6> </label>
-        <input type="text" [(ngModel)]="surveyInfo.deviceNeed.numberOfMachineNeed" name="numberOfMachineNeed" class="form-control" style="width: 8%; margin-bottom: 15px;">
+        <input [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" [(ngModel)]="surveyInfo.deviceNeed.numberOfMachineNeed" name="numberOfMachineNeed" class="form-control" style="width: 8%; margin-bottom: 15px;">
     </div>
     </form>
 </div>
@@ -871,7 +906,7 @@
                     <br>
                 </div>
 
-                <div class="form-inline" [hidden]="showBlock.blockE">
+                <div class="form-inline" [hidden]="showBlock.blockE" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                     <div class="row">
                         <div class="col-lg-2">
                             <label>Tên sinh phẩm (theo QĐ-2245 BYT-DP)</label>
@@ -905,7 +940,7 @@
                     <i style="font-size: 11px; color: red; ">(*Nếu chọn khác và điền tên sinh phẩm vào phần ghi chú)</i>
                     <br>
                 </div>
-                <div class="form-inline" [hidden]="showBlock.blockE">
+                <div class="form-inline" [hidden]="showBlock.blockE" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                     <div class="row">
                         <div class="col-lg-2">
                             <label>Tên sinh phẩm</label>
@@ -940,7 +975,7 @@
                     <i style="font-size: 11px; color: red; ">(*Nếu chọn khác và điền tên sinh phẩm vào phần ghi chú)</i>
                     <br>
                 </div>
-                <div class="form-inline" [hidden]="showBlock.blockE">
+                <div class="form-inline" [hidden]="showBlock.blockE" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }">
                     <div class="row">
                         <div class="col-lg-2">
                             <label>Tên sinh phẩm</label>
@@ -967,11 +1002,9 @@
     </div>
 </div>
 </div>
-<div class="btn1 col-sm-4" [hidden]="!submitted">
-    <h5 style="color: forestgreen; text-align: center; margin-top: 20px;">Information Added SuccessFully !!!</h5>
-</div>
+
 <div class="btn1 col-sm-4">
     <button type="submit" class="btn btn-primary" (click)="saveNote()">Lưu bản nháp</button>&nbsp;
-    <button type="submit" class="btn btn-success" (click)="addSurveyForm()">Hoàn Thành</button>&nbsp;
+    <button type="submit" class="btn btn-success" (click)="save()">Hoàn Thành</button>&nbsp;
     <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
 </div>
